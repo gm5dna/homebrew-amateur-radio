@@ -22,7 +22,7 @@ class Qttermtcp < Formula
     system "macdeployqt", app_path
   
     # Move the .app to /Applications (system-wide directory)
-    apps_dir = "/Applications"
+    apps_dir = "#{ENV["HOME"]}/Applications"
   
     # Ensure the directory exists (this is generally handled by macOS, but it's safe to check)
     mkdir_p apps_dir
@@ -33,7 +33,7 @@ class Qttermtcp < Formula
     <<~EOS
       QtTermTCP has been installed as a macOS application.
       You can find it in:
-        /Applications/QtTermTCP.app
+        ~/Applications/QtTermTCP.app
     EOS
   end
 
