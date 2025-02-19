@@ -14,7 +14,8 @@ class Qttermtcp < Formula
   depends_on "qt"
 
   def install
-    system "qmake"
+    system "qmake", "QMAKE_CXXFLAGS+=-I#{Formula[\"qt\"].opt_include}", "QMAKE_LFLAGS+=-F#{Formula[\"qt\"].opt_lib}"
+    system "make", "LIBS+=-lQtMultimedia"
     system "make"
 
     # Create a macOS application bundle
@@ -27,7 +28,7 @@ class Qttermtcp < Formula
 
     mkdir_p apps_dir
     mv app_path, apps_dir
-  end
+end
 
   def caveats
     <<~EOS
