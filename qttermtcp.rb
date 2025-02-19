@@ -12,6 +12,7 @@ class Qttermtcp < Formula
   head "https://github.com/g8bpq/QtTermTCP.git", branch: "master"
 
   depends_on "qt"
+  depends_on "qt-multimedia"
 
   def install
     system "qmake"
