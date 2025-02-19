@@ -1,9 +1,10 @@
 class Qttermtcp < Formula
   desc "QtTermTCP - TCP KISS Terminal for Amateur Radio Packet"
   homepage "https://github.com/g8bpq/QtTermTCP"
-  url "https://github.com/g8bpq/QtTermTCP/archive/refs/heads/master.zip"
-  version "2025.02.19" # Use a date-based version since there are no releases
+  url "https://github.com/g8bpq/QtTermTCP/archive/refs/tags/0.79.zip"
+  version "0.0.0.79"
   sha256 "21b39b32e44989579f5c07d8a1432adc57e751f03a916edf3747de9c58fdb346"
+  license "GPL-3.0-or-later"
 
   head "https://github.com/g8bpq/QtTermTCP.git", branch: "master"
 
@@ -20,9 +21,10 @@ class Qttermtcp < Formula
     app_path = "QtTermTCP.app"
     system "macdeployqt", app_path
   
-    # Move the .app to /Applications (use HOMEBREW_PREFIX for user-writable location)
-    apps_dir = "#{HOMEBREW_PREFIX}/Applications"
+    # Move the .app to /Applications (system-wide directory)
+    apps_dir = "/Applications"
   
+    # Ensure the directory exists (this is generally handled by macOS, but it's safe to check)
     mkdir_p apps_dir
     mv app_path, apps_dir
   end  
