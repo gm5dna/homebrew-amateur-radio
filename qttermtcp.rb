@@ -54,7 +54,7 @@ class Qttermtcp < Formula
 
   def do_build
     # Build steps encapsulated in this method for clarity
-    cd "QtTermTCP-0.79" do
+    cd "QtTermTCP-0.79/QtTermTCP-0.79/" do
       system "mkdir", "build"
       cd "build" do
         system "/opt/homebrew/opt/qt@5/bin/qmake", "CONFIG+=sdk_no_version_check", "../QtTermTCP.pro"
@@ -66,7 +66,7 @@ class Qttermtcp < Formula
   def install
     do_build
     # Install the app into Homebrew's bin
-    bin.install "QtTermTCP-0.79/build/QtTermTCP.app/Contents/MacOS/QtTermTCP"
+    bin.install "QtTermTCP-0.79/QtTermTCP-0.79/build/QtTermTCP.app/Contents/MacOS/QtTermTCP"
   end
 
   test do
