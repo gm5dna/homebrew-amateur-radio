@@ -7,12 +7,13 @@ class Qttermtcp < Formula
 
   head "https://github.com/g8bpq/QtTermTCP.git", branch: "master"
 
-  depends_on "qt@5"  # Explicitly depend on Qt5
-  depends_on "qt@5" => :build # Ensures Qt5 is available during the build
+  depends_on "qt@5"
 
   def install
-    system "qmake", "QMAKE_CXXFLAGS+=-I#{Formula["qt@5"].opt_include}", "QMAKE_LFLAGS+=-F#{Formula["qt@5"].opt_lib}"
-    system "make", "LIBS+=-lQtMultimedia"
+    # Ensure the QtMultimedia library is properly linked
+    system "qmake", "QMAKE_CXXFLAGS+=-I#{Formula["qt@5"].opt_include}",
+                   "QMAKE_LFLAGS+=-F#{Formula["qt@5"].opt_lib}",
+                   "LIBS+=-F#{Formula["qt@5"].opt_lib} -framework QtMultimedia"
     system "make"
 
     # Create a macOS application bundle
