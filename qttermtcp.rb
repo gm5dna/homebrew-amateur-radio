@@ -3,7 +3,7 @@ class Qttermtcp < Formula
   homepage "https://github.com/g8bpq/QtTermTCP"
   url "https://github.com/g8bpq/QtTermTCP/archive/refs/tags/0.79.zip"
   version "0.0.0.79"
-  sha256 "21b39b32e44989579f5c07d8a1432adc57e751f03a916edf3747de9c58fdb346"
+  sha256 "c01e5ea266833d47469c7aa0d9f7ac582767de771960aaed57d07fd915de6237"
   license "GPL-3.0-or-later"
 
   head "https://github.com/g8bpq/QtTermTCP.git", branch: "master"
