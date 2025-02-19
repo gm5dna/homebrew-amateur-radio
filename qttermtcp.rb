@@ -15,18 +15,17 @@ class Qttermtcp < Formula
                    "QMAKE_LFLAGS+=-F#{Formula["qt@5"].opt_lib}",
                    "LIBS+=-F#{Formula["qt@5"].opt_lib} -framework QtMultimedia"
     system "make"
-
+  
     # Create a macOS application bundle
     app_path = "QtTermTCP.app"
     system "macdeployqt", app_path
-
-    # Move the .app to /Applications
-    apps_dir = "/Applications"
-    apps_dir = "#{HOMEBREW_PREFIX}/Applications" unless File.writable?("/Applications")
-
+  
+    # Move the .app to /Applications (use HOMEBREW_PREFIX for user-writable location)
+    apps_dir = "#{HOMEBREW_PREFIX}/Applications"
+  
     mkdir_p apps_dir
     mv app_path, apps_dir
-  end
+  end  
 
   def caveats
     <<~EOS
