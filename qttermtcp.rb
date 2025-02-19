@@ -54,7 +54,7 @@ class Qttermtcp < Formula
 
   def do_build
     # Build steps encapsulated in this method for clarity
-    cd "QtTermTCP-master" do
+    cd "QtTermTCP-0.79" do
       system "mkdir", "build"
       cd "build" do
         system "/opt/homebrew/opt/qt@5/bin/qmake", "CONFIG+=sdk_no_version_check", "../QtTermTCP.pro"
