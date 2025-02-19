@@ -11,7 +11,7 @@ cask "wsjtx-improved" do
   
     depends_on macos: ">= :monterey"
   
-    app "wsjtx-#{version.csv.first}-devel_improved_PLUS_#{version.csv.second}_M1.app"
+    app "wsjtx.app"
   
     zap trash: [
       "~/Library/Application Support/WSJT-X",
