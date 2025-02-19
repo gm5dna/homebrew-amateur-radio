@@ -1,7 +1,7 @@
 cask "wsjtx-improved" do
     version "2.7.1,250106-RC8"
     sha256 :no_check # SourceForge links are often dynamically generated
-  
+    license "GPL-3.0-or-later"
     url "https://sourceforge.net/projects/wsjt-x-improved/files/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}-devel_improved_PLUS_#{version.csv.second}_M1.zip/download",
         verified: "sourceforge.net/projects/wsjt-x-improved/files/"
   
