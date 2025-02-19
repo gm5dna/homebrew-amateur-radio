@@ -66,7 +66,7 @@ class Qttermtcp < Formula
   def install
     do_build
     # Install the app into Homebrew's bin
-    bin.install "QtTermTCP-master/build/QtTermTCP.app/Contents/MacOS/QtTermTCP"
+    bin.install "QtTermTCP-0.79/build/QtTermTCP.app/Contents/MacOS/QtTermTCP"
   end
 
   test do
