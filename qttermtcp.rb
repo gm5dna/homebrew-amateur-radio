@@ -28,30 +28,3 @@ class Qttermtcp < Formula
     assert_predicate prefix/"QtTermTCP.app", :exist?, "QtTermTCP.app bundle was not installed"
   end
 end
-
-#  ---
-
-# class Qttermtcp < Formula
-#   desc "QtTermTCP terminal application"
-#   homepage "https://github.com/g8bpq/QtTermTCP"
-#   url "https://github.com/g8bpq/QtTermTCP/archive/refs/tags/0.79.zip"
-#   version "0.0.0.79"
-#   sha256 "c01e5ea266833d47469c7aa0d9f7ac582767de771960aaed57d07fd915de6237"
-#   license "GPL-3.0-or-later"
-
-#   depends_on "qt5" => :build
-
-#   def install
-#     # Remove unrecognized options if they cause configure to fail
-#     # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-#     # system "./configure", "--disable-silent-rules", *std_configure_args
-#     # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-#     system "qmake", "QtTermTCP.pro"
-#     system "make"
-#     bin.install "QtTermTCP.app/Contents/MacOS/QtTermTCP"
-#   end
-
-#   test do
-#     system "#{bin}/QtTermTCP", "--version"
-#   end
-# end
