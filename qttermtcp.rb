@@ -15,9 +15,11 @@ class Qttermtcp < Formula
   end
 
   def post_install
-    applications_dir = "/Applications"
+    applications_dir = "#{ENV["HOME"]}/Applications"
     app_path = "#{opt_prefix}/QtTermTCP.app"
     link_path = "#{applications_dir}/QtTermTCP.app"
+    
+    mkdir_p applications_dir unless Dir.exist?(applications_dir)
     
     if File.exist?(link_path)
       ohai "Removing existing symlink: #{link_path}"
@@ -33,7 +35,9 @@ class Qttermtcp < Formula
       The application has been installed as a macOS app bundle in:
         #{opt_prefix}/QtTermTCP.app
       
-      A symlink has been created in /Applications for easier access.
+      A symlink has been created in ~/Applications for easier access.
+      If you prefer a symlink in /Applications, run:
+        sudo ln -s #{opt_prefix}/QtTermTCP.app /Applications/QtTermTCP.app
     EOS
   end
 
@@ -41,6 +45,7 @@ class Qttermtcp < Formula
     assert_predicate prefix/"QtTermTCP.app", :exist?, "QtTermTCP.app bundle was not installed"
   end
 end
+
 
 
 # class Qttermtcp < Formula
