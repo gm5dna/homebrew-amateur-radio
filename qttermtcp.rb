@@ -19,7 +19,7 @@ class Qttermtcp < Formula
   
     # Create a macOS application bundle
     app_path = "QtTermTCP.app"
-    system "macdeployqt", app_path
+    system "macdeployqt", app_path, "-verbose=3" # Use verbose output for more details
   
     # Move the .app to /Applications (system-wide directory)
     apps_dir = "#{ENV["HOME"]}/Applications"
