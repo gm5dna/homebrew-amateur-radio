@@ -50,23 +50,16 @@ class Qttermtcp < Formula
   sha256 "c01e5ea266833d47469c7aa0d9f7ac582767de771960aaed57d07fd915de6237"
   license "GPL-3.0-or-later"
 
-  depends_on "qt@5"
-
-  def do_build
-    # Build steps encapsulated in this method for clarity
-    cd "QtTermTCP-0.79/QtTermTCP-0.79/" do
-      system "mkdir", "build"
-      cd "build" do
-        system "/opt/homebrew/opt/qt@5/bin/qmake", "CONFIG+=sdk_no_version_check", "../QtTermTCP.pro"
-        system "make", "-j4"
-      end
-    end
-  end
+  depends_on "qt5" => :build
 
   def install
-    do_build
-    # Install the app into Homebrew's bin
-    bin.install "QtTermTCP-0.79/QtTermTCP-0.79/build/QtTermTCP.app/Contents/MacOS/QtTermTCP"
+    # Remove unrecognized options if they cause configure to fail
+    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
+    # system "./configure", "--disable-silent-rules", *std_configure_args
+    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "qmake", "QtTermTCP.pro"
+    system "make"
+    bin.install "QtTermTCP.app/Contents/MacOS/QtTermTCP"
   end
 
   test do
