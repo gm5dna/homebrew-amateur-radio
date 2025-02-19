@@ -11,21 +11,21 @@ class Qttermtcp < Formula
 
 
   def install
-        system "qmake", "QMAKE_CXXFLAGS+=-I#{Formula[\"qt\"].opt_include}", "QMAKE_LFLAGS+=-F#{Formula[\"qt\"].opt_lib}"
+    system "qmake", "QMAKE_CXXFLAGS+=-I#{Formula["qt"].opt_include}", "QMAKE_LFLAGS+=-F#{Formula["qt"].opt_lib}"
     system "make", "LIBS+=-lQtMultimedia"
     system "make"
-
+  
     # Create a macOS application bundle
     app_path = "QtTermTCP.app"
     system "macdeployqt", app_path
-
+  
     # Move the .app to /Applications
     apps_dir = "/Applications"
     apps_dir = "#{HOMEBREW_PREFIX}/Applications" unless File.writable?("/Applications")
-
+  
     mkdir_p apps_dir
     mv app_path, apps_dir
-  end
+  end  
 
   def caveats
     <<~EOS
