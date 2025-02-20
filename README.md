@@ -16,7 +16,7 @@ Once Homebrew is installed, you can add this tap to your setup by running the fo
 brew tap gm5dna/amateur-radio
 ```
 
-## Available Formulae
+## Available Software
 
 ### Formulae
 - **qttermtcp**: A terminal emulator for packet radio including linbpq.
@@ -26,7 +26,7 @@ brew tap gm5dna/amateur-radio
 - **js8call**: A digital communication software for weak-signal operators using JS8 mode.
 - **pine64-updater**: A utility for updating Pine64 devices.
 - **sdrconnect**: Software for interfacing with SDR (Software Defined Radio) devices.
-- **waveloggate**: Connectore software for wavelog.
+- **waveloggate**: Connector software for wavelog.
 - **wsjtx-improved**: A modified version of WSJT-X, an advanced software for weak signal communication.
 
 ## Installing Software
