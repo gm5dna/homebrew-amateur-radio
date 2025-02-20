@@ -12,6 +12,10 @@ cask "wsjtx-improved" do
   
     app "wsjtx.app"
   
+    postflight do
+      system_command "/bin/mv", args: ["#{appdir}/wsjtx.app", "#{appdir}/wsjtx-improved.app"]
+    end
+
     zap trash: [
       "~/Library/Application Support/WSJT-X",
       "~/Library/Preferences/wsjtx.plist",
