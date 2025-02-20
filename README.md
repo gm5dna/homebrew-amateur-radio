@@ -1,7 +1,3 @@
-Here's an improved version of your README file:
-
----
-
 # homebrew-amateur-radio
 
 This is a custom Homebrew tap containing macOS software for amateur radio that I use frequently. It includes both formulae and casks for various tools and utilities to enhance your ham radio experience on macOS.
