@@ -47,7 +47,7 @@ brew install --cask freedv
 
 ## To Do
 - Add NanoVNA Saver
-- Add [FT7-10 Cockpit](https://w0xz.com/v/ft710/)
+- Add [FT-710 Cockpit](https://w0xz.com/v/ft710/)
 - Add https://hamrs.app
 
 ## Contributing
