@@ -8,7 +8,7 @@ cask "wsjtx" do
     desc "Software for weak-signal digital communication"
     homepage "https://physics.princeton.edu/pulsar/k1jt/wsjtx.html"
   
-    app "WSJT-X.app"
+    app "wsjtx.app"
   
     zap trash: [
       "~/Library/Application Support/WSJT-X",
