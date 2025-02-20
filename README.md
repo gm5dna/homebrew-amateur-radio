@@ -22,6 +22,7 @@ brew tap gm5dna/amateur-radio
 - **ftdx10-cockpit**: Controller software for the Yaesu FTdx10 transceiver
 - **js8call**: Digital communication software for weak-signal operators using JS8 mode.
 - **pine64-updater**: A utility for updating Pine64 devices.
+- **rumlogng**: Logging and QSL software
 - **sdrconnect**: Software for interfacing with SDRplay devices.
 - **waveloggate**: Connector software for wavelog.
 - **wsjtx**: Software for weak signal communication.
