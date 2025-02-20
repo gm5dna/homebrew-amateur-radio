@@ -1,9 +1,9 @@
 class Qttermtcp < Formula
   desc "Terminal application for packet radio"
   homepage "https://github.com/g8bpq/QtTermTCP"
-  url "https://github.com/g8bpq/QtTermTCP/archive/refs/tags/0.79.tar.gz"
+  url "https://github.com/g8bpq/QtTermTCP/archive/refs/heads/master.tar.gz"
   version "0.0.0.79"
-  sha256 "150752aa261cb4049019cf5f92e06650806c703f00f5bea4f47c9ca834d9c2eb"
+  sha256 "d0a0b8cac93ae1b7e6690f4ec90db147054779a82bfc3cb561cd0121b037a267"
   license "GPL-3.0-or-later"
 
   depends_on "qt@5"
