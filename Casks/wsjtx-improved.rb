@@ -3,14 +3,12 @@ cask "wsjtx-improved" do
 
   on_arm do
     sha256 :no_check
-    url "https://sourceforge.net/projects/wsjt-x-improved/files/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}-devel_improved_PLUS_#{version.csv.second}_M1.zip/download",
-        verified: "sourceforge.net/projects/wsjt-x-improved/files/"
+    url "https://downloads.sourceforge.net/wsjt-x-improved/wsjtx-#{version.csv.first}-devel_improved_PLUS_#{version.csv.second}_M1.zip"
   end
 
   on_intel do
     sha256 :no_check
-    url "https://sourceforge.net/projects/wsjt-x-improved/files/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}-devel_improved_PLUS_#{version.csv.second}_Darwin.zip/download",
-        verified: "sourceforge.net/projects/wsjt-x-improved/files/"
+    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}-devel_improved_PLUS_#{version.csv.second}_Darwin.zip"
   end
 
   name "WSJT-X Improved"
