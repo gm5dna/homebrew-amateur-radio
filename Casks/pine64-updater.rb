@@ -8,7 +8,7 @@ cask "pine64-updater" do
     desc "Updater tool for Pine64 devices"
     homepage "https://github.com/pine64/pine64_updater"
   
-    app "pine64_updater.app"
+    app "PINE64 Updater.app"
   
     zap trash: [
       "~/Library/Application Support/pine64_updater",
