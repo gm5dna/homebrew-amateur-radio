@@ -24,6 +24,7 @@ brew tap gm5dna/amateur-radio
 - **pine64-updater**: A utility for updating Pine64 devices.
 - **rumlogng**: Logging and QSL software
 - **sdrconnect**: Software for interfacing with SDRplay devices.
+- **skookumlogger**: Contest logging software by K1GQ.
 - **waveloggate**: Connector software for wavelog.
 - **wsjtx**: Software for weak signal communication.
 - **wsjtx-improved**: A modified version of WSJT-X, with additional features.
