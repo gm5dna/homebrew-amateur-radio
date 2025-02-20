@@ -41,4 +41,4 @@ brew install --cask freedv
 
 ## Contributing
 
-If you'd like to contribute or suggest new software for inclusion in this tap, feel free to open an issue or a pull request. Contributions are always welcome!
+If you'd like to contribute or suggest new software for inclusion in this tap, feel free to open an issue or a pull request.
