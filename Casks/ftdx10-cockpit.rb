@@ -7,5 +7,5 @@ cask "ftdx10-cockpit" do
   desc "Controller software for the Yaesu FTdx10 transceiver"
   homepage "https://w0xz.com/ftdx10/"
 
-  app "FTdx10.app"
+  app "FTDX10 Cockpit.app"
 end
