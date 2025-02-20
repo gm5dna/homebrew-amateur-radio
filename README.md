@@ -19,11 +19,11 @@ brew tap gm5dna/amateur-radio
 
 ### Casks
 - **freedv**: FreeDV is a digital voice mode for HF radio.
-- **js8call**: A digital communication software for weak-signal operators using JS8 mode.
+- **js8call**: Digital communication software for weak-signal operators using JS8 mode.
 - **pine64-updater**: A utility for updating Pine64 devices.
-- **sdrconnect**: Software for interfacing with SDR (Software Defined Radio) devices.
+- **sdrconnect**: Software for interfacing with SDRplay devices.
 - **waveloggate**: Connector software for wavelog.
-- **wsjtx-improved**: A modified version of WSJT-X, an advanced software for weak signal communication.
+- **wsjtx-improved**: A modified version of WSJT-X, software for weak signal communication.
 
 ## Installing Software
 
