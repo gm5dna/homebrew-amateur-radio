@@ -20,6 +20,7 @@ brew tap gm5dna/amateur-radio
 ### Casks
 - **freedv**: FreeDV is a digital voice mode for HF radio.
 - **ftdx10-cockpit**: Controller software for the Yaesu FTdx10 transceiver
+- **hamrs**: HamRS Pro portable logger tailored for activities like Parks on the Air, Field Day, etc.
 - **js8call**: Digital communication software for weak-signal operators using JS8 mode.
 - **pine64-updater**: A utility for updating Pine64 devices.
 - **rumlogng**: Logging and QSL software
@@ -49,7 +50,6 @@ brew install --cask freedv
 ## To Do
 - Add [NanoVNA Saver](https://github.com/NanoVNA-Saver/nanovna-saver/issues/803)
 - Add [FT-710 Cockpit](https://w0xz.com/v/ft710/)
-- Add https://hamrs.app
 
 ## Contributing
 
