@@ -4,7 +4,7 @@ cask "pine64-updater" do
 
   url "https://github.com/pine64/pine64_updater/releases/download/#{version}/pine64_updater_macos64_#{version}.dmg"
   name "Pine64 Updater"
-  desc "Updater tool for Pine64 devices"
+  desc "Updater tool for Pine64 devices such as the Pinecil"
   homepage "https://github.com/pine64/pine64_updater"
 
   app "PINE64 Updater.app"

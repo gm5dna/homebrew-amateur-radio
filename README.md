@@ -15,7 +15,7 @@ brew tap gm5dna/amateur-radio
 ## Available Software
 
 ### Formulae
-- **qttermtcp**: A terminal emulator for packet radio including linbpq.
+- **qttermtcp**: A terminal emulator for packet radio by John Wiseman G8BPQ.
 
 ### Casks
 - **freedv**: FreeDV is a digital voice mode for HF radio.
@@ -23,7 +23,11 @@ brew tap gm5dna/amateur-radio
 - **pine64-updater**: A utility for updating Pine64 devices.
 - **sdrconnect**: Software for interfacing with SDRplay devices.
 - **waveloggate**: Connector software for wavelog.
-- **wsjtx-improved**: A modified version of WSJT-X, software for weak signal communication.
+- **wsjtx**: Software for weak signal communication.
+- **wsjtx-improved**: A modified version of WSJT-X, with additional features.
+- **wsjtx-improved-alt**: An alternative layout version of wsjtx-improved.
+- **wsjtx-improved-ws**: A widescreen layout version of wsjtx-improved.
+- **wsjtz**: Software for weak signal communication with automation features.
 
 ## Installing Software
 
