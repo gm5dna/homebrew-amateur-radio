@@ -19,6 +19,7 @@ brew tap gm5dna/amateur-radio
 
 ### Casks
 - **freedv**: FreeDV is a digital voice mode for HF radio.
+- **ftdx10-cockpit**: Controller software for the Yaesu FTdx10 transceiver
 - **js8call**: Digital communication software for weak-signal operators using JS8 mode.
 - **pine64-updater**: A utility for updating Pine64 devices.
 - **sdrconnect**: Software for interfacing with SDRplay devices.
