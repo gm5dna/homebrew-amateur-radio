@@ -1,26 +1,26 @@
 cask "sdrconnect" do
-    version "1.0.3"
+  version "1.0.3"
 
-    on_arm do
-      sha256 :no_check
-        url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_b6fce59a3.dmg"
-      end
-    
-      on_intel do
-        sha256 :no_check
-        url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_b6fce59a3.dmg"
-      end
+  on_arm do
+    sha256 :no_check
 
-    name "SDRconnect"
-    desc "Software-defined radio (SDR) application by SDRplay"
-    homepage "https://www.sdrplay.com/"
-  
-    app "SDRconnect.app"
-  
-    zap trash: [
-      "~/Library/Application Support/SDRconnect",
-      "~/Library/Preferences/com.sdrplay.SDRconnect.plist",
-      "~/Library/Saved Application State/com.sdrplay.SDRconnect.savedState"
-    ]
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_b6fce59a3.dmg"
   end
-  
+  on_intel do
+    sha256 :no_check
+
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_b6fce59a3.dmg"
+  end
+
+  name "SDRconnect"
+  desc "Software-defined radio (SDR) application by SDRplay"
+  homepage "https://www.sdrplay.com/"
+
+  app "SDRconnect.app"
+
+  zap trash: [
+    "~/Library/Application Support/SDRconnect",
+    "~/Library/Preferences/com.sdrplay.SDRconnect.plist",
+    "~/Library/Saved Application State/com.sdrplay.SDRconnect.savedState",
+  ]
+end
