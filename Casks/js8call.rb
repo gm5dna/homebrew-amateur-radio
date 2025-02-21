@@ -5,6 +5,7 @@ cask "js8call" do
   url "http://files.js8call.com/#{version}/js8call-#{version}-Darwin.dmg"
   name "JS8Call"
   homepage "https://js8call.com/"
+  desc "Weak signal amateur radio software"
 
   app "JS8Call.app"
 

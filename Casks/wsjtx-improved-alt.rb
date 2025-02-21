@@ -13,7 +13,7 @@ cask "wsjtx-improved-alt" do
   end
 
   name "WSJT-X Improved"
-  desc "Improved version of WSJT-X"
+  desc "Improved version of WSJT-X (alternative layout)"
   homepage "https://sourceforge.net/projects/wsjt-x-improved/"
 
   depends_on macos: ">= :monterey"
