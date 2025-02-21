@@ -5,7 +5,7 @@ cask "freedv" do
   url "https://github.com/drowe67/freedv-gui/releases/download/v#{version}/FreeDV.dmg",
       verified: "github.com/drowe67/freedv-gui/"
   name "FreeDV"
-  desc "Open-source digital voice for HF radio"
+  desc "Open Source HF Digital Voice for Amateur Radio"
   homepage "https://freedv.org/"
 
   app "FreeDV.app"

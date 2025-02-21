@@ -13,7 +13,7 @@ cask "sdrconnect" do
   end
 
   name "SDRconnect"
-  desc "Software-defined radio (SDR) application by SDRplay"
+  desc "Software-defined radio application by SDRplay"
   homepage "https://www.sdrplay.com/"
 
   app "SDRconnect.app"

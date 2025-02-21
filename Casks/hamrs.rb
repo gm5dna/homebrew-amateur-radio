@@ -15,7 +15,7 @@ cask "hamrs" do
   end
 
   name "HAMRS Pro"
-  desc "Ham radio logging software"
+  desc "Amateur radio logging software"
   homepage "https://www.hamrs.app/"
 
   app "HAMRS Pro.app"
