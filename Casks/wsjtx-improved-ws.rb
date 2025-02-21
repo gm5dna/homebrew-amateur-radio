@@ -13,7 +13,7 @@ cask "wsjtx-improved-ws" do
   end
 
   name "WSJT-X Improved"
-  desc "Improved version of WSJT-X"
+  desc "Improved version of WSJT-X (widescreen layout)"
   homepage "https://sourceforge.net/projects/wsjt-x-improved/"
 
   depends_on macos: ">= :monterey"
