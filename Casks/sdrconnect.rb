@@ -1,5 +1,5 @@
 cask "sdrconnect" do
-  version "1.0.3"
+  version "1.0.4"
 
   on_arm do
     sha256 :no_check
