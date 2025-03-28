@@ -4,12 +4,12 @@ cask "sdrconnect" do
   on_arm do
     sha256 :no_check
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_b6fce59a3.dmg"
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_83273bcd8.dmg"
   end
   on_intel do
     sha256 :no_check
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_b6fce59a3.dmg"
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_83273bcd8.dmg"
   end
 
   name "SDRconnect"
