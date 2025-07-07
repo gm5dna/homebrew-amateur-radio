@@ -1,6 +1,6 @@
 cask "waveloggate" do
-  version "1.1.0"
-  sha256 "60508ed52a6a9469004d411234308105409784e38caceed0e85ddad261b77daa"
+  version "1.1.6"
+  sha256 :no_check
 
   url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-universal.dmg"
   name "WaveLogGate"
