@@ -2,9 +2,18 @@ cask "waveloggate" do
   version "1.1.6"
   sha256 :no_check
 
-  url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-universal.dmg"
+  on_arm do
+    url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-arm64.dmg",
+        verified: "github.com/wavelog/WaveLogGate/"
+  end
+
+  on_intel do
+    url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-x64.dmg",
+        verified: "github.com/wavelog/WaveLogGate/"
+  end
+
   name "WaveLogGate"
-  desc "Application"
+  desc "Gateway utility for WaveLog amateur radio logging software"
   homepage "https://github.com/wavelog/WaveLogGate"
 
   app "WaveLogGate.app"
