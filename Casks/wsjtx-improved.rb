@@ -1,5 +1,5 @@
 cask "wsjtx-improved" do
-  version "3.0.0,250915"
+  version "3.0.0-RC1,250915"
   sha256 :no_check
 
   on_arm do
