@@ -4,17 +4,23 @@ cask "wsjtx-improved" do
 
   on_arm do
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_M1.zip",
-        verified: "sourceforge.net/projects/wsjt-x-improved/"
+        verified: "sourceforge.net/project/wsjt-x-improved/"
   end
 
   on_intel do
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_Darwin.zip",
-        verified: "sourceforge.net/projects/wsjt-x-improved/"
+        verified: "sourceforge.net/project/wsjt-x-improved/"
   end
 
   name "WSJT-X Improved"
-  desc "Improved version of WSJT-X"
+  desc "Enhanced and experimental builds of WSJT-X for amateur radio digital modes"
   homepage "https://sourceforge.net/projects/wsjt-x-improved/"
+
+  livecheck do
+    url :homepage
+    strategy :page_match
+    regex(/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved/i)
+  end
 
   depends_on macos: ">= :monterey"
 
