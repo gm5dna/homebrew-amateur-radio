@@ -1,12 +1,17 @@
 cask "freedv" do
-  version "2.0.0-20250130"
-  sha256 "da63320c1b65342981c58b36118b752845afbc4dacec0197125650686578884c"
+  version "2.0.2"
+  sha256 :no_check
 
   url "https://github.com/drowe67/freedv-gui/releases/download/v#{version}/FreeDV.dmg",
       verified: "github.com/drowe67/freedv-gui/"
-  name "FreeDV"
-  desc "Open Source HF Digital Voice for Amateur Radio"
+  name "FreeDV GUI"
+  desc "Open-source HF digital voice modem and GUI for amateur radio"
   homepage "https://freedv.org/"
+
+  livecheck do
+    url "https://github.com/drowe67/freedv-gui"
+    strategy :github_latest
+  end
 
   app "FreeDV.app"
 
