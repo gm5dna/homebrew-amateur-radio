@@ -1,5 +1,5 @@
 cask "waveloggate" do
-  version "1.1.6"
+  version "1.1.11"
   sha256 :no_check
 
   on_arm do
