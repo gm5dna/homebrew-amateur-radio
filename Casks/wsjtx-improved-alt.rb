@@ -1,5 +1,5 @@
 cask "wsjtx-improved-alt" do
-  version "3.0.0,250915-RC1"
+  version "3.0.0,251101"
   sha256 :no_check
 
   on_arm do
