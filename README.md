@@ -15,42 +15,120 @@ brew tap gm5dna/amateur-radio
 ## Available Software
 
 ### Formulae
-- **qttermtcp**: A terminal emulator for packet radio by John Wiseman G8BPQ.
+- **qttermtcp**: Terminal emulator for packet radio communication by John Wiseman G8BPQ.
 
 ### Casks
-- **freedv**: FreeDV is a digital voice mode for HF radio.
-- **ftdx10-cockpit**: Controller software for the Yaesu FTdx10 transceiver
-- **hamrs**: HamRS Pro portable logger tailored for activities like Parks on the Air, Field Day, etc.
+
+**Digital Modes & Weak Signal Communication**
+- **freedv**: Open-source HF digital voice modem and GUI for amateur radio.
 - **js8call**: Digital communication software for weak-signal operators using JS8 mode.
-- **pine64-updater**: A utility for updating Pine64 devices.
-- **rumlogng**: Logging and QSL software
-- **sdrconnect**: Software for interfacing with SDRplay devices.
-- **skookumlogger**: Contest logging software by K1GQ.
-- **waveloggate**: Connector software for wavelog.
-- **wsjtx**: Software for weak signal communication.
-- **wsjtx-improved**: A modified version of WSJT-X, with additional features.
-- **wsjtx-improved-alt**: An alternative layout version of wsjtx-improved.
-- **wsjtx-improved-ws**: A widescreen layout version of wsjtx-improved.
+- **wsjtx**: Software for weak signal communication (FT8, JT65, JTDX, etc.).
+- **wsjtx-improved**: Enhanced version of WSJT-X with additional features and improvements.
+- **wsjtx-improved-alt**: WSJT-X Improved with alternative layout.
+- **wsjtx-improved-ws**: WSJT-X Improved with widescreen layout.
 - **wsjtz**: Software for weak signal communication with automation features.
+
+**Logging & QSL Management**
+- **hamrs**: Ham radio logging software for portable operations (POTA, Field Day, etc.).
+- **rumlogng**: Comprehensive logging and QSL management software.
+- **skookumlogger**: Advanced contest logging software by K1GQ.
+- **waveloggate**: Gateway utility for WaveLog amateur radio logging software.
+
+**SDR & Transceiver Control**
+- **sdr-angel**: Software defined radio receiver/transmitter application with extensive device support.
+- **sdrconnect**: Software for interfacing with SDRplay SDR devices.
+- **ftdx10-cockpit**: Controller software for the Yaesu FTdx10 transceiver.
+
+**Utilities**
+- **pine64-updater**: Updater tool for Pine64 devices.
 
 ## Installing Software
 
-To install any of the software from this tap, simply run:
+### Installing a Cask
+To install any cask from this tap, use:
 
 ```bash
-brew install <formula_or_cask_name>
+brew install --cask <cask_name>
 ```
 
-For example, to install **freedv**, use:
-
+Examples:
 ```bash
 brew install --cask freedv
+brew install --cask wsjtx
+brew install --cask hamrs
 ```
 
+### Installing a Formula
+To install a formula, use:
+
+```bash
+brew install <formula_name>
+```
+
+Example:
+```bash
+brew install qttermtcp
+```
+
+## Uninstalling Software
+
+To remove any software installed from this tap:
+
+```bash
+# For casks
+brew uninstall --cask <cask_name>
+
+# For formulae
+brew uninstall <formula_name>
+```
+
+## Updating Software
+
+To update all software from this tap:
+
+```bash
+brew update
+brew upgrade
+```
+
+To update a specific package:
+
+```bash
+brew upgrade <formula_or_cask_name>
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**"Command not found" after installation**
+- Formulae are typically installed in `/opt/homebrew/bin/` on Apple Silicon Macs
+- Make sure `/opt/homebrew/bin` is in your `$PATH`
+- Add to your shell profile if needed: `export PATH="/opt/homebrew/bin:$PATH"`
+
+**Qt-dependent software won't launch**
+- Some formulae require Qt@5: `brew install qt@5`
+- Casks may require additional dependencies; check the installation output for messages
+
+**SHA256 checksum mismatch**
+- This typically means the download URL is outdated
+- Report an issue or create a pull request to update the formula/cask
+
 ## To Do
-- Add [NanoVNA Saver](https://github.com/NanoVNA-Saver/nanovna-saver/issues/803)
+- Add [NanoVNA Saver](https://github.com/NanoVNA-Saver/nanovna-saver)
 - Add [FT-710 Cockpit](https://w0xz.com/v/ft710/)
 
 ## Contributing
 
-If you'd like to contribute or suggest new software for inclusion in this tap, feel free to open an issue or a pull request.
+If you'd like to contribute or suggest new software for inclusion in this tap, feel free to open an issue or a pull request. When contributing:
+
+1. Follow Homebrew's [Cask Cookbook](https://docs.brew.sh/Cask-Cookbook) for cask contributions
+2. Follow Homebrew's [Formula Cookbook](https://docs.brew.sh/Formula-Cookbook) for formula contributions
+3. Test installations locally before submitting a PR
+4. Include a description of the software and why it's useful for amateur radio operators
+
+## Resources
+
+- [Homebrew Documentation](https://docs.brew.sh/)
+- [Homebrew Cask Cookbook](https://docs.brew.sh/Cask-Cookbook)
+- [Amateur Radio Online Resources](https://www.arrl.org/)
