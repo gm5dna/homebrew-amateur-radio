@@ -22,6 +22,7 @@ brew tap gm5dna/amateur-radio
 **Digital Modes & Weak Signal Communication**
 - **freedv**: Open-source HF digital voice modem and GUI for amateur radio.
 - **js8call**: Digital communication software for weak-signal operators using JS8 mode.
+- **js8call-improved**: Improved version of JS8Call with bug fixes and enhanced features.
 - **wsjtx**: Software for weak signal communication (FT8, JT65, JTDX, etc.).
 - **wsjtx-improved**: Enhanced version of WSJT-X with additional features and improvements.
 - **wsjtx-improved-alt**: WSJT-X Improved with alternative layout.
