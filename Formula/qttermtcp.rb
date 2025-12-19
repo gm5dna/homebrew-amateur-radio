@@ -1,8 +1,7 @@
 class Qttermtcp < Formula
   desc "Terminal application for packet radio"
   homepage "https://github.com/g8bpq/QtTermTCP"
-  url "https://github.com/g8bpq/QtTermTCP/archive/refs/heads/master.tar.gz"
-  version "0.0.0.79"
+  url "https://github.com/g8bpq/QtTermTCP/archive/refs/tags/0.79.tar.gz"
   sha256 "d0a0b8cac93ae1b7e6690f4ec90db147054779a82bfc3cb561cd0121b037a267"
   license "GPL-3.0-or-later"
 
@@ -25,6 +24,6 @@ class Qttermtcp < Formula
   end
 
   test do
-    assert_path_exists prefix/"QtTermTCP.app", :exist?, "QtTermTCP.app bundle was not installed"
+    assert_path_exists prefix/"QtTermTCP.app"
   end
 end
