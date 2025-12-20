@@ -16,6 +16,7 @@ brew tap gm5dna/amateur-radio
 
 ### Formulae
 - **qttermtcp**: Terminal emulator for packet radio communication by John Wiseman G8BPQ.
+- **nanovnasaver**: GUI application for measuring and analyzing NanoVNA devices (vector network analyzers).
 
 ### Casks
 
@@ -66,9 +67,10 @@ To install a formula, use:
 brew install <formula_name>
 ```
 
-Example:
+Examples:
 ```bash
 brew install qttermtcp
+brew install nanovnasaver
 ```
 
 ## Uninstalling Software
