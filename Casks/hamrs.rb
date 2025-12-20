@@ -1,5 +1,5 @@
 cask "hamrs" do
-  version "2.41.1"
+  version "2.45"
 
   on_arm do
     sha256 :no_check
