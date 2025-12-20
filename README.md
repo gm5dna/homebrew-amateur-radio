@@ -99,39 +99,3 @@ To update a specific package:
 ```bash
 brew upgrade <formula_or_cask_name>
 ```
-
-## Troubleshooting
-
-### Common Issues
-
-**"Command not found" after installation**
-- Formulae are typically installed in `/opt/homebrew/bin/` on Apple Silicon Macs
-- Make sure `/opt/homebrew/bin` is in your `$PATH`
-- Add to your shell profile if needed: `export PATH="/opt/homebrew/bin:$PATH"`
-
-**Qt-dependent software won't launch**
-- Some formulae require Qt@5: `brew install qt@5`
-- Casks may require additional dependencies; check the installation output for messages
-
-**SHA256 checksum mismatch**
-- This typically means the download URL is outdated
-- Report an issue or create a pull request to update the formula/cask
-
-## To Do
-- Add [NanoVNA Saver](https://github.com/NanoVNA-Saver/nanovna-saver)
-- Add [FT-710 Cockpit](https://w0xz.com/v/ft710/)
-
-## Contributing
-
-If you'd like to contribute or suggest new software for inclusion in this tap, feel free to open an issue or a pull request. When contributing:
-
-1. Follow Homebrew's [Cask Cookbook](https://docs.brew.sh/Cask-Cookbook) for cask contributions
-2. Follow Homebrew's [Formula Cookbook](https://docs.brew.sh/Formula-Cookbook) for formula contributions
-3. Test installations locally before submitting a PR
-4. Include a description of the software and why it's useful for amateur radio operators
-
-## Resources
-
-- [Homebrew Documentation](https://docs.brew.sh/)
-- [Homebrew Cask Cookbook](https://docs.brew.sh/Cask-Cookbook)
-- [Amateur Radio Online Resources](https://www.arrl.org/)
