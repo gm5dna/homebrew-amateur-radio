@@ -1,8 +1,9 @@
 class Qttermtcp < Formula
   desc "Terminal application for packet radio"
-  homepage "https://github.com/g8bpq/QtTermTCP"
-  url "https://github.com/g8bpq/QtTermTCP/archive/refs/tags/0.79.tar.gz"
-  sha256 "d0a0b8cac93ae1b7e6690f4ec90db147054779a82bfc3cb561cd0121b037a267"
+  homepage "https://github.com/gm5dna/QtTermTCP"
+  url "https://github.com/gm5dna/QtTermTCP/archive/refs/heads/master.tar.gz"
+  version "0.79"
+  sha256 "132e36af74efc09505486b6a2ec1e56d2aa38722b23382a64d5cc94dce996cc4"
   license "GPL-3.0-or-later"
 
   depends_on "qt@5"
@@ -18,8 +19,11 @@ class Qttermtcp < Formula
       The application has been installed as a macOS app bundle in:
         #{opt_prefix}/QtTermTCP.app
 
-      You can link it to /Applications with:
-        ln -s #{opt_prefix}/QtTermTCP.app /Applications/QtTermTCP.app
+      To link it to /Applications (requires sudo):
+        sudo ln -s #{opt_prefix}/QtTermTCP.app /Applications/QtTermTCP.app
+
+      Or to copy it to /Applications instead:
+        cp -r #{opt_prefix}/QtTermTCP.app /Applications/
     EOS
   end
 
