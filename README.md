@@ -40,6 +40,7 @@ brew tap gm5dna/amateur-radio
 - **sdr-angel**: Software defined radio receiver/transmitter application with extensive device support.
 - **sdrconnect**: Software for interfacing with SDRplay SDR devices.
 - **ftdx10-cockpit**: Controller software for the Yaesu FTdx10 transceiver.
+- **qttinysa**: Software for controlling the TinySA spectrum analyzer.
 
 **Utilities**
 - **pine64-updater**: Updater tool for Pine64 devices.
