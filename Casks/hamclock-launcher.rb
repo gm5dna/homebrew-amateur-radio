@@ -21,5 +21,5 @@ cask "hamclock-launcher" do
     strategy :github_latest
   end
 
-  app "HamClock Launcher.app"
+  app "HamClockLauncher.app"
 end
