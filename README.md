@@ -36,6 +36,9 @@ brew tap gm5dna/amateur-radio
 - **skookumlogger**: Advanced contest logging software by K1GQ.
 - **waveloggate**: Gateway utility for WaveLog amateur radio logging software.
 
+**Radio Programming**
+- **chirp-next**: Radio programming software supporting multiple radio manufacturers and models.
+
 **SDR & Transceiver Control**
 - **sdr-angel**: Software defined radio receiver/transmitter application with extensive device support.
 - **sdrconnect**: Software for interfacing with SDRplay SDR devices.
@@ -43,6 +46,8 @@ brew tap gm5dna/amateur-radio
 - **qttinysa**: Software for controlling the TinySA spectrum analyzer.
 
 **Utilities**
+- **hamclock-launcher**: Launcher for HamClock application for amateur radio operators.
+- **pat**: Cross-platform Winlink client for amateur radio emergency communications.
 - **pine64-updater**: Updater tool for Pine64 devices.
 
 ## Installing Software
