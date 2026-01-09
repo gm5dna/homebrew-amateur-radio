@@ -18,5 +18,16 @@ cask "hamrs" do
   desc "Amateur radio logging software"
   homepage "https://www.hamrs.app/"
 
+  livecheck do
+    url "https://www.hamrs.app/"
+    regex(/hamrs[._-]pro[._-]v?(\d+(?:\.\d+)+)/i)
+  end
+
   app "HAMRS Pro.app"
+
+  zap trash: [
+    "~/Library/Application Support/HAMRS Pro",
+    "~/Library/Preferences/com.hamrs.pro.plist",
+    "~/Library/Saved Application State/com.hamrs.pro.savedState",
+  ]
 end

@@ -22,4 +22,10 @@ cask "hamclock-launcher" do
   end
 
   app "HamClockLauncher.app"
+
+  zap trash: [
+    "~/Library/Application Support/HamClockLauncher",
+    "~/Library/Preferences/com.huberthickman.HamClockLauncher.plist",
+    "~/Library/Saved Application State/com.huberthickman.HamClockLauncher.savedState",
+  ]
 end

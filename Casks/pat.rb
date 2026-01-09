@@ -7,7 +7,17 @@ cask "pat" do
   desc "Cross-platform Winlink client for amateur radio"
   homepage "https://github.com/la5nta/pat"
 
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
+
   pkg "pat_#{version}_darwin_amd64.pkg"
 
   uninstall pkgutil: "com.github.la5nta.pat"
+
+  zap trash: [
+    "~/.config/pat",
+    "~/.local/share/pat",
+  ]
 end

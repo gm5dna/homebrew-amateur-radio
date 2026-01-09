@@ -7,6 +7,11 @@ cask "pine64-updater" do
   desc "Updater tool for Pine64 devices such as the Pinecil"
   homepage "https://github.com/pine64/pine64_updater"
 
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
+
   app "PINE64 Updater.app"
 
   zap trash: [
