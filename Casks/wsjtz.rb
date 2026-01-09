@@ -8,5 +8,16 @@ cask "wsjtz" do
   desc "Weak-signal digital communication software with automation features"
   homepage "https://physics.princeton.edu/pulsar/k1jt/wsjtx.html"
 
+  livecheck do
+    url "https://sourceforge.net/projects/wsjt-z/files/"
+    regex(/wsjtz[._-]v?(\d+(?:[.-]\d+)+)[._-]Darwin/i)
+  end
+
   app "wsjtx.app", target: "wsjtz.app"
+
+  zap trash: [
+    "~/Library/Application Support/WSJT-Z",
+    "~/Library/Preferences/org.wsjtz.WSJTZ.plist",
+    "~/Library/Saved Application State/org.wsjtz.WSJTZ.savedState",
+  ]
 end

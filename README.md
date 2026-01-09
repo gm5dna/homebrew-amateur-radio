@@ -2,6 +2,8 @@
 
 A custom Homebrew tap with macOS software for amateur radio operators. This tap includes formulae and casks for ham radio tools and utilities.
 
+[![License](https://img.shields.io/badge/license-Mixed-blue.svg)](https://github.com/gm5dna/homebrew-amateur-radio)
+
 ## Getting Started
 
 If you haven't installed Homebrew yet, follow the instructions at [https://brew.sh](https://brew.sh)
@@ -105,3 +107,62 @@ To update a specific package:
 ```bash
 brew upgrade <formula_or_cask_name>
 ```
+
+## Troubleshooting
+
+### Common Issues
+
+**"App is damaged and can't be opened"**
+
+Some applications may need to be allowed to run. Remove the quarantine attribute:
+```bash
+xattr -d com.apple.quarantine /Applications/AppName.app
+```
+
+**Permission errors during installation**
+
+Ensure Homebrew has proper permissions:
+```bash
+sudo chown -R $(whoami) /opt/homebrew/Library/Taps/gm5dna
+```
+
+**Formula build failures**
+
+Make sure you have the required build tools:
+```bash
+xcode-select --install
+```
+
+**Cask version appears outdated**
+
+Update the tap and check for new versions:
+```bash
+brew update
+brew upgrade --cask <cask_name>
+```
+
+### Getting Help
+
+- Check the [Issues](https://github.com/gm5dna/homebrew-amateur-radio/issues) page for known problems
+- Review Homebrew's troubleshooting guide: https://docs.brew.sh/Troubleshooting
+- Open a new issue if you encounter a problem not covered here
+
+## Contributing
+
+Contributions are welcome! Whether you want to add new software, update existing packages, or improve documentation, please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+### Quick Contribution Guide
+
+1. Fork this repository
+2. Add or update the cask/formula
+3. Test your changes: `brew install --cask your-package`
+4. Run audit: `brew audit --strict --cask Casks/your-package.rb`
+5. Submit a pull request
+
+## License
+
+This tap itself is open source. Individual software packages maintain their own licenses. Please check each package's homepage for license information.
+
+## Maintainer
+
+Maintained by GM5DNA. Questions or suggestions? Open an issue on GitHub.
