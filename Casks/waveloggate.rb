@@ -3,13 +3,10 @@ cask "waveloggate" do
   sha256 :no_check
 
   on_arm do
-    url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-arm64.dmg",
-        verified: "github.com/wavelog/WaveLogGate/"
+    url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-arm64.dmg"
   end
-
   on_intel do
-    url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-x64.dmg",
-        verified: "github.com/wavelog/WaveLogGate/"
+    url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WaveLogGate-#{version}-x64.dmg"
   end
 
   name "WaveLogGate"
