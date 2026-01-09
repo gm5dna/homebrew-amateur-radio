@@ -23,6 +23,7 @@ brew tap gm5dna/amateur-radio
 ### Casks
 
 **Digital Modes & Weak Signal Communication**
+- **cocoamodem**: Free digital modes app supporting RTTY, PSK31/63/125, MFSK16, Hellschreiber, CW, and more
 - **freedv**: Open-source HF digital voice modem and GUI
 - **js8call**: Digital communication software for weak-signal operators using JS8 mode
 - **js8call-improved**: Enhanced version with bug fixes and additional features
@@ -33,7 +34,9 @@ brew tap gm5dna/amateur-radio
 - **wsjtz**: Weak signal communication with automation features
 
 **Logging & QSL Management**
+- **aether**: Native macOS logging app with rig control, LoTW/eQSL integration, and awards tracking
 - **hamrs**: Logging software designed for portable operations (POTA, Field Day, etc.)
+- **qlog**: Free/open-source cross-platform logger with no ads or tracking
 - **rumlogng**: Comprehensive logging and QSL management
 - **skookumlogger**: Advanced contest logging by K1GQ
 - **waveloggate**: Gateway utility for WaveLog logging software
