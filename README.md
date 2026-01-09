@@ -2,8 +2,6 @@
 
 A custom Homebrew tap with macOS software for amateur radio operators. This tap includes formulae and casks for ham radio tools and utilities.
 
-[![License](https://img.shields.io/badge/license-Mixed-blue.svg)](https://github.com/gm5dna/homebrew-amateur-radio)
-
 ## Getting Started
 
 If you haven't installed Homebrew yet, follow the instructions at [https://brew.sh](https://brew.sh)
