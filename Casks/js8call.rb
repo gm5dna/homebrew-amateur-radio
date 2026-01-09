@@ -7,10 +7,16 @@ cask "js8call" do
   desc "Weak signal amateur radio software"
   homepage "https://js8call.com/"
 
+  livecheck do
+    url "https://files.js8call.com/"
+    regex(/href=.*?v?(\d+(?:\.\d+)+)/i)
+  end
+
   app "JS8Call.app"
 
-  # zap trash: [
-  #   "~/Library/Application Support/JS8Call",
-  #   "~/Library/Preferences/com.js8call.plist",
-  # ]
+  zap trash: [
+    "~/Library/Application Support/JS8Call",
+    "~/Library/Preferences/com.js8call.plist",
+    "~/Library/Saved Application State/com.js8call.savedState",
+  ]
 end

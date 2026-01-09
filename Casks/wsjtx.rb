@@ -8,6 +8,11 @@ cask "wsjtx" do
   desc "Software for weak-signal digital communication"
   homepage "https://physics.princeton.edu/pulsar/k1jt/wsjtx.html"
 
+  livecheck do
+    url "https://sourceforge.net/projects/wsjt/files/wsjtx/"
+    regex(/wsjtx[._-]v?(\d+(?:\.\d+)+)/i)
+  end
+
   app "wsjtx.app"
 
   zap trash: [

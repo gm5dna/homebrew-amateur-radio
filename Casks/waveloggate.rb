@@ -16,6 +16,11 @@ cask "waveloggate" do
   desc "Gateway utility for WaveLog amateur radio logging software"
   homepage "https://github.com/wavelog/WaveLogGate"
 
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
+
   app "WaveLogGate.app"
 
   zap trash: [
