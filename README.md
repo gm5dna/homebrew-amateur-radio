@@ -44,6 +44,9 @@ brew tap gm5dna/amateur-radio
 **SDR & Transceiver Control**
 - **sdr-angel**: Software defined radio with extensive device support
 - **sdrconnect**: Interface software for SDRplay devices
+- **sdrplusplus**: Cross-platform SDR software (nightly build)
+- **sdrplusplus-brown**: Cross-platform SDR software with brown UI theme (rolling release)
+- **sparksdr**: Software defined radio application
 - **ftdx10-cockpit**: Controller for the Yaesu FTdx10 transceiver
 - **qttinysa**: Control software for the TinySA spectrum analyzer
 
