@@ -1,6 +1,6 @@
 cask "wsjtx" do
-  version "2.7.0"
-  sha256 "f3ef11f3612f1db7bcdea55e5a4ce409b0c1db43ae6bc1a5e048fc99833e031e"
+  version "3.0.0"
+  sha256 "8cf5ce27d21490c24eedf91e0ac2bc4a748ba8f4eb20cb7c1fc9442d2d580008"
 
   url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-Darwin.dmg",
       verified: "downloads.sourceforge.net/wsjt/"
