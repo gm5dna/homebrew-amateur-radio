@@ -24,7 +24,7 @@ cask "js8call-improved" do
 
   depends_on macos: ">= :monterey"
 
-  app "JS8Call-improved.app"
+  app "JS8Call.app", target: "JS8Call-improved.app"
 
   zap trash: [
     "~/Library/Application Support/JS8Call",
