@@ -1,13 +1,13 @@
 cask "js8call-improved" do
-  version "2.5.0"
+  version "2.5.1"
 
   on_arm do
-    sha256 "e3e09bcf8b4f0364786fe0da2d66a746d7f28295cf6ca78363c32dc8f57199c6"
+    sha256 "9336025c43b008503edbfdb8d3be4a0b9d9aadebe89c37d26bd80f4283678f51"
 
     url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/release/#{version}/JS8Call_#{version}_arm64.dmg"
   end
   on_intel do
-    sha256 "fd031b8780d122e992871611c11b906f597b4d1aedb8a3802069625245a1c531"
+    sha256 "8aa867cca857e921e2c39de9d6831f668bac452c979492f8fe92bec17ac9d75b"
 
     url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/release/#{version}/JS8Call_#{version}_universal.dmg"
   end
