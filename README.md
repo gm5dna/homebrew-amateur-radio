@@ -110,24 +110,11 @@ brew uninstall --zap <name>  # also removes preferences and support files
 
 ## Troubleshooting
 
-### "command not found: brew"
+**"command not found: brew"** — Homebrew isn't set up in your shell yet. The Homebrew installer shows instructions for this at the end. See [brew.sh](https://brew.sh) for details.
 
-On Apple Silicon Macs, run:
+**App won't open / "unidentified developer"** — Right-click the app in Finder → Open → click "Open" in the dialog.
 
-```bash
-eval "$(/opt/homebrew/bin/brew shellenv)"
-```
-
-Add this to `~/.zshrc` to make it permanent.
-
-### Application won't open (Gatekeeper)
-
-Right-click the app in Finder, select "Open", then click "Open" in the dialog.
-
-### More help
-
-- [Homebrew Documentation](https://docs.brew.sh)
-- [Open an issue](https://github.com/gm5dna/homebrew-amateur-radio/issues) for problems with this tap
+**Other issues** — See [Homebrew docs](https://docs.brew.sh) or [open an issue](https://github.com/gm5dna/homebrew-amateur-radio/issues).
 
 ## License
 
