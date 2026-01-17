@@ -4,42 +4,21 @@
 
 A Homebrew tap providing macOS software for amateur radio operators.
 
-## What is Homebrew?
+## New to Homebrew?
 
-[Homebrew](https://brew.sh) is a free, open-source package manager for macOS that makes it easy to install, update, and manage software from the command line. Think of it as an "app store" for command-line tools and applications that aren't available in the Mac App Store.
+[Homebrew](https://brew.sh) is a popular open-source package manager for macOS. It provides a convenient way to install and update software from the command line.
 
-### Why use Homebrew for amateur radio software?
-
-- **Easy updates**: Update all your ham radio software with a single command
-- **No hunting for downloads**: Homebrew knows where to find the latest versions
-- **Clean uninstalls**: Homebrew tracks what it installs, making removal simple
-- **Consistency**: Install and manage software the same way across all your Macs
-
-### Installing Homebrew
-
-If you don't have Homebrew installed, open **Terminal** (found in Applications → Utilities) and paste this command:
+To install Homebrew, open Terminal and run:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Follow the on-screen instructions. The installer will explain what it's doing and ask for your password (this is your Mac login password—you won't see characters as you type, which is normal).
-
-After installation completes, you may need to run additional commands shown in the Terminal to add Homebrew to your PATH. The installer will tell you exactly what to do.
-
-To verify Homebrew is working:
-
-```bash
-brew --version
-```
-
-You should see a version number like `Homebrew 4.x.x`.
+Follow the post-install instructions to add `brew` to your PATH.
 
 ## Installation
 
 ### Add the tap
-
-A "tap" is a collection of software packages. Adding this tap tells Homebrew where to find amateur radio software:
 
 ```bash
 brew tap gm5dna/amateur-radio
@@ -169,31 +148,22 @@ brew uninstall --cask --zap <name>
 
 ### "command not found: brew"
 
-Homebrew isn't in your PATH. On Apple Silicon Macs (M1/M2/M3/M4), run:
+On Apple Silicon Macs, run:
 
 ```bash
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-Add this line to your `~/.zshrc` file to make it permanent.
+Add this to `~/.zshrc` to make it permanent.
 
-### "Permission denied" errors
+### Application won't open (Gatekeeper)
 
-Never run `brew` with `sudo`. If you're seeing permission errors, Homebrew's permissions may need repair:
+Right-click the app in Finder, select "Open", then click "Open" in the dialog.
 
-```bash
-sudo chown -R $(whoami) $(brew --prefix)/*
-```
-
-### Application won't open ("unidentified developer")
-
-macOS Gatekeeper may block apps the first time. Right-click the app in Finder, select "Open", then click "Open" in the dialog. You only need to do this once per app.
-
-### Still stuck?
+### More help
 
 - [Homebrew Documentation](https://docs.brew.sh)
-- [Homebrew Troubleshooting](https://docs.brew.sh/Troubleshooting)
-- [Open an issue](https://github.com/gm5dna/homebrew-amateur-radio/issues) for problems specific to this tap
+- [Open an issue](https://github.com/gm5dna/homebrew-amateur-radio/issues) for problems with this tap
 
 ## License
 
