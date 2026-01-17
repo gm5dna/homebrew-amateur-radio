@@ -18,29 +18,16 @@ Follow the post-install instructions to add `brew` to your PATH.
 
 ## Installation
 
-### Add the tap
-
 ```bash
 brew tap gm5dna/amateur-radio
-```
-
-### Install software
-
-Once the tap is added, install any package:
-
-```bash
-# Install a cask (pre-built application)
-brew install --cask gm5dna/amateur-radio/<name>
-
-# Install a formula (built from source)
-brew install gm5dna/amateur-radio/<name>
+brew install <name>
 ```
 
 For example:
 
 ```bash
-brew install --cask gm5dna/amateur-radio/wsjtx
-brew install gm5dna/amateur-radio/nanovnasaver
+brew install wsjtx
+brew install nanovnasaver
 ```
 
 ## Available Software
@@ -114,35 +101,12 @@ brew update
 brew upgrade --greedy
 ```
 
-## Uninstalling Software
-
-To remove an application:
+## Uninstalling
 
 ```bash
-brew uninstall --cask <name>
-
-# Example
-brew uninstall --cask wsjtx
+brew uninstall <name>
+brew uninstall --zap <name>  # also removes preferences and support files
 ```
-
-To completely remove an application including its preferences and support files:
-
-```bash
-brew uninstall --cask --zap <name>
-```
-
-## Common Commands Reference
-
-| Command | What it does |
-|---------|--------------|
-| `brew tap gm5dna/amateur-radio` | Add this tap to Homebrew |
-| `brew install --cask <name>` | Install an application |
-| `brew uninstall --cask <name>` | Remove an application |
-| `brew update` | Refresh the list of available software |
-| `brew upgrade` | Update all installed software |
-| `brew upgrade --greedy` | Update all software, including apps that auto-update |
-| `brew list --cask` | Show all installed applications |
-| `brew info --cask <name>` | Show details about a package |
 
 ## Troubleshooting
 
