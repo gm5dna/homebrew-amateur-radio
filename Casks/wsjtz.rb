@@ -6,7 +6,7 @@ cask "wsjtz" do
       verified: "downloads.sourceforge.net/wsjt-z/"
   name "WSJT-Z"
   desc "Weak-signal digital communication software with automation features"
-  homepage "https://physics.princeton.edu/pulsar/k1jt/wsjtx.html"
+  homepage "https://wsjt-z.sourceforge.io/"
 
   livecheck do
     url "https://sourceforge.net/projects/wsjt-z/files/"
