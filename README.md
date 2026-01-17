@@ -4,9 +4,42 @@
 
 A Homebrew tap providing macOS software for amateur radio operators.
 
+## What is Homebrew?
+
+[Homebrew](https://brew.sh) is a free, open-source package manager for macOS that makes it easy to install, update, and manage software from the command line. Think of it as an "app store" for command-line tools and applications that aren't available in the Mac App Store.
+
+### Why use Homebrew for amateur radio software?
+
+- **Easy updates**: Update all your ham radio software with a single command
+- **No hunting for downloads**: Homebrew knows where to find the latest versions
+- **Clean uninstalls**: Homebrew tracks what it installs, making removal simple
+- **Consistency**: Install and manage software the same way across all your Macs
+
+### Installing Homebrew
+
+If you don't have Homebrew installed, open **Terminal** (found in Applications → Utilities) and paste this command:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Follow the on-screen instructions. The installer will explain what it's doing and ask for your password (this is your Mac login password—you won't see characters as you type, which is normal).
+
+After installation completes, you may need to run additional commands shown in the Terminal to add Homebrew to your PATH. The installer will tell you exactly what to do.
+
+To verify Homebrew is working:
+
+```bash
+brew --version
+```
+
+You should see a version number like `Homebrew 4.x.x`.
+
 ## Installation
 
 ### Add the tap
+
+A "tap" is a collection of software packages. Adding this tap tells Homebrew where to find amateur radio software:
 
 ```bash
 brew tap gm5dna/amateur-radio
@@ -101,6 +134,66 @@ To update all software from this tap:
 brew update
 brew upgrade --greedy
 ```
+
+## Uninstalling Software
+
+To remove an application:
+
+```bash
+brew uninstall --cask <name>
+
+# Example
+brew uninstall --cask wsjtx
+```
+
+To completely remove an application including its preferences and support files:
+
+```bash
+brew uninstall --cask --zap <name>
+```
+
+## Common Commands Reference
+
+| Command | What it does |
+|---------|--------------|
+| `brew tap gm5dna/amateur-radio` | Add this tap to Homebrew |
+| `brew install --cask <name>` | Install an application |
+| `brew uninstall --cask <name>` | Remove an application |
+| `brew update` | Refresh the list of available software |
+| `brew upgrade` | Update all installed software |
+| `brew upgrade --greedy` | Update all software, including apps that auto-update |
+| `brew list --cask` | Show all installed applications |
+| `brew info --cask <name>` | Show details about a package |
+
+## Troubleshooting
+
+### "command not found: brew"
+
+Homebrew isn't in your PATH. On Apple Silicon Macs (M1/M2/M3/M4), run:
+
+```bash
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+Add this line to your `~/.zshrc` file to make it permanent.
+
+### "Permission denied" errors
+
+Never run `brew` with `sudo`. If you're seeing permission errors, Homebrew's permissions may need repair:
+
+```bash
+sudo chown -R $(whoami) $(brew --prefix)/*
+```
+
+### Application won't open ("unidentified developer")
+
+macOS Gatekeeper may block apps the first time. Right-click the app in Finder, select "Open", then click "Open" in the dialog. You only need to do this once per app.
+
+### Still stuck?
+
+- [Homebrew Documentation](https://docs.brew.sh)
+- [Homebrew Troubleshooting](https://docs.brew.sh/Troubleshooting)
+- [Open an issue](https://github.com/gm5dna/homebrew-amateur-radio/issues) for problems specific to this tap
 
 ## License
 
