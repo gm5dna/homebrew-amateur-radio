@@ -3,18 +3,21 @@ cask "wsjtx-improved-alt" do
   sha256 :no_check
 
   on_arm do
-    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_AL_PLUS_#{version.csv.second}_M1.zip",
-        verified: "sourceforge.net/projects/wsjt-x-improved/"
+    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_AL_PLUS_#{version.csv.second}_M1.zip"
   end
-
   on_intel do
-    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_AL_PLUS_#{version.csv.second}_Darwin.zip",
-        verified: "sourceforge.net/projects/wsjt-x-improved/"
+    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_AL_PLUS_#{version.csv.second}_Darwin.zip"
   end
 
-  name "WSJT-X Improved"
+  name "WSJT-X Improved (Alt Layout)"
   desc "Improved version of WSJT-X (alternative layout)"
   homepage "https://sourceforge.net/projects/wsjt-x-improved/"
+
+  livecheck do
+    url :homepage
+    strategy :page_match
+    regex(/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved/i)
+  end
 
   depends_on macos: ">= :monterey"
 

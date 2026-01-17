@@ -5,10 +5,10 @@ cask "qlog" do
   url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog.v#{version}.dmg"
   name "QLog"
   desc "Amateur radio logbook software"
-  homepage "https://github.com/foldynl/QLog"
+  homepage "https://github.com/aa5sh/QLog"
 
   livecheck do
-    url "https://github.com/aa5sh/QLog/releases"
+    url :homepage
     strategy :github_latest
   end
 

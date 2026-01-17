@@ -14,9 +14,7 @@ cask "sdrplusplus-brown" do
   homepage "https://github.com/sannysanoff/SDRPlusPlusBrown"
 
   livecheck do
-    url :homepage
-    strategy :page_match
-    regex(/sdrpp_macos_(?:arm|intel)\.zip/i)
+    skip "Rolling release with no versioned tags"
   end
 
   app "SDR++Brown.app"

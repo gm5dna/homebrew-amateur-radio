@@ -14,9 +14,7 @@ cask "sdrplusplus" do
   homepage "https://github.com/AlexandreRouma/SDRPlusPlus"
 
   livecheck do
-    url :homepage
-    strategy :page_match
-    regex(/sdrpp_macos_(?:arm|intel)\.zip/i)
+    skip "Nightly build with no versioned releases"
   end
 
   app "SDR++.app"

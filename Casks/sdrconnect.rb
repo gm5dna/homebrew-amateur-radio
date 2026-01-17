@@ -5,16 +5,25 @@ cask "sdrconnect" do
     sha256 :no_check
 
     url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_583e89db6.dmg"
+
+    depends_on macos: ">= :ventura"
   end
   on_intel do
     sha256 :no_check
 
     url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_583e89db6.dmg"
+
+    depends_on macos: ">= :catalina"
   end
 
   name "SDRconnect"
   desc "Software-defined radio application by SDRplay"
   homepage "https://www.sdrplay.com/"
+
+  livecheck do
+    url "https://www.sdrplay.com/sdrconnect/"
+    regex(/Latest\s+version:\s*v?(\d+(?:\.\d+)+)/i)
+  end
 
   app "SDRconnect.app"
 
