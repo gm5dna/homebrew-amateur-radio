@@ -3,7 +3,7 @@ cask "ftdx10-cockpit" do
   sha256 :no_check
 
   url "https://w0xz.com/ftdx10/Installer.dmg"
-  name "FTdx10 Utility"
+  name "FTDX10 Cockpit"
   desc "Controller software for the Yaesu FTdx10 transceiver"
   homepage "https://w0xz.com/ftdx10/"
 

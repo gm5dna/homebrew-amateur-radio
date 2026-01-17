@@ -2,10 +2,10 @@ cask "cocoamodem" do
   version "1.03"
   sha256 :no_check
 
-  url "http://www.w7ay.net/site/Downloads/cocoaModem/cocoaModem%20app.dmg"
+  url "https://www.w7ay.net/site/Downloads/cocoaModem/cocoaModem%20app.dmg"
   name "cocoaModem"
   desc "Amateur radio digital modes application"
-  homepage "http://www.w7ay.net/site/Applications/cocoaModem/"
+  homepage "https://www.w7ay.net/site/Applications/cocoaModem/"
 
   livecheck do
     skip "No version information available on website"

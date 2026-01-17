@@ -20,4 +20,8 @@ cask "pat" do
     "~/.config/pat",
     "~/.local/share/pat",
   ]
+
+  caveats <<~EOS
+    Pat is built for Intel (x86_64) only. On Apple Silicon Macs, it runs via Rosetta 2.
+  EOS
 end
