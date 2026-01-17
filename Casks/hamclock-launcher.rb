@@ -1,15 +1,15 @@
 cask "hamclock-launcher" do
-  version "0.2"
+  version "1.1"
 
   on_arm do
-    sha256 "d40c5019175b411eaac4b4252f8591255664b764c2b9dc6f633c816901d483af"
+    sha256 "63e695f7877d16b46a8b92fd0096846b8981c7cb90fc7cd21fff828057ffe140"
 
-    url "https://github.com/huberthickman/HamClockLauncher/releases/download/release_#{version}/HamClockLauncher.dmg"
+    url "https://github.com/huberthickman/HamClockLauncher/releases/download/release_#{version.tr(".", "_")}/HamClockLauncher.dmg"
   end
   on_intel do
-    sha256 "ea337409ecb7bca3913911aca5c57ec3f8b2c1a0c13b0605ae3a92a76e362aea"
+    sha256 "72bb4951d520049ef2a954e7df7a0753c61354cebe4ea39c9debaa1f56307f16"
 
-    url "https://github.com/huberthickman/HamClockLauncher/releases/download/release_#{version}/HamClockLauncherIntel.dmg"
+    url "https://github.com/huberthickman/HamClockLauncher/releases/download/release_#{version.tr(".", "_")}/HamClockLauncherIntel.dmg"
   end
 
   name "HamClock Launcher"
@@ -17,8 +17,11 @@ cask "hamclock-launcher" do
   homepage "https://github.com/huberthickman/HamClockLauncher"
 
   livecheck do
-    url :homepage
-    strategy :github_latest
+    url :url
+    regex(/release[._](\d+(?:[._]\d+)+)/i)
+    strategy :github_latest do |json, regex|
+      json["tag_name"]&.scan(regex)&.map { |match| match[0].tr("_", ".") }
+    end
   end
 
   app "HamClockLauncher.app"
