@@ -24,6 +24,7 @@ jobs:
 
       - name: Tap this repository
         run: |
+          brew untap gm5dna/amateur-radio 2>/dev/null || true
           brew tap gm5dna/amateur-radio "$(pwd)"
 
       - name: Get changed files
@@ -77,6 +78,7 @@ jobs:
 
       - name: Tap this repository
         run: |
+          brew untap gm5dna/amateur-radio 2>/dev/null || true
           brew tap gm5dna/amateur-radio "$(pwd)"
 
       - name: Run brew audit on all casks
