@@ -19,4 +19,8 @@ cask "pine64-updater" do
     "~/Library/Preferences/com.pine64.updater.plist",
     "~/Library/Saved Application State/com.pine64.updater.savedState",
   ]
+
+  caveats <<~EOS
+    Pine64 Updater is built for Intel (x86_64) only. On Apple Silicon Macs, it runs via Rosetta 2.
+  EOS
 end
