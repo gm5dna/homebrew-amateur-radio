@@ -49,6 +49,7 @@ brew install nanovnasaver
 | **freedv** | Open-source HF digital voice modem and GUI |
 | **js8call** | Digital communication using JS8 mode for weak-signal operators |
 | **js8call-improved** | Enhanced JS8Call with bug fixes and additional features |
+| **jtdx** | FT8, JT65, JT9, and T10 digital modes software |
 | **wsjtx** | Weak signal software (FT8, JT65, JTDX, and more) |
 | **wsjtx-improved** | Enhanced WSJT-X with additional features |
 | **wsjtx-improved-alt** | WSJT-X Improved with alternative layout |
@@ -61,6 +62,7 @@ brew install nanovnasaver
 |------|-------------|
 | **aether** | Native macOS logger with rig control, LoTW/eQSL integration, awards tracking |
 | **hamrs** | Logging for portable operations (POTA, Field Day, etc.) |
+| **jlog** | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
 | **qlog** | Cross-platform open-source logger with no ads or tracking |
 | **rumlogng** | Comprehensive logging and QSL management |
 | **skookumlogger** | Advanced contest logging by K1GQ |
@@ -83,6 +85,12 @@ brew install nanovnasaver
 | **sdrplusplus** | Cross-platform SDR software (nightly build) |
 | **sdrplusplus-brown** | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
 | **sparksdr** | Software defined radio application |
+
+#### Antenna Modeling
+
+| Name | Description |
+|------|-------------|
+| **cocoanec** | NEC-2 antenna modeling application |
 
 #### Utilities
 
