@@ -6,11 +6,14 @@ on:
     paths:
       - 'Casks/**'
       - 'Formula/**'
+      - '.github/workflows/ci.yml'
   pull_request:
     branches: [main]
     paths:
       - 'Casks/**'
       - 'Formula/**'
+      - '.github/workflows/ci.yml'
+  workflow_dispatch:
 
 jobs:
   audit:
