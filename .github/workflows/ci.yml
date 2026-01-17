@@ -1,0 +1,96 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Casks/**'
+      - 'Formula/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Casks/**'
+      - 'Formula/**'
+
+jobs:
+  audit:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap this repository
+        run: |
+          brew tap gm5dna/amateur-radio "$(pwd)"
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          files: |
+            Casks/**
+            Formula/**
+
+      - name: Run brew style on changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "Checking style: $file"
+            brew style "$file"
+          done
+
+      - name: Run brew audit on changed casks
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ "$file" == Casks/* ]]; then
+              cask_name=$(basename "$file" .rb)
+              echo "Auditing cask: $cask_name"
+              brew audit --cask "$cask_name"
+            fi
+          done
+
+      - name: Run brew audit on changed formulae
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            if [[ "$file" == Formula/* ]]; then
+              formula_name=$(basename "$file" .rb)
+              echo "Auditing formula: $formula_name"
+              brew audit --formula "$formula_name"
+            fi
+          done
+
+  audit-all:
+    runs-on: macos-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Tap this repository
+        run: |
+          brew tap gm5dna/amateur-radio "$(pwd)"
+
+      - name: Run brew audit on all casks
+        run: |
+          for cask in Casks/*.rb; do
+            cask_name=$(basename "$cask" .rb)
+            echo "Auditing: $cask_name"
+            brew audit --cask "$cask_name" || echo "Warning: audit failed for $cask_name"
+          done
+
+      - name: Run brew audit on all formulae
+        run: |
+          for formula in Formula/*.rb; do
+            formula_name=$(basename "$formula" .rb)
+            echo "Auditing: $formula_name"
+            brew audit --formula "$formula_name" || echo "Warning: audit failed for $formula_name"
+          done
