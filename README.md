@@ -36,6 +36,7 @@ brew install nanovnasaver
 
 | Name | Description |
 |------|-------------|
+| **cloudlogcatqt** | CAT control interface for Cloudlog logging |
 | **nanovnasaver** | GUI for measuring and analyzing NanoVNA vector network analyzers |
 | **qttermtcp** | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
 
