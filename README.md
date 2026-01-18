@@ -100,6 +100,7 @@ brew install nanovnasaver
 | **hamclock-launcher** | Launcher for the HamClock application |
 | **pat** | Winlink client for emergency communications |
 | **pine64-updater** | Updater for Pine64 devices (Pinecil, etc.) |
+| **rf-toolbox** | Antenna design and electronics calculator |
 
 ## Updating
 
