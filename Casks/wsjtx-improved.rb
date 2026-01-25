@@ -14,9 +14,11 @@ cask "wsjtx-improved" do
   homepage "https://sourceforge.net/projects/wsjt-x-improved/"
 
   livecheck do
-    url :homepage
-    strategy :page_match
-    regex(/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved/i)
+    url "https://sourceforge.net/projects/wsjt-x-improved/rss?path=/WSJT-X_v3.0.0/macOS"
+    regex(%r{/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved[._-]PLUS[._-](\d+)}i)
+    strategy :page_match do |page, regex|
+      page.scan(regex).map { |match| "#{match[0]},#{match[1]}" }
+    end
   end
 
   depends_on macos: ">= :monterey"
