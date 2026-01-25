@@ -8,8 +8,8 @@ cask "skookumlogger" do
   homepage "https://www.k1gq.net/SkookumLogger/"
 
   livecheck do
-    url :homepage
-    regex(/version\s*(\d+(?:\.\d+)+)/i)
+    url "https://www.k1gq.net/SkookumLoggerDownloads/"
+    regex(/Release\s+(\d+(?:\.\d+)+)/i)
   end
 
   app "SkookumLogger.app"
