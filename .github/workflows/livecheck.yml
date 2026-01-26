@@ -24,7 +24,8 @@ jobs:
 
       - name: Tap this repository
         run: |
-          brew tap gm5dna/amateur-radio "$(pwd)"
+          mkdir -p "$(brew --repository)/Library/Taps/gm5dna"
+          ln -sf "$(pwd)" "$(brew --repository)/Library/Taps/gm5dna/homebrew-amateur-radio"
 
       - name: Run livecheck on all casks
         id: livecheck
