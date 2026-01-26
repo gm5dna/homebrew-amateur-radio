@@ -8,8 +8,7 @@ cask "ftdx10-cockpit" do
   homepage "https://w0xz.com/ftdx10/"
 
   livecheck do
-    url :homepage
-    regex(/version\s*(\d+(?:\.\d+)+)/i)
+    skip "No version information available on website"
   end
 
   depends_on cask: "silicon-labs-vcp-driver"

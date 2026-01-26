@@ -16,8 +16,6 @@ cask "aether" do
     end
   end
 
-  depends_on macos: ">= :high_sierra"
-
   app "Aether.app"
 
   zap trash: [

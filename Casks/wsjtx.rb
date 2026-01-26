@@ -10,7 +10,8 @@ cask "wsjtx" do
 
   livecheck do
     url "https://sourceforge.net/projects/wsjt/files/wsjtx/"
-    regex(/wsjtx[._-]v?(\d+(?:\.\d+)+)/i)
+    regex(%r{href=.*?/wsjtx[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
+    strategy :page_match
   end
 
   app "wsjtx.app"

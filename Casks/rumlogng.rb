@@ -8,8 +8,7 @@ cask "rumlogng" do
   homepage "https://dl2rum.de/"
 
   livecheck do
-    url :homepage
-    regex(/RUMlogNG[._-]v?(\d+(?:\.\d+)+)/i)
+    skip "No version information available on website"
   end
 
   app "RUMlogNG.app"

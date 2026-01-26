@@ -8,8 +8,9 @@ cask "pat" do
   homepage "https://github.com/la5nta/pat"
 
   livecheck do
-    url :homepage
-    strategy :github_latest
+    url "https://github.com/la5nta/pat/releases"
+    regex(%r{href=["']?[^"' >]*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
+    strategy :page_match
   end
 
   pkg "pat_#{version}_darwin_amd64.pkg"
