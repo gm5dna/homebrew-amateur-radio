@@ -1,13 +1,13 @@
 cask "sdr-angel" do
-  version "7.23.0"
+  version "7.23.1"
 
   on_arm do
-    sha256 "d8599a55d5708b30231d91a11d45e7e187286abad56fcb5ef54ffc0c52864743"
+    sha256 "ed2c2e54c8f0882965bfc88ae53bd4c24f00e2e320d7ec03a9f455e1309cd16a"
 
     url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-14.8.3_arm64.dmg"
   end
   on_intel do
-    sha256 "073a3f4f1469278d7f7e452ec415cfe9c17bf4c6bc54a4b4ffcb52fea0032be2"
+    sha256 "41e70d7b5ae555679ed1b2f6a9179c1b80f02bb2a054455cf702bc18fb7c8c9d"
 
     url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-15.7.3_x86_64.dmg"
   end
