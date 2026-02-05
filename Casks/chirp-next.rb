@@ -8,9 +8,13 @@ cask "chirp-next" do
   homepage "https://chirpmyradio.com/"
 
   livecheck do
-    url "https://archive.chirpmyradio.com/chirp_next/"
+    url "https://archive.chirpmyradio.com/download?stream=next&os=macos"
+    strategy :header_match
     regex(/next[._-](\d+)/i)
   end
+
+  # NOTE: Livecheck may fail due to Cloudflare bot protection on archive.chirpmyradio.com.
+  # To check manually: curl -sI "https://archive.chirpmyradio.com/download?stream=next" | grep location
 
   app "CHIRP.app"
 
