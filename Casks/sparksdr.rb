@@ -28,5 +28,6 @@ cask "sparksdr" do
   zap trash: [
     "~/Library/Application Support/SparkSDR",
     "~/Library/Preferences/com.sparksdr.plist",
+    "~/Library/Saved Application State/com.sparksdr.savedState",
   ]
 end
