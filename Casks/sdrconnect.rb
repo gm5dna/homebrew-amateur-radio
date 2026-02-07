@@ -17,7 +17,7 @@ cask "sdrconnect" do
   end
 
   name "SDRconnect"
-  desc "Software-defined radio application by SDRplay"
+  desc "SDR application for SDRplay receivers with spectrum analysis"
   homepage "https://www.sdrplay.com/"
 
   livecheck do

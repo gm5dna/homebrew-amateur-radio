@@ -5,7 +5,7 @@ cask "wsjtx" do
   url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-Darwin.dmg",
       verified: "downloads.sourceforge.net/wsjt/"
   name "WSJT-X"
-  desc "Software for weak-signal digital communication"
+  desc "Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes"
   homepage "https://physics.princeton.edu/pulsar/k1jt/wsjtx.html"
 
   livecheck do

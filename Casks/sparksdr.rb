@@ -13,7 +13,7 @@ cask "sparksdr" do
   end
 
   name "SparkSDR"
-  desc "Software defined radio application"
+  desc "SDR application for Hermes Lite and OpenHPSDR-compatible radios"
   homepage "https://www.sparksdr.com/"
 
   livecheck do

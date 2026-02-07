@@ -4,7 +4,7 @@ cask "js8call" do
 
   url "https://files.js8call.com/#{version}/js8call-#{version}-Darwin.dmg"
   name "JS8Call"
-  desc "Weak signal amateur radio software"
+  desc "Weak-signal keyboard-to-keyboard messaging built on FT8"
   homepage "https://js8call.com/"
 
   livecheck do

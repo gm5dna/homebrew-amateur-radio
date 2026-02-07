@@ -5,7 +5,7 @@ cask "aether" do
   url "https://builds.openreelsoftware.com/apps/aether/release/download/latest_dmg",
       verified: "builds.openreelsoftware.com/apps/aether/"
   name "Aether"
-  desc "Ham radio logging application"
+  desc "Ham radio logger with rig control, awards tracking, and QSL management"
   homepage "https://www.aetherlog.com/"
 
   livecheck do

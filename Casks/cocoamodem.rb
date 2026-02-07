@@ -4,7 +4,7 @@ cask "cocoamodem" do
 
   url "https://www.w7ay.net/site/Downloads/cocoaModem/cocoaModem%20app.dmg"
   name "cocoaModem"
-  desc "Amateur radio digital modes application"
+  desc "Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes"
   homepage "https://www.w7ay.net/site/Applications/cocoaModem/"
 
   livecheck do

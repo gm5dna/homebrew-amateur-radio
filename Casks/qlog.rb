@@ -4,7 +4,7 @@ cask "qlog" do
 
   url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog.v#{version}.dmg"
   name "QLog"
-  desc "Amateur radio logbook software"
+  desc "Amateur radio logbook with DX cluster, rig control, and online log integration"
   homepage "https://github.com/aa5sh/QLog"
 
   livecheck do

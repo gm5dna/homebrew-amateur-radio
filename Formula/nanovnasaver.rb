@@ -1,5 +1,5 @@
 class Nanovnasaver < Formula
-  desc "GUI for the NanoVNA and derivatives"
+  desc "Tool for reading, displaying, and saving data from NanoVNA analyzers"
   homepage "https://github.com/NanoVNA-Saver/nanovna-saver"
   url "https://github.com/NanoVNA-Saver/nanovna-saver/archive/refs/tags/v0.7.3.tar.gz"
   sha256 "932a9d54e6cdf3a7ee4fd9e5c75f8721b5a249b1de320feefb013de293717cd1"

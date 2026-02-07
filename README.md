@@ -37,7 +37,7 @@ brew install nanovnasaver
 | Name | Description |
 |------|-------------|
 | **cloudlogcatqt** | CAT control interface for Cloudlog logging |
-| **nanovnasaver** | GUI for measuring and analyzing NanoVNA vector network analyzers |
+| **nanovnasaver** | Tool for reading, displaying, and saving data from NanoVNA analyzers |
 | **qttermtcp** | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
 
 ### Casks
@@ -46,12 +46,12 @@ brew install nanovnasaver
 
 | Name | Description |
 |------|-------------|
-| **cocoamodem** | Digital modes app supporting RTTY, PSK31/63/125, MFSK16, Hellschreiber, CW |
+| **cocoamodem** | Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes |
 | **freedv** | Open-source HF digital voice modem and GUI |
-| **js8call** | Digital communication using JS8 mode for weak-signal operators |
+| **js8call** | Weak-signal keyboard-to-keyboard messaging built on FT8 |
 | **js8call-improved** | Enhanced JS8Call with bug fixes and additional features |
 | **jtdx** | FT8, JT65, JT9, and T10 digital modes software |
-| **wsjtx** | Weak signal software (FT8, JT65, JTDX, and more) |
+| **wsjtx** | Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes |
 | **wsjtx-improved** | Enhanced WSJT-X with additional features |
 | **wsjtx-improved-alt** | WSJT-X Improved with alternative layout |
 | **wsjtx-improved-ws** | WSJT-X Improved with widescreen layout |
@@ -61,11 +61,11 @@ brew install nanovnasaver
 
 | Name | Description |
 |------|-------------|
-| **aether** | Native macOS logger with rig control, LoTW/eQSL integration, awards tracking |
-| **hamrs** | Logging for portable operations (POTA, Field Day, etc.) |
+| **aether** | Ham radio logger with rig control, awards tracking, and QSL management |
+| **hamrs** | Portable amateur radio logger for Parks on the Air, Field Day, and SOTA |
 | **jlog** | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
-| **qlog** | Cross-platform open-source logger with no ads or tracking |
-| **rumlogng** | Comprehensive logging and QSL management |
+| **qlog** | Amateur radio logbook with DX cluster, rig control, and online log integration |
+| **rumlogng** | Amateur radio logger with QSL management and DX tracking |
 | **skookumlogger** | Advanced contest logging by K1GQ |
 | **waveloggate** | Gateway utility for WaveLog logging software |
 
@@ -73,7 +73,7 @@ brew install nanovnasaver
 
 | Name | Description |
 |------|-------------|
-| **chirp-next** | Program radios from multiple manufacturers and models |
+| **chirp-next** | Open-source tool for programming amateur radio handhelds and mobiles |
 
 #### SDR & Transceiver Control
 
@@ -82,10 +82,10 @@ brew install nanovnasaver
 | **ftdx10-cockpit** | Controller for the Yaesu FTdx10 transceiver |
 | **qttinysa** | Control software for the TinySA spectrum analyzer |
 | **sdr-angel** | Software defined radio with extensive device support |
-| **sdrconnect** | Interface software for SDRplay devices |
-| **sdrplusplus** | Cross-platform SDR software (nightly build) |
+| **sdrconnect** | SDR application for SDRplay receivers with spectrum analysis |
+| **sdrplusplus** | Cross-platform open-source SDR receiver application (nightly build) |
 | **sdrplusplus-brown** | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
-| **sparksdr** | Software defined radio application |
+| **sparksdr** | SDR application for Hermes Lite and OpenHPSDR-compatible radios |
 
 #### Antenna Modeling
 
