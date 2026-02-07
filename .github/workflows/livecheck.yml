@@ -32,8 +32,8 @@ jobs:
         run: |
           echo "Running livecheck..."
 
-          # Run livecheck and capture output
-          LIVECHECK_OUTPUT=$(brew livecheck --tap gm5dna/amateur-radio --newer-only 2>&1) || true
+          # Run livecheck, keeping stdout (updates) separate from stderr (errors)
+          LIVECHECK_OUTPUT=$(brew livecheck --tap gm5dna/amateur-radio --newer-only 2>/dev/null) || true
 
           echo "Livecheck output:"
           echo "$LIVECHECK_OUTPUT"
@@ -45,11 +45,11 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-          # Check if there are any updates
-          if [ -z "$LIVECHECK_OUTPUT" ] || echo "$LIVECHECK_OUTPUT" | grep -q "^$"; then
-            echo "has_updates=false" >> "$GITHUB_OUTPUT"
-          else
+          # Check if any lines contain "==>" indicating an actual version update
+          if echo "$LIVECHECK_OUTPUT" | grep -q "==>"; then
             echo "has_updates=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_updates=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create issues for outdated casks
