@@ -15,7 +15,7 @@ cask "hamrs" do
   end
 
   name "HAMRS Pro"
-  desc "Amateur radio logging software"
+  desc "Portable amateur radio logger for Parks on the Air, Field Day, and SOTA"
   homepage "https://www.hamrs.app/"
 
   livecheck do

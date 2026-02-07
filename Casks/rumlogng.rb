@@ -4,7 +4,7 @@ cask "rumlogng" do
 
   url "https://dl2rum.de/RUMlogNG/RUMlogNG.zip"
   name "RUMlogNG"
-  desc "Amateur radio logging software by DL2RUM"
+  desc "Amateur radio logger with QSL management and DX tracking"
   homepage "https://dl2rum.de/"
 
   livecheck do

@@ -4,7 +4,7 @@ cask "chirp-next" do
 
   url "https://archive.chirpmyradio.com/chirp_next/next-#{version}/chirp-next-#{version}.app.zip"
   name "CHIRP Next"
-  desc "Radio programming software for amateur radio"
+  desc "Open-source tool for programming amateur radio handhelds and mobiles"
   homepage "https://chirpmyradio.com/"
 
   livecheck do

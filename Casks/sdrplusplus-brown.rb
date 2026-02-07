@@ -10,7 +10,7 @@ cask "sdrplusplus-brown" do
   end
 
   name "SDR++ Brown"
-  desc "Cross-platform SDR software with brown UI theme"
+  desc "SDR++ fork with FT8/FT4 decoders, noise reduction, and KiwiSDR support"
   homepage "https://github.com/sannysanoff/SDRPlusPlusBrown"
 
   livecheck do

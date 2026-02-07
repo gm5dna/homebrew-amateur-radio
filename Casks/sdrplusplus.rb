@@ -10,7 +10,7 @@ cask "sdrplusplus" do
   end
 
   name "SDR++"
-  desc "Cross-platform SDR software"
+  desc "Cross-platform open-source SDR receiver application"
   homepage "https://github.com/AlexandreRouma/SDRPlusPlus"
 
   livecheck do
