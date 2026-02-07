@@ -39,15 +39,17 @@ jobs:
           echo "$LIVECHECK_OUTPUT"
 
           # Save output for next steps
-          echo "output<<EOF" >> $GITHUB_OUTPUT
-          echo "$LIVECHECK_OUTPUT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          {
+            echo "output<<EOF"
+            echo "$LIVECHECK_OUTPUT"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
           # Check if there are any updates
           if [ -z "$LIVECHECK_OUTPUT" ] || echo "$LIVECHECK_OUTPUT" | grep -q "^$"; then
-            echo "has_updates=false" >> $GITHUB_OUTPUT
+            echo "has_updates=false" >> "$GITHUB_OUTPUT"
           else
-            echo "has_updates=true" >> $GITHUB_OUTPUT
+            echo "has_updates=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Create issues for outdated casks
@@ -94,13 +96,17 @@ jobs:
 
       - name: Summary
         run: |
-          echo "## Livecheck Results" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          if [ "${{ steps.livecheck.outputs.has_updates }}" == "true" ]; then
-            echo "### Updates Available" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            echo "${{ steps.livecheck.outputs.output }}" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-          else
-            echo "All casks are up to date." >> $GITHUB_STEP_SUMMARY
-          fi
+          HAS_UPDATES="${{ steps.livecheck.outputs.has_updates }}"
+          LIVECHECK_OUTPUT="${{ steps.livecheck.outputs.output }}"
+          {
+            echo "## Livecheck Results"
+            echo ""
+            if [ "$HAS_UPDATES" == "true" ]; then
+              echo "### Updates Available"
+              echo '```'
+              echo "$LIVECHECK_OUTPUT"
+              echo '```'
+            else
+              echo "All casks are up to date."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
