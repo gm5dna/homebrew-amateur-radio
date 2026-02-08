@@ -12,6 +12,9 @@ on:
         default: 'true'
         type: boolean
 
+permissions:
+  issues: write
+
 jobs:
   livecheck:
     runs-on: macos-latest
@@ -33,7 +36,8 @@ jobs:
           echo "Running livecheck..."
 
           # Run livecheck, keeping stdout (updates) separate from stderr (errors)
-          LIVECHECK_OUTPUT=$(brew livecheck --tap gm5dna/amateur-radio --newer-only 2>/dev/null) || true
+          # Pipe through sed to strip ANSI color codes so downstream parsing works
+          LIVECHECK_OUTPUT=$(brew livecheck --tap gm5dna/amateur-radio --newer-only 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g') || true
 
           echo "Livecheck output:"
           echo "$LIVECHECK_OUTPUT"
