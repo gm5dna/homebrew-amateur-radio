@@ -1,17 +1,17 @@
 cask "sdrconnect" do
-  version "1.0.6"
+  version "1.0.7"
 
   on_arm do
     sha256 :no_check
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_583e89db6.dmg"
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_22b2d4724.dmg"
 
     depends_on macos: ">= :ventura"
   end
   on_intel do
     sha256 :no_check
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_583e89db6.dmg"
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_22b2d4724.dmg"
 
     depends_on macos: ">= :catalina"
   end
