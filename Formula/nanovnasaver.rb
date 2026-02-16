@@ -5,6 +5,11 @@ class Nanovnasaver < Formula
   sha256 "932a9d54e6cdf3a7ee4fd9e5c75f8721b5a249b1de320feefb013de293717cd1"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :homepage
+    strategy :github_latest
+  end
+
   depends_on "python@3.12"
 
   def install
@@ -22,7 +27,7 @@ class Nanovnasaver < Formula
 
     # Install project dependencies including dev dependencies (which contains pyinstaller)
     # Set version for setuptools-scm since we're using a tarball without git metadata
-    ENV["SETUPTOOLS_SCM_PRETEND_VERSION"] = "0.7.3"
+    ENV["SETUPTOOLS_SCM_PRETEND_VERSION"] = version.to_s
     system pip, "install", "-e", ".[dev]"
 
     # Compile UI files (required before building app)

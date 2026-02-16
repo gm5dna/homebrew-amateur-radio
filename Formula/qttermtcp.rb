@@ -15,7 +15,8 @@ class Qttermtcp < Formula
   depends_on "qt@5"
 
   def install
-    system "qmake", "QtTermTCP.pro"
+    ENV["QMAKE_MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
+    system Formula["qt@5"].opt_bin/"qmake", "CONFIG+=sdk_no_version_check", "QtTermTCP.pro"
     system "make"
     prefix.install "QtTermTCP.app"
   end

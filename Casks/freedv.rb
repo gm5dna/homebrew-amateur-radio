@@ -18,5 +18,6 @@ cask "freedv" do
   zap trash: [
     "~/Library/Application Support/FreeDV",
     "~/Library/Preferences/org.freedv.FreeDV.plist",
+    "~/Library/Saved Application State/org.freedv.FreeDV.savedState",
   ]
 end
