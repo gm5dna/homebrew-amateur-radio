@@ -69,12 +69,6 @@ brew install nanovnasaver
 | **skookumlogger** | Advanced contest logging by K1GQ |
 | **waveloggate** | Gateway utility for WaveLog logging software |
 
-#### Radio Programming
-
-| Name | Description |
-|------|-------------|
-| **chirp-next** | Open-source tool for programming amateur radio handhelds and mobiles |
-
 #### SDR & Transceiver Control
 
 | Name | Description |
