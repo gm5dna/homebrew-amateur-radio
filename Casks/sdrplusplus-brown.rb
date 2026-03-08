@@ -1,5 +1,5 @@
 cask "sdrplusplus-brown" do
-  version "rolling"
+  version :latest
   sha256 :no_check
 
   on_arm do

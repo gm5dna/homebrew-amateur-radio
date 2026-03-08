@@ -1,5 +1,5 @@
 cask "sdrplusplus" do
-  version "nightly"
+  version :latest
   sha256 :no_check
 
   on_arm do
