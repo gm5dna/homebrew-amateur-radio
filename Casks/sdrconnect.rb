@@ -4,14 +4,14 @@ cask "sdrconnect" do
   on_arm do
     sha256 :no_check
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_22b2d4724.dmg"
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_9e3d77790.dmg"
 
     depends_on macos: ">= :ventura"
   end
   on_intel do
     sha256 :no_check
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_22b2d4724.dmg"
+    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_9e3d77790.dmg"
 
     depends_on macos: ">= :catalina"
   end
