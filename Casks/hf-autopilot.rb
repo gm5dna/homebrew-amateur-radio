@@ -4,7 +4,7 @@ cask "hf-autopilot" do
 
   url "https://w0xz.com/autopilot/Installer.dmg"
   name "HF Autopilot"
-  desc "Quick tuning to POTA, SOTA, and NetLogger HF spots for Elecraft, Icom, Kenwood, and Yaesu"
+  desc "Quick tuning to POTA, SOTA, and NetLogger HF spots for HF radios"
   homepage "https://w0xz.com/autopilot/"
 
   livecheck do
