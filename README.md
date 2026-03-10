@@ -40,6 +40,7 @@ brew install nanovnasaver
 | **nanovnasaver** | Tool for reading, displaying, and saving data from NanoVNA analyzers |
 | **qttermtcp** | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
 | **wsjtz** | Weak-signal digital communication with automation features (built from source) |
+| **xastir** | APRS client with mapping and weather alert support |
 
 ### Casks
 
