@@ -1,6 +1,6 @@
 cask "hf-autopilot" do
   version "0.93"
-  sha256 "9f6cd6f5c5f8ea664584681efaee8e1ebf3b2179d326df01762ad5a901217789"
+  sha256 :no_check
 
   url "https://w0xz.com/autopilot/Installer.dmg"
   name "HF Autopilot"

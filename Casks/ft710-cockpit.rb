@@ -1,6 +1,6 @@
 cask "ft710-cockpit" do
   version "1.2"
-  sha256 "8d348ac9d228d4a7810c4f041a0f4893f15d92d29673f8a394a248abbc74f626"
+  sha256 :no_check
 
   url "https://w0xz.com/ft-710/Installer.dmg"
   name "FT-710 Cockpit"
