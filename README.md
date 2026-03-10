@@ -66,6 +66,7 @@ brew install nanovnasaver
 | **aether** | Ham radio logger with rig control, awards tracking, and QSL management |
 | **hamrs** | Portable amateur radio logger for Parks on the Air, Field Day, and SOTA |
 | **jlog** | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
+| **netlogger** | Amateur radio net logging and real-time net monitoring |
 | **qlog** | Amateur radio logbook with DX cluster, rig control, and online log integration |
 | **rumlogng** | Amateur radio logger with QSL management and DX tracking |
 | **skookumlogger** | Advanced contest logging by K1GQ |
