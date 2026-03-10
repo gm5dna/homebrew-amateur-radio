@@ -76,6 +76,7 @@ brew install nanovnasaver
 
 | Name | Description |
 |------|-------------|
+| **ft710-cockpit** | Controller for the Yaesu FT-710 transceiver |
 | **ftdx10-cockpit** | Controller for the Yaesu FTdx10 transceiver |
 | **qttinysa** | Control software for the TinySA spectrum analyzer |
 | **sdr-angel** | Software defined radio with extensive device support |
@@ -96,6 +97,7 @@ brew install nanovnasaver
 | Name | Description |
 |------|-------------|
 | **hamclock-launcher** | Launcher for the HamClock application |
+| **hf-autopilot** | Quick tuning to POTA, SOTA, and NetLogger HF spots for Elecraft, Icom, Kenwood, and Yaesu |
 | **pat** | Winlink client for emergency communications |
 | **pine64-updater** | Updater for Pine64 devices (Pinecil, etc.) |
 | **rf-toolbox** | Antenna design and electronics calculator |
