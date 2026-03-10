@@ -81,6 +81,7 @@ brew install nanovnasaver
 | **sdrplusplus** | Cross-platform open-source SDR receiver application (nightly build) |
 | **sdrplusplus-brown** | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
 | **sparksdr** | SDR application for Hermes Lite and OpenHPSDR-compatible radios |
+| **wfview** | Open source interface for Icom and Kenwood transceivers |
 
 #### Antenna Modeling
 
