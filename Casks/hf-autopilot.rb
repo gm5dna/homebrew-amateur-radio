@@ -9,7 +9,7 @@ cask "hf-autopilot" do
 
   livecheck do
     url "https://w0xz.com/v/autopilot/"
-    regex(/v?(\d+(?:\.\d+)+)/i)
+    regex(/v(\d+(?:\.\d+)+)/i)
     strategy :page_match
   end
 
