@@ -30,4 +30,34 @@ cask "wsjtx-improved-alt" do
     "~/Library/Preferences/wsjtx.plist",
     "~/Library/Saved Application State/wsjtx.savedState",
   ]
+
+  caveats <<~EOS
+    WSJT-X requires increased shared memory limits on macOS.
+    If you see a "shared memory" error, create the file
+    /Library/LaunchDaemons/com.wsjtx.sysctl.plist with:
+
+      sudo tee /Library/LaunchDaemons/com.wsjtx.sysctl.plist << 'PLIST'
+      <?xml version="1.0" encoding="UTF-8"?>
+      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+      <plist version="1.0">
+      <dict>
+          <key>Label</key>
+          <string>com.wsjtx.sysctl</string>
+          <key>Program</key>
+          <string>/usr/sbin/sysctl</string>
+          <key>ProgramArguments</key>
+          <array>
+              <string>/usr/sbin/sysctl</string>
+              <string>kern.sysv.shmmax=52428800</string>
+              <string>kern.sysv.shmall=25600</string>
+          </array>
+          <key>RunAtLoad</key>
+          <true/>
+      </dict>
+      </plist>
+      PLIST
+      sudo chown root:wheel /Library/LaunchDaemons/com.wsjtx.sysctl.plist
+
+    Then restart your Mac for the changes to take effect.
+  EOS
 end
