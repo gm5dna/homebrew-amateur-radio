@@ -1,6 +1,6 @@
 cask "qlog" do
-  version "0.48.0"
-  sha256 "0a1a64c6742ac4199deccfc544538434ccbe5e1df69bc0a3ab81666e726dcded"
+  version "0.49.0"
+  sha256 "537058e12a1f4799d2f93dd00170c99df92185505c59dcb5cb0e5988ebe895ac"
 
   url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog.v#{version}.dmg"
   name "QLog"
