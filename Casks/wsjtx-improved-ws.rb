@@ -6,7 +6,7 @@ cask "wsjtx-improved-ws" do
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_widescreen_PLUS_#{version.csv.second}_M1.zip"
   end
   on_intel do
-    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v3.1.0/macOS/wsjtx-3.1.0_improved_widescreen_PLUS_260226-OFC-Darwin.dmg"
+    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_widescreen_PLUS_#{version.csv.second}-Darwin.dmg"
   end
 
   name "WSJT-X Improved (Widescreen)"
