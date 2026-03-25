@@ -5,7 +5,7 @@ class Qttermtcp < Formula
   # doesn't publish versioned releases. The SHA256 will change when master updates.
   url "https://github.com/gm5dna/QtTermTCP/archive/refs/heads/master.tar.gz"
   version "0.79"
-  sha256 :no_check
+  sha256 "132e36af74efc09505486b6a2ec1e56d2aa38722b23382a64d5cc94dce996cc4"
   license "GPL-3.0-or-later"
 
   livecheck do
