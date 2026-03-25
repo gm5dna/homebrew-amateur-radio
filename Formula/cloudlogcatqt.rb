@@ -3,7 +3,7 @@ class Cloudlogcatqt < Formula
   homepage "https://github.com/myzinsky/CloudLogCatQt"
   url "https://github.com/myzinsky/CloudLogCatQt/archive/refs/heads/master.tar.gz"
   version "0.0.1"
-  sha256 "2a988ee4897ad1afb87e0e13617982706dddd7b9df61808bafb9d1936337a099"
+  sha256 :no_check
   license "GPL-3.0-or-later"
   head "https://github.com/myzinsky/CloudLogCatQt.git", branch: "master"
 
