@@ -1,5 +1,5 @@
 cask "rumlogng" do
-  version "6.1.1"
+  version "6.2"
   sha256 :no_check
 
   url "https://dl2rum.de/RUMlogNG/RUMlogNG.zip"
