@@ -1,15 +1,15 @@
 cask "js8call" do
-  version "2.4.0"
-  sha256 "7a1c1509a59e3ac2a5fffb6947f79e493fb24fe4c9e113a7fd4bf2bf6b0b7fbe"
+  version "2.3.1"
+  sha256 "4f364e7b94af49bceaf554169d710fa0d464b4ee9f43d72120387c258c7975a9"
 
-  url "https://files.js8call.com/#{version}/js8call-#{version}-Darwin.dmg"
+  url "https://github.com/js8call/js8call/releases/download/v#{version}/JS8Call_#{version}.dmg"
   name "JS8Call"
   desc "Weak-signal keyboard-to-keyboard messaging built on FT8"
   homepage "https://js8call.com/"
 
   livecheck do
-    url "https://files.js8call.com/"
-    regex(/href=.*?v?(\d+(?:\.\d+)+)/i)
+    url "https://github.com/js8call/js8call/releases/latest"
+    strategy :github_latest
   end
 
   app "JS8Call.app"
