@@ -9,7 +9,7 @@ cask "skookumlogger" do
 
   livecheck do
     url "https://www.k1gq.net/SkookumLoggerDownloads/"
-    regex(/Release\s+(\d+(?:\.\d+)+)/i)
+    regex(/Beta\s+(\d+(?:\.\d+)+)/i)
   end
 
   app "SkookumLogger.app"
