@@ -1,9 +1,19 @@
 cask "wsjtx" do
-  version "2.7.0"
-  sha256 "f3ef11f3612f1db7bcdea55e5a4ce409b0c1db43ae6bc1a5e048fc99833e031e"
+  on_arm do
+    version "3.0.0"
+    sha256 "f9d95aad28e4da29b6f1d1fdf75647ecffe68162f3edc9e13d1984645bb21a37"
 
-  url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-Darwin.dmg",
-      verified: "downloads.sourceforge.net/wsjt/"
+    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-ARM-Darwin.dmg",
+        verified: "downloads.sourceforge.net/wsjt/"
+  end
+  on_intel do
+    version "3.0.0"
+    sha256 "8b2b0c43cca32f55a26a0f54510d8462f9dc4709a339f9dd1c2f468e00de3f29"
+
+    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-Darwin.dmg",
+        verified: "downloads.sourceforge.net/wsjt/"
+  end
+
   name "WSJT-X"
   desc "Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes"
   homepage "https://physics.princeton.edu/pulsar/k1jt/wsjtx.html"
