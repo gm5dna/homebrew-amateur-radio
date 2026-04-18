@@ -1,14 +1,14 @@
 class Wsjtz < Formula
   desc "Weak-signal digital communication software with automation features"
   homepage "https://wsjt-z.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/wsjt-z/Source/wsjtz-2.7.0-rc7-1.48.zip"
-  version "2.7.0-rc7-1.48"
-  sha256 "4af4a008eadbe49eb5d620a0802691550d83605c235573a3e859a3013937b933"
+  url "https://downloads.sourceforge.net/project/wsjt-z/Source/wsjtz-3.0.0-2.0.7.zip"
+  version "3.0.0-2.0.7"
+  sha256 "0065c1c3dff793ca2e198c50dd3506ac9f7636d2b8d4d2650d707515d4427732"
   license "GPL-3.0-or-later"
 
   livecheck do
     url "https://sourceforge.net/projects/wsjt-z/files/Source/"
-    regex(/wsjtz[._-]v?(\d+\.\d+\.\d+(?:[._-]rc\d+)?[._-]\d+\.\d+)\.zip/i)
+    regex(/wsjtz[._-]v?(\d+\.\d+\.\d+(?:[._-]rc\d+)?[._-]\d+(?:\.\d+)+)\.zip/i)
     strategy :page_match
   end
 
