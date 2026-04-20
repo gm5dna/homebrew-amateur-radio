@@ -1,6 +1,6 @@
 cask "pat" do
-  version "0.19.2"
-  sha256 "0b6d82c3d4ea6216e51a6a32f8034e91bfb0bd0c9f5ab4327088104cda6206c2"
+  version "1.0.0"
+  sha256 "cd7af751ee52536abfb3881375dd42e4f29906a2a543976fcc6a8d9a77d6e484"
 
   url "https://github.com/la5nta/pat/releases/download/v#{version}/pat_#{version}_darwin_amd64.pkg"
   name "Pat"
