@@ -38,7 +38,9 @@ brew install nanovnasaver
 |------|-------------|
 | [**cloudlogcatqt**](https://github.com/myzinsky/CloudLogCatQt) | CAT control interface for Cloudlog logging |
 | [**nanovnasaver**](https://github.com/NanoVNA-Saver/nanovna-saver) | Tool for reading, displaying, and saving data from NanoVNA analyzers |
+| [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications (native Apple Silicon build) |
 | [**qttermtcp**](https://github.com/gm5dna/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
+| [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
 | [**wsjtz**](https://wsjt-z.sourceforge.io/) | Weak-signal digital communication with automation features (built from source) |
 | [**xastir**](https://github.com/Xastir/Xastir) | APRS client with mapping and weather alert support |
 
@@ -98,7 +100,6 @@ brew install nanovnasaver
 |------|-------------|
 | [**hamclock-launcher**](https://github.com/huberthickman/HamClockLauncher) | Launcher for the HamClock application |
 | [**hf-autopilot**](https://w0xz.com/autopilot/) | Quick tuning to POTA, SOTA, and NetLogger HF spots for HF radios |
-| [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications |
 | [**pine64-updater**](https://github.com/pine64/pine64_updater) | Updater for Pine64 devices (Pinecil, etc.) |
 | [**rf-toolbox**](https://www.blackcatsystems.com/software/electronics-antenna-design-software.html) | Antenna design and electronics calculator |
 
