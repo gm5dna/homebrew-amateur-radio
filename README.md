@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/gm5dna/homebrew-amateur-radio/actions/workflows/ci.yml/badge.svg)](https://github.com/gm5dna/homebrew-amateur-radio/actions/workflows/ci.yml)
 
-A Homebrew tap providing macOS software for amateur radio operators.
+Native macOS builds and pre-packaged apps for amateur radio.
 
 ## New to Homebrew?
 
@@ -26,8 +26,14 @@ brew install <name>
 For example:
 
 ```bash
-brew install wsjtx
-brew install nanovnasaver
+brew install wsjtx          # cask (GUI app)
+brew install nanovnasaver   # formula (built from source)
+```
+
+Homebrew chooses formula or cask automatically when the name is unambiguous. If a name collides with a package in homebrew-core (e.g. `wsjtx`), use the fully-qualified form to be explicit:
+
+```bash
+brew install gm5dna/amateur-radio/wsjtx
 ```
 
 ## Available Software
@@ -41,7 +47,7 @@ brew install nanovnasaver
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications (native Apple Silicon build) |
 | [**qttermtcp**](https://github.com/gm5dna/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
 | [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
-| [**wsjtz**](https://github.com/sq9fve/wsjt-z) | Weak-signal digital communication with automation features (built from source) |
+| [**wsjtz**](https://github.com/sq9fve/wsjt-z) | Weak-signal digital communication with automation features |
 | [**xastir**](https://github.com/Xastir/Xastir) | APRS client with mapping and weather alert support |
 
 ### Casks
@@ -80,7 +86,7 @@ brew install nanovnasaver
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
 | [**qttinysa**](https://github.com/g4ixt/QtTinySA) | Control software for the TinySA spectrum analyzer |
-| [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software defined radio with extensive device support |
+| [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software-defined radio with extensive device support |
 | [**sdrconnect**](https://www.sdrplay.com/) | SDR application for SDRplay receivers with spectrum analysis |
 | [**sdrplusplus**](https://github.com/AlexandreRouma/SDRPlusPlus) | Cross-platform open-source SDR receiver application (nightly build) |
 | [**sdrplusplus-brown**](https://github.com/sannysanoff/SDRPlusPlusBrown) | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
@@ -104,27 +110,43 @@ brew install nanovnasaver
 
 ## Updating
 
-To update all software from this tap:
-
 ```bash
 brew update
+brew upgrade
+```
+
+Some casks self-update internally (e.g. SDR++ nightly builds). To force Homebrew to re-pull those, add `--greedy`:
+
+```bash
 brew upgrade --greedy
 ```
 
 ## Uninstalling
 
+For formulae:
+
 ```bash
 brew uninstall <name>
-brew uninstall --zap <name>  # also removes preferences and support files
+```
+
+For casks (use `--zap` to also remove preferences and support files):
+
+```bash
+brew uninstall --cask <name>
+brew uninstall --cask --zap <name>
 ```
 
 ## Troubleshooting
 
 **"command not found: brew"** — Homebrew isn't set up in your shell yet. The Homebrew installer shows instructions for this at the end. See [brew.sh](https://brew.sh) for details.
 
-**App won't open / "unidentified developer"** — Right-click the app in Finder → Open → click "Open" in the dialog.
+**App won't open / "unidentified developer"** — On macOS 15 (Sequoia) and later: launch the app once, dismiss the warning, then go to *System Settings → Privacy & Security* and click "Open Anyway" next to the blocked app. On older macOS: right-click the app in Finder → Open → click "Open" in the dialog.
 
 **Other issues** — See [Homebrew docs](https://docs.brew.sh) or [open an issue](https://github.com/gm5dna/homebrew-amateur-radio/issues).
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add a formula or cask, update versions, or report issues.
 
 ## License
 
