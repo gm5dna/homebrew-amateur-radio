@@ -92,6 +92,7 @@ brew install gm5dna/amateur-radio/wsjtx
 | [**sdrplusplus-brown**](https://github.com/sannysanoff/SDRPlusPlusBrown) | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
 | [**sparksdr**](https://www.sparksdr.com/) | SDR application for Hermes Lite and OpenHPSDR-compatible radios |
 | [**wfview**](https://wfview.org/) | Open source interface for Icom and Kenwood transceivers |
+| [**wfview-beta**](https://github.com/eliggett/wfview/releases) | wfview Qt6 universal beta builds — tracks upstream master |
 
 #### Antenna Modeling
 
