@@ -30,7 +30,7 @@ brew install wsjtx          # cask (GUI app)
 brew install nanovnasaver   # formula (built from source)
 ```
 
-Homebrew chooses formula or cask automatically when the name is unambiguous. If a name collides with a package in homebrew-core (e.g. `wsjtx`), use the fully-qualified form to be explicit:
+Homebrew chooses formula or cask automatically when the name is unambiguous. If a name collides with another tap, use the fully-qualified form to be explicit:
 
 ```bash
 brew install gm5dna/amateur-radio/wsjtx
@@ -45,7 +45,7 @@ brew install gm5dna/amateur-radio/wsjtx
 | [**cloudlogcatqt**](https://github.com/myzinsky/CloudLogCatQt) | CAT control interface for Cloudlog logging |
 | [**nanovnasaver**](https://github.com/NanoVNA-Saver/nanovna-saver) | Tool for reading, displaying, and saving data from NanoVNA analyzers |
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications (native Apple Silicon build) |
-| [**qttermtcp**](https://github.com/gm5dna/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
+| [**qttermtcp**](https://github.com/g8bpq/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
 | [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
 | [**wsjtz**](https://github.com/sq9fve/wsjt-z) | Weak-signal digital communication with automation features |
 | [**xastir**](https://github.com/Xastir/Xastir) | APRS client with mapping and weather alert support |
@@ -92,7 +92,7 @@ brew install gm5dna/amateur-radio/wsjtx
 | [**sdrplusplus-brown**](https://github.com/sannysanoff/SDRPlusPlusBrown) | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
 | [**sparksdr**](https://www.sparksdr.com/) | SDR application for Hermes Lite and OpenHPSDR-compatible radios |
 | [**wfview**](https://wfview.org/) | Open source interface for Icom and Kenwood transceivers |
-| [**wfview-beta**](https://github.com/eliggett/wfview/releases) | wfview Qt6 universal beta builds — tracks upstream master |
+| [**wfview-beta**](https://wfview.org/) | wfview Qt6 universal beta builds — tracks upstream master |
 
 #### Antenna Modeling
 
