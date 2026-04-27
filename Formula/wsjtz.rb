@@ -1,15 +1,19 @@
 class Wsjtz < Formula
   desc "Weak-signal digital communication software with automation features"
-  homepage "https://wsjt-z.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/wsjt-z/Source/wsjtz-3.0.0-2.0.7.zip"
-  version "3.0.0-2.0.7"
-  sha256 "0065c1c3dff793ca2e198c50dd3506ac9f7636d2b8d4d2650d707515d4427732"
+  homepage "https://github.com/sq9fve/wsjt-z"
+  url "https://github.com/sq9fve/wsjt-z.git",
+      revision: "7cbff9e555b1f6a1d50c3adcbfeee14ed78b1a30"
+  version "3.0.0-2.0.8"
   license "GPL-3.0-or-later"
+  head "https://github.com/sq9fve/wsjt-z.git", branch: "master"
 
   livecheck do
-    url "https://sourceforge.net/projects/wsjt-z/files/Source/"
-    regex(/wsjtz[._-]v?(\d+\.\d+\.\d+(?:[._-]rc\d+)?[._-]\d+(?:\.\d+)+)\.zip/i)
-    strategy :page_match
+    url "https://raw.githubusercontent.com/sq9fve/wsjt-z/master/CMakeLists.txt"
+    regex(/CPACK_PACKAGE_VERSION_Z\s+"(\d+(?:\.\d+)+)"/i)
+    strategy :page_match do |page, regex|
+      z = page[regex, 1]
+      z ? "3.0.0-#{z}" : nil
+    end
   end
 
   depends_on "cmake" => :build
