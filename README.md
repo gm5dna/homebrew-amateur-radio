@@ -41,7 +41,7 @@ brew install nanovnasaver
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications (native Apple Silicon build) |
 | [**qttermtcp**](https://github.com/gm5dna/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
 | [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
-| [**wsjtz**](https://wsjt-z.sourceforge.io/) | Weak-signal digital communication with automation features (built from source) |
+| [**wsjtz**](https://github.com/sq9fve/wsjt-z) | Weak-signal digital communication with automation features (built from source) |
 | [**xastir**](https://github.com/Xastir/Xastir) | APRS client with mapping and weather alert support |
 
 ### Casks
@@ -59,7 +59,6 @@ brew install nanovnasaver
 | [**wsjtx-improved**](https://sourceforge.net/projects/wsjt-x-improved/) | Enhanced WSJT-X with additional features |
 | [**wsjtx-improved-alt**](https://sourceforge.net/projects/wsjt-x-improved/) | WSJT-X Improved with alternative layout |
 | [**wsjtx-improved-ws**](https://sourceforge.net/projects/wsjt-x-improved/) | WSJT-X Improved with widescreen layout |
-| [**wsjtz**](https://wsjt-z.sourceforge.io/) | Weak signal communication with automation features |
 
 #### Logging & QSL Management
 
