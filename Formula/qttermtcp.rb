@@ -1,11 +1,11 @@
 class Qttermtcp < Formula
   desc "Terminal application for packet radio"
   homepage "https://github.com/g8bpq/QtTermTCP"
-  # NOTE: This formula uses the master branch tarball since the project
-  # doesn't publish versioned releases. The SHA256 will change when master updates.
-  url "https://github.com/g8bpq/QtTermTCP/archive/refs/heads/master.tar.gz"
+  # Pinned to a specific commit because upstream's tags lag the embedded
+  # version in master. Bump the URL + sha256 + version when reviewing.
+  url "https://github.com/g8bpq/QtTermTCP/archive/00ca15573c4653882265d6bfc884fca619556c30.tar.gz"
   version "0.81"
-  sha256 "50751f9ae6f4abe7b0624f68baf16a7ded49876d1b6d6afb9fe0c8f9fb60e096"
+  sha256 "5bdc377e6de7e900a14087e39fef146ed3bd47879c06744245f6d54d90517488"
   license "GPL-3.0-or-later"
 
   livecheck do
