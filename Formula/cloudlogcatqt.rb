@@ -1,9 +1,9 @@
 class Cloudlogcatqt < Formula
   desc "CAT control interface for Cloudlog amateur radio logging"
   homepage "https://github.com/myzinsky/CloudLogCatQt"
-  url "https://github.com/myzinsky/CloudLogCatQt/archive/refs/heads/master.tar.gz"
+  url "https://github.com/myzinsky/CloudLogCatQt/archive/c067920158675c40d180d9139043c37d28d5cb9b.tar.gz"
   version "0.0.1"
-  sha256 "2a988ee4897ad1afb87e0e13617982706dddd7b9df61808bafb9d1936337a099"
+  sha256 "3f3ef375424348d564887018e67f9222d33ac762feadd2f74de400984e45649f"
   license "GPL-3.0-or-later"
   head "https://github.com/myzinsky/CloudLogCatQt.git", branch: "master"
 
