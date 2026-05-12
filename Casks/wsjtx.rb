@@ -7,8 +7,8 @@ cask "wsjtx" do
         verified: "downloads.sourceforge.net/wsjt/"
   end
   on_intel do
-    version "3.0.0"
-    sha256 "8b2b0c43cca32f55a26a0f54510d8462f9dc4709a339f9dd1c2f468e00de3f29"
+    version "3.0.1"
+    sha256 "faf71d2681eb9a266ad7219d30ad7d5520a0f6e3158da7906444bcdeb4a13436"
 
     url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-Darwin.dmg",
         verified: "downloads.sourceforge.net/wsjt/"
