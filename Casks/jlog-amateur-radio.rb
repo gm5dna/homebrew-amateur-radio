@@ -1,4 +1,4 @@
-cask "jlog" do
+cask "jlog-amateur-radio" do
   version "6.14.1"
 
   on_arm do
