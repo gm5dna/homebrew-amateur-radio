@@ -10,7 +10,6 @@ cask "wsjtx" do
     pkg "wsjtx-#{version}-arm64-macOS.pkg"
   end
   on_intel do
-    version "3.0.1"
     sha256 "177ad99dc74df2325ee67eaff4f4777c4924dfc4f5726ef208d631e842d528bb"
 
     url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-x86_64-macOS.pkg",
