@@ -13,6 +13,8 @@ cask "js8call" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "JS8Call.app"
 
   zap trash: [

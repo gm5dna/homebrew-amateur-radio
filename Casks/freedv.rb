@@ -13,6 +13,8 @@ cask "freedv" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "FreeDV.app"
 
   zap trash: [

@@ -23,6 +23,8 @@ cask "hamrs" do
     regex(/hamrs[._-]pro[._-]v?(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on :macos
+
   app "HAMRS Pro.app"
 
   zap trash: [

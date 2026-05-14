@@ -16,6 +16,8 @@ cask "aether" do
     end
   end
 
+  depends_on :macos
+
   app "Aether.app"
 
   zap trash: [

@@ -17,7 +17,7 @@ cask "wfview-beta" do
   end
 
   conflicts_with cask: "gm5dna/amateur-radio/wfview"
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "wfview.app"
 

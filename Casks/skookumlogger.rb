@@ -12,6 +12,8 @@ cask "skookumlogger" do
     regex(/Beta\s+(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on :macos
+
   app "SkookumLogger.app"
 
   zap trash: [

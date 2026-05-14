@@ -17,6 +17,8 @@ cask "sdrplusplus" do
     skip "Nightly build with no versioned releases"
   end
 
+  depends_on :macos
+
   app "SDR++.app"
 
   zap trash: [

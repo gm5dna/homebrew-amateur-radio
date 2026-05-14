@@ -21,7 +21,7 @@ cask "sparksdr" do
     regex(/SparkSDR[._-]v?(\d+(?:\.\d+)+)\.osx\.arm\.zip/i)
   end
 
-  depends_on macos: ">= :big_sur"
+  depends_on macos: :big_sur
 
   app "SparkSDR.app"
 

@@ -12,6 +12,7 @@ cask "ftdx10-cockpit" do
   end
 
   depends_on cask: "silicon-labs-vcp-driver"
+  depends_on :macos
 
   app "FTDX10 Cockpit.app"
 

@@ -13,7 +13,7 @@ cask "hf-autopilot" do
     strategy :page_match
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "HF Autopilot.app"
 

@@ -21,7 +21,7 @@ cask "wsjtx-improved" do
     end
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "wsjtx.app", target: "wsjtx-improved.app"
 

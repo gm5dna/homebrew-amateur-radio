@@ -17,6 +17,8 @@ cask "sdrplusplus-brown" do
     skip "Rolling release with no versioned tags"
   end
 
+  depends_on :macos
+
   app "SDR++Brown.app"
 
   zap trash: [

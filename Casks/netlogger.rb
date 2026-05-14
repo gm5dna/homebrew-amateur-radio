@@ -13,6 +13,8 @@ cask "netlogger" do
     strategy :page_match
   end
 
+  depends_on :macos
+
   app "NetLogger.app"
 
   zap trash: [

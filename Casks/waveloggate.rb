@@ -21,6 +21,8 @@ cask "waveloggate" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "WaveLogGate.app"
 
   zap trash: [
