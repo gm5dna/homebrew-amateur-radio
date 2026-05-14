@@ -2,7 +2,8 @@ cask "rf-toolbox" do
   version "5.2.0"
   sha256 :no_check
 
-  url "https://www.blackcatsystems.com/download/RFToolboxOSX.dmg"
+  url "https://www.blackcatsystems.com/download/RFToolboxOSX.dmg",
+      user_agent: :fake
   name "RF Toolbox"
   desc "Antenna design and electronics calculator for amateur radio"
   homepage "https://www.blackcatsystems.com/software/electronics-antenna-design-software.html"
@@ -12,6 +13,8 @@ cask "rf-toolbox" do
     regex(/version\s*(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on :macos
+
   app "RF Toolbox.app"
 
   zap trash: [
@@ -19,4 +22,8 @@ cask "rf-toolbox" do
     "~/Library/Preferences/com.blackcatsystems.rftoolbox.plist",
     "~/Library/Saved Application State/com.blackcatsystems.rftoolbox.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end
