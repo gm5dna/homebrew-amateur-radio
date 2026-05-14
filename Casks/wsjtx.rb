@@ -1,17 +1,22 @@
 cask "wsjtx" do
-  on_arm do
-    version "3.0.0"
-    sha256 "f9d95aad28e4da29b6f1d1fdf75647ecffe68162f3edc9e13d1984645bb21a37"
+  version "3.0.1"
 
-    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-ARM-Darwin.dmg",
+  on_arm do
+    sha256 "31cf41da282148490d442e33bc8f377886ab3184df55fb70d1776e1ad761166e"
+
+    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-arm64-macOS.pkg",
         verified: "downloads.sourceforge.net/wsjt/"
+
+    pkg "wsjtx-#{version}-arm64-macOS.pkg"
   end
   on_intel do
     version "3.0.1"
-    sha256 "faf71d2681eb9a266ad7219d30ad7d5520a0f6e3158da7906444bcdeb4a13436"
+    sha256 "177ad99dc74df2325ee67eaff4f4777c4924dfc4f5726ef208d631e842d528bb"
 
-    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-Darwin.dmg",
+    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-x86_64-macOS.pkg",
         verified: "downloads.sourceforge.net/wsjt/"
+
+    pkg "wsjtx-#{version}-x86_64-macOS.pkg"
   end
 
   name "WSJT-X"
@@ -24,7 +29,8 @@ cask "wsjtx" do
     strategy :page_match
   end
 
-  app "wsjtx.app"
+  uninstall quit:    "org.k1jt.wsjtx",
+            pkgutil: "org.k1jt.wsjtx.*"
 
   zap trash: [
     "~/Library/Application Support/WSJT-X",
