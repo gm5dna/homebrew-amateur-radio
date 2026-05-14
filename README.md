@@ -154,10 +154,6 @@ brew uninstall --cask --zap <name>
 
 **Other issues** — See [Homebrew docs](https://docs.brew.sh) or [open an issue](https://github.com/gm5dna/homebrew-amateur-radio/issues).
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add a formula or cask, update versions, or report issues.
-
 ## License
 
-This tap is open source. Individual packages maintain their own licenses—check each package's homepage for details.
+This tap's metadata is released under the MIT License. Individual packages maintain their own licenses—check each package's homepage for details.
