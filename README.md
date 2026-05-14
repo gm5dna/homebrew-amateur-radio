@@ -81,7 +81,7 @@ brew install --HEAD <name>
 |------|-------------|
 | [**aether**](https://www.aetherlog.com/) | Ham radio logger with rig control, awards tracking, and QSL management |
 | [**hamrs**](https://www.hamrs.app/) | Portable amateur radio logger for Parks on the Air, Field Day, and SOTA |
-| [**jlog**](https://jlog.org/) | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
+| [**jlog-amateur-radio**](https://jlog.org/) | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
 | [**netlogger**](https://www.netlogger.org/) | Amateur radio net logging and real-time net monitoring |
 | [**qlog**](https://github.com/aa5sh/QLog) | Amateur radio logbook with DX cluster, rig control, and online log integration |
 | [**rumlogng**](https://dl2rum.de/) | Amateur radio logger with QSL management and DX tracking |
