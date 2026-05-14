@@ -9,7 +9,7 @@ class Wsjtz < Formula
 
   livecheck do
     url "https://raw.githubusercontent.com/sq9fve/wsjt-z/master/CMakeLists.txt"
-    regex(/CPACK_PACKAGE_VERSION_Z\s+"(\d+(?:\.\d+)+)"/i)
+    regex(/VERSION_Z\s+"(\d+(?:\.\d+)+)"/i)
     strategy :page_match do |page, regex|
       z = page[regex, 1]
       z ? "3.0.0-#{z}" : nil
