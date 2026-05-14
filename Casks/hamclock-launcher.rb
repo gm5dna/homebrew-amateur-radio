@@ -24,6 +24,8 @@ cask "hamclock-launcher" do
     end
   end
 
+  depends_on :macos
+
   app "HamClockLauncher.app"
 
   zap trash: [

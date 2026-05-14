@@ -22,7 +22,7 @@ cask "js8call-improved" do
     regex(%r{release/(\d+(?:\.\d+)+)})
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "JS8Call.app", target: "JS8Call-improved.app"
 

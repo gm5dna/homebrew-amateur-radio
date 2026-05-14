@@ -11,6 +11,8 @@ cask "cocoamodem" do
     skip "No version information available on website"
   end
 
+  depends_on :macos
+
   app "cocoaModem 2.0.app"
 
   zap trash: [

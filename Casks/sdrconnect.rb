@@ -6,14 +6,14 @@ cask "sdrconnect" do
 
     url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_a4b8da76b.dmg"
 
-    depends_on macos: ">= :ventura"
+    depends_on macos: :ventura
   end
   on_intel do
     sha256 :no_check
 
     url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_a4b8da76b.dmg"
 
-    depends_on macos: ">= :catalina"
+    depends_on macos: :catalina
   end
 
   name "SDRconnect"

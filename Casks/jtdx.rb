@@ -24,6 +24,8 @@ cask "jtdx" do
     regex(/jtdx[._-]v?(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on :macos
+
   app "jtdx.app"
 
   zap trash: [

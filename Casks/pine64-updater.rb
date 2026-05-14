@@ -12,6 +12,8 @@ cask "pine64-updater" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "PINE64 Updater.app"
 
   zap trash: [

@@ -12,6 +12,8 @@ cask "cocoanec" do
     regex(/version\s*(\d+(?:\.\d+)+)/i)
   end
 
+  depends_on :macos
+
   app "cocoaNEC 2.0.app"
 
   zap trash: [

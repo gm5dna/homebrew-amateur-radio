@@ -89,7 +89,7 @@ jobs:
           for cask in Casks/*.rb; do
             cask_name=$(basename "$cask" .rb)
             echo "Auditing: $cask_name"
-            brew audit --cask "$cask_name" || echo "Warning: audit failed for $cask_name"
+            brew audit --cask "$cask_name"
           done
 
       - name: Run brew audit on all formulae
@@ -97,5 +97,5 @@ jobs:
           for formula in Formula/*.rb; do
             formula_name=$(basename "$formula" .rb)
             echo "Auditing: $formula_name"
-            brew audit --formula "$formula_name" || echo "Warning: audit failed for $formula_name"
+            brew audit --formula "$formula_name"
           done

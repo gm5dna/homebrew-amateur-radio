@@ -6,14 +6,14 @@ cask "jlog" do
 
     url "https://jlog.org/v#{version.major_minor}/jLog-#{version}-M.dmg"
 
-    depends_on macos: ">= :big_sur"
+    depends_on macos: :big_sur
   end
   on_intel do
     sha256 "48bfd867ac47b719e986617abb49fd889169ce58dc1baada484c6cbcfd14dc34"
 
     url "https://jlog.org/v#{version.major_minor}/jLog-#{version}.dmg"
 
-    depends_on macos: ">= :sierra"
+    depends_on macos: :sierra
   end
 
   name "jLog"

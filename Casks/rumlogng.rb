@@ -11,6 +11,8 @@ cask "rumlogng" do
     skip "No version information available on website"
   end
 
+  depends_on :macos
+
   app "RUMlogNG.app"
 
   zap trash: [
