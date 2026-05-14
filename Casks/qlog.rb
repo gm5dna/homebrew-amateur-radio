@@ -1,6 +1,6 @@
 cask "qlog" do
   version "0.50.0"
-  sha256 "257beddb971292b8acc984ad46fb19a5d5e207126a78d4aa7f5a627b4ffdbae0"
+  sha256 "7dbaad8f36751a826a558f90b11e4664b1a13bd6dabc209942bd12ebd309830b"
 
   url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog.v#{version}.dmg"
   name "QLog"
@@ -11,6 +11,8 @@ cask "qlog" do
     url :homepage
     strategy :github_latest
   end
+
+  depends_on macos: :sonoma
 
   app "QLog.app"
 
