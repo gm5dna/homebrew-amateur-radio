@@ -52,7 +52,6 @@ brew install --HEAD <name>
 | [**linbpq**](https://github.com/g8bpq/linbpq) | G8BPQ AX.25 packet switch (Linux/macOS port of BPQ32) |
 | [**nanovnasaver**](https://github.com/NanoVNA-Saver/nanovna-saver) | Tool for reading, displaying, and saving data from NanoVNA analysers |
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications |
-| [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem (UZ7HO QtSoundModem, macOS arm64 port) — `--HEAD` only |
 | [**qttermtcp**](https://github.com/g8bpq/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
 | [**samoyed**](https://github.com/doismellburning/samoyed) | Software modem/TNC for packet radio (Go port of Dire Wolf) — `--HEAD` only |
 | [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
@@ -70,6 +69,7 @@ brew install --HEAD <name>
 | [**js8call**](https://js8call.com/) | Weak-signal keyboard-to-keyboard messaging built on FT8 |
 | [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features |
 | [**jtdx**](https://www.jtdx.tech/) | FT8, JT65, JT9, and T10 digital modes software |
+| [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem (UZ7HO QtSoundModem, Apple Silicon port) |
 | [**wsjtx**](https://physics.princeton.edu/pulsar/k1jt/wsjtx.html) | Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes |
 | [**wsjtx-improved**](https://sourceforge.net/projects/wsjt-x-improved/) | Enhanced WSJT-X with additional features |
 | [**wsjtx-improved-alt**](https://sourceforge.net/projects/wsjt-x-improved/) | WSJT-X Improved with alternative layout |
