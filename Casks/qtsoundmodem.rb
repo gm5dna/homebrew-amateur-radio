@@ -1,6 +1,6 @@
 cask "qtsoundmodem" do
-  version "0.1.0"
-  sha256 "ba41c07811159834e7f971c6387ac403b283d6234950d45e6f2e56d35ccc611d"
+  version "0.1.1"
+  sha256 "a5f8cc8c7447267dd82f1ac7a3db0563b31fd8e922b89240c718ed696f6107e6"
 
   url "https://github.com/gm5dna/qtsoundmodem-macos-port/releases/download/mac-#{version}/QtSoundModem-mac-#{version}.dmg"
   name "QtSoundModem"
