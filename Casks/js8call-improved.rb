@@ -1,15 +1,15 @@
 cask "js8call-improved" do
-  version "2.5.2"
+  version "3.0.1"
 
   on_arm do
-    sha256 "9755fd3d37ba90e3f6733b510195ebb3d7aea378e150271db5bedcd25d0e6543"
+    sha256 "40df7438be667b5cfd07e76c923f77800c722851096367f6f9a4c79f1ec24e9e"
 
-    url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/release/#{version}/JS8Call_#{version}_AppleSilicon.dmg"
+    url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/v#{version}/JS8Call_#{version}_M1.dmg"
   end
   on_intel do
-    sha256 "f2c01822bf4f7d21e1dab2df7e5d43db4b61b21e4263012bf40cd1ff44574df1"
+    sha256 "a851f591085583f26ab9989e4177ebb41ca0619f5abac9159f37c907fc66cb00"
 
-    url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/release/#{version}/JS8Call_#{version}_Intel.dmg"
+    url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/v#{version}/JS8Call_#{version}_Intel.dmg"
   end
 
   name "JS8Call Improved"
@@ -19,7 +19,6 @@ cask "js8call-improved" do
   livecheck do
     url :homepage
     strategy :github_latest
-    regex(%r{release/(\d+(?:\.\d+)+)})
   end
 
   depends_on macos: :monterey
