@@ -1,12 +1,12 @@
 cask "wsjtx-improved" do
-  version "3.1.0,260418"
+  version "3.1.0,260522"
   sha256 :no_check
 
   on_arm do
-    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_M1.zip"
+    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_ARM.zip"
   end
   on_intel do
-    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}-Darwin.dmg"
+    url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_Darwin.dmg"
   end
 
   name "WSJT-X Improved"
@@ -15,7 +15,7 @@ cask "wsjtx-improved" do
 
   livecheck do
     url "https://sourceforge.net/projects/wsjt-x-improved/rss?path=/WSJT-X_v3.1.0/macOS"
-    regex(%r{/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved[._-]PLUS[._-](\d+(?:-\w+)?)[._-]M1}i)
+    regex(%r{/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved[._-]PLUS[._-](\d+(?:-\w+)?)[._-]ARM}i)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| "#{match[0]},#{match[1]}" }
     end
