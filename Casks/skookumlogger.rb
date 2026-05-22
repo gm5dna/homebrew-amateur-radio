@@ -12,7 +12,7 @@ cask "skookumlogger" do
     regex(/Beta\s+(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on :macos
+  depends_on macos: :big_sur
 
   app "SkookumLogger.app"
 

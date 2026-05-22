@@ -1,6 +1,10 @@
 cask "sdrconnect" do
   version "1.0.8"
 
+  # The download URLs embed an upstream build hash (..._a4b8da76b...) that is not
+  # derived from `version`; refresh both URLs by hand when bumping the version.
+  # `sha256 :no_check` is appropriate because the hashed URL is updated in place.
+
   on_arm do
     sha256 :no_check
 

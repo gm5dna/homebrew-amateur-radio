@@ -11,6 +11,8 @@ cask "cocoamodem" do
     skip "No version information available on website"
   end
 
+  disable! date: "2026-05-22", because: "is a 32-bit app unsupported on macOS Catalina (10.15) and later"
+
   depends_on :macos
 
   app "cocoaModem 2.0.app"

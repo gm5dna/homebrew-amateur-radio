@@ -1,13 +1,19 @@
 cask "wsjtx-improved-ws" do
   version "3.1.0,260522"
-  sha256 :no_check
 
   on_arm do
+    sha256 "62991461110086e0c83a7a305ec0aa213b626e4357e680ffdb5b5b5e1e6b75ff"
+
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_widescreen_PLUS_#{version.csv.second}_ARM.zip"
   end
   on_intel do
+    sha256 "babfd67e41c7b7e4bbb22c2ee124ab07eb52e634f7d3e2f03ff5ecf45e73efae"
+
     # Upstream typo: the widescreen Darwin DMG is published as "26052" (missing
     # the final digit of the 260522 build date); the correctly-named file 404s.
+    # TODO(2026-05-22): restore #{version.csv.second} interpolation once upstream
+    # corrects the filename — until then the Intel build number is intentionally
+    # decoupled from `version` and the livecheck only tracks the ARM artefact.
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_widescreen_PLUS_26052_Darwin.dmg"
   end
 
@@ -23,7 +29,7 @@ cask "wsjtx-improved-ws" do
     end
   end
 
-  depends_on macos: :monterey
+  depends_on macos: :big_sur
 
   app "wsjtx.app", target: "wsjtx-improved-ws.app"
 
