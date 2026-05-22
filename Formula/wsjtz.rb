@@ -71,11 +71,12 @@ class Wsjtz < Formula
   end
 
   def post_install
-    # Symlink to /Applications so it appears in Finder/Launchpad
+    # Symlink to /Applications so it appears in Finder/Launchpad.
+    # Only ever manage a symlink we created; never remove a real app
+    # the user already installed there.
     applications_app = Pathname("/Applications/wsjtz.app")
     applications_app.unlink if applications_app.symlink?
-    rm_r(applications_app) if applications_app.exist?
-    ln_s opt_prefix/"wsjtz.app", applications_app
+    ln_s opt_prefix/"wsjtz.app", applications_app unless applications_app.exist?
   rescue Errno::EPERM
     opoo "Could not symlink to /Applications (permission denied)."
     opoo "Run: sudo ln -s #{opt_prefix}/wsjtz.app /Applications/wsjtz.app"

@@ -13,7 +13,7 @@ cask "jlog-amateur-radio" do
 
     url "https://jlog.org/v#{version.major_minor}/jLog-#{version}.dmg"
 
-    depends_on macos: :sierra
+    depends_on macos: :catalina
   end
 
   name "jLog"

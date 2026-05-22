@@ -82,41 +82,29 @@ class Nanovnasaver < Formula
       exec "#{opt_libexec}/venv/bin/NanoVNASaver-gui" "$@"
     EOS
     chmod 0755, app/"Contents/MacOS/NanoVNASaver"
+  end
 
-    # Try to install to /Applications as well
-    begin
-      applications_app = Pathname("/Applications/NanoVNASaver.app")
-      if File.exist?("/Applications")
-        # Remove old version if it exists
-        rm_r(applications_app) if applications_app.exist?
-        # Copy to /Applications
-        cp_r(prefix/"NanoVNASaver.app", applications_app)
-      end
-    rescue Errno::EPERM
-      # Silently ignore permission errors - user can manually copy if needed
-    end
+  def post_install
+    # Symlink into /Applications so it appears in Finder/Launchpad.
+    # Only ever manage a symlink we created; never remove a real app
+    # the user already installed there.
+    applications_app = Pathname("/Applications/NanoVNASaver.app")
+    applications_app.unlink if applications_app.symlink?
+    ln_s opt_prefix/"NanoVNASaver.app", applications_app unless applications_app.exist?
+  rescue Errno::EPERM
+    opoo "Could not symlink to /Applications (permission denied)."
+    opoo "Run: sudo ln -s #{opt_prefix}/NanoVNASaver.app /Applications/NanoVNASaver.app"
   end
 
   def caveats
-    apps_installed = File.exist?("/Applications/NanoVNASaver.app")
-    if apps_installed
-      <<~EOS
-        NanoVNA Saver has been installed to /Applications/NanoVNASaver.app
-        and can be launched from Spotlight or the Applications folder.
+    <<~EOS
+      NanoVNA Saver is installed at:
+        #{opt_prefix}/NanoVNASaver.app
+      and symlinked to /Applications/NanoVNASaver.app when that location is
+      writable and no app of that name already exists there.
 
-        Ensure your NanoVNA device is connected via USB.
-      EOS
-    else
-      <<~EOS
-        NanoVNA Saver has been installed to:
-          #{opt_prefix}/NanoVNASaver.app
-
-        To install to /Applications, run:
-          cp -r #{opt_prefix}/NanoVNASaver.app /Applications/
-
-        Ensure your NanoVNA device is connected via USB.
-      EOS
-    end
+      Ensure your NanoVNA device is connected via USB.
+    EOS
   end
 
   test do
