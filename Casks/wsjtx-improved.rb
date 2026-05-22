@@ -1,11 +1,14 @@
 cask "wsjtx-improved" do
   version "3.1.0,260522"
-  sha256 :no_check
 
   on_arm do
+    sha256 "4a9cc4ea4fc9c401a4bfc08bae638a9d10d74028cf4d46a3627fb9d24e11cd9b"
+
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_ARM.zip"
   end
   on_intel do
+    sha256 "ce6cb1b443a42703ab4ceff9d325c15155485ebe0713033a8d121bf22ca24f0c"
+
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_Darwin.dmg"
   end
 
@@ -21,7 +24,7 @@ cask "wsjtx-improved" do
     end
   end
 
-  depends_on macos: :monterey
+  depends_on macos: :big_sur
 
   app "wsjtx.app", target: "wsjtx-improved.app"
 

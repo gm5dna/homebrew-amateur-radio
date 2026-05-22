@@ -13,13 +13,17 @@ cask "js8call" do
     strategy :github_latest
   end
 
-  depends_on :macos
+  depends_on macos: :monterey
 
   app "JS8Call.app"
 
   zap trash: [
     "~/Library/Application Support/JS8Call",
-    "~/Library/Preferences/com.js8call.plist",
-    "~/Library/Saved Application State/com.js8call.savedState",
+    "~/Library/Preferences/org.kn4crd.js8call.plist",
+    "~/Library/Saved Application State/org.kn4crd.js8call.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

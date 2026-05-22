@@ -1,7 +1,9 @@
 class Voacapl < Formula
   desc "HF propagation prediction engine (port of VOACAP)"
   homepage "https://github.com/jawatson/voacapl"
-  url "https://github.com/jawatson/voacapl.git", tag: "v0.7.7"
+  url "https://github.com/jawatson/voacapl.git",
+      tag:      "v0.7.7",
+      revision: "c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
   license "LGPL-2.1-or-later"
   head "https://github.com/jawatson/voacapl.git", branch: "master"
 

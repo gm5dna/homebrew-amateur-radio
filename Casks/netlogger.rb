@@ -21,4 +21,8 @@ cask "netlogger" do
     "~/Library/Preferences/org.netlogger.NetLogger.plist",
     "~/Library/Saved Application State/org.netlogger.NetLogger.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

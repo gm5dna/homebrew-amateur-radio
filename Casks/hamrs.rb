@@ -23,7 +23,7 @@ cask "hamrs" do
     regex(/hamrs[._-]pro[._-]v?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on :macos
+  depends_on macos: :big_sur
 
   app "HAMRS Pro.app"
 

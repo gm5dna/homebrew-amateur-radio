@@ -8,11 +8,13 @@ cask "ftdx10-cockpit" do
   homepage "https://w0xz.com/ftdx10/"
 
   livecheck do
-    skip "No version information available on website"
+    url "https://w0xz.com/v/ftdx10/"
+    regex(/v(\d+(?:\.\d+)+)/i)
+    strategy :page_match
   end
 
+  depends_on macos: :big_sur
   depends_on cask: "silicon-labs-vcp-driver"
-  depends_on :macos
 
   app "FTDX10 Cockpit.app"
 

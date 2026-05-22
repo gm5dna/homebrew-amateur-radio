@@ -21,4 +21,8 @@ cask "cocoanec" do
     "~/Library/Preferences/net.w7ay.cocoaNEC.plist",
     "~/Library/Saved Application State/net.w7ay.cocoaNEC.savedState",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

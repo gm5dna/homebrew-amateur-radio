@@ -24,7 +24,7 @@ cask "jtdx" do
     regex(/jtdx[._-]v?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on :macos
+  depends_on macos: :big_sur
 
   app "jtdx.app"
 
