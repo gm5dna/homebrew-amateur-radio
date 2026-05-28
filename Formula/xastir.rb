@@ -60,6 +60,6 @@ class Xastir < Formula
 
   test do
     assert_predicate bin/"xastir", :executable?
-    assert_match version.to_s, shell_output("#{bin}/xastir -V 2>&1", 1)
+    assert_match version.to_s, shell_output("#{bin}/xastir -V 2>&1")
   end
 end
