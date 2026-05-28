@@ -17,6 +17,9 @@ cask "wsjtx-improved-alt" do
   homepage "https://sourceforge.net/projects/wsjt-x-improved/"
 
   livecheck do
+    # Path is scoped to the current version directory (and macOS subdir) so the
+    # RSS feed reliably contains the macOS artefacts. Bump the path when upstream
+    # publishes a new WSJT-X_v<major> directory.
     url "https://sourceforge.net/projects/wsjt-x-improved/rss?path=/WSJT-X_v3.1.0/macOS"
     regex(%r{/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved[._-]AL[._-]PLUS[._-](\d+(?:-\w+)?)[._-]ARM}i)
     strategy :page_match do |page, regex|
@@ -30,8 +33,8 @@ cask "wsjtx-improved-alt" do
 
   zap trash: [
     "~/Library/Application Support/WSJT-X",
-    "~/Library/Preferences/wsjtx.plist",
-    "~/Library/Saved Application State/wsjtx.savedState",
+    "~/Library/Preferences/F6VY59P28F.org.ko3f.wsjtx.plist",
+    "~/Library/Saved Application State/F6VY59P28F.org.ko3f.wsjtx.savedState",
   ]
 
   caveats <<~EOS

@@ -33,8 +33,8 @@ cask "wsjtx" do
 
   zap trash: [
     "~/Library/Application Support/WSJT-X",
-    "~/Library/Preferences/org.wsjtx.WSJTX.plist",
-    "~/Library/Saved Application State/org.wsjtx.WSJTX.savedState",
+    "~/Library/Preferences/org.k1jt.wsjtx.plist",
+    "~/Library/Saved Application State/org.k1jt.wsjtx.savedState",
   ]
 
   caveats <<~EOS
