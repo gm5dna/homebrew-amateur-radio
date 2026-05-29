@@ -35,9 +35,23 @@ jobs:
         run: |
           echo "Running livecheck..."
 
-          # Run livecheck, keeping stdout (updates) separate from stderr (errors)
-          # Pipe through sed to strip ANSI color codes so downstream parsing works
-          LIVECHECK_OUTPUT=$(brew livecheck --tap gm5dna/amateur-radio --newer-only 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g') || true
+          # Run livecheck, capturing stdout and stderr to files so a total
+          # failure (network outage, broken tap) is surfaced instead of being
+          # silently treated as "no updates". Capture the exit code directly
+          # (no pipe) so it reflects brew livecheck rather than a downstream
+          # filter, and so it cannot interact with the shell's pipefail option.
+          LIVECHECK_RC=0
+          brew livecheck --tap gm5dna/amateur-radio --newer-only >livecheck.out 2>livecheck.err || LIVECHECK_RC=$?
+
+          # Strip ANSI colour codes so downstream parsing works.
+          LIVECHECK_OUTPUT=$(sed 's/\x1b\[[0-9;]*m//g' livecheck.out)
+
+          # A non-zero exit with no parsed output means livecheck itself failed
+          # (as opposed to individual flaky casks while others succeeded).
+          if [ "$LIVECHECK_RC" -ne 0 ] && [ -z "$LIVECHECK_OUTPUT" ]; then
+            echo "::warning::brew livecheck exited ${LIVECHECK_RC} with no output; treating as a failed run:"
+            cat livecheck.err
+          fi
 
           echo "Livecheck output:"
           echo "$LIVECHECK_OUTPUT"
@@ -50,7 +64,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
           # Check if any lines contain "==>" indicating an actual version update
-          if echo "$LIVECHECK_OUTPUT" | grep -q "==>"; then
+          if grep -q "==>" <<<"$LIVECHECK_OUTPUT"; then
             echo "has_updates=true" >> "$GITHUB_OUTPUT"
           else
             echo "has_updates=false" >> "$GITHUB_OUTPUT"

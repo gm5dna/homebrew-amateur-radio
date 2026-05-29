@@ -36,12 +36,6 @@ Homebrew chooses formula or cask automatically when the name is unambiguous. If 
 brew install gm5dna/amateur-radio/wsjtx
 ```
 
-A few formulae are marked **`--HEAD` only** in the table below — these track upstream's main branch because there's no stable release tagged yet. Install them with:
-
-```bash
-brew install --HEAD <name>
-```
-
 ## Available Software
 
 ### Formulae
@@ -53,7 +47,7 @@ brew install --HEAD <name>
 | [**nanovnasaver**](https://github.com/NanoVNA-Saver/nanovna-saver) | Tool for reading, displaying, and saving data from NanoVNA analysers |
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications |
 | [**qttermtcp**](https://github.com/g8bpq/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
-| [**samoyed**](https://github.com/doismellburning/samoyed) | Software modem/TNC for packet radio (Go port of Dire Wolf) — `--HEAD` only |
+| [**samoyed**](https://github.com/doismellburning/samoyed) | Software modem/TNC for packet radio (Go port of Dire Wolf) |
 | [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
 | [**wsjtz**](https://github.com/sq9fve/wsjt-z) | Weak-signal digital communication with automation features |
 | [**xastir**](https://github.com/Xastir/Xastir) | APRS client with mapping and weather alert support |
