@@ -13,7 +13,7 @@ cask "ftdx10-cockpit" do
     strategy :page_match
   end
 
-  depends_on macos: :big_sur
+  depends_on macos: :monterey
   depends_on cask: "silicon-labs-vcp-driver"
 
   app "FTDX10 Cockpit.app"
