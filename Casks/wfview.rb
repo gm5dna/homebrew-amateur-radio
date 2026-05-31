@@ -1,6 +1,6 @@
 cask "wfview" do
-  version "2.22,1788"
-  sha256 "68f5ecc8ffe7eecf426397d67086bb256be1981ccff05880a914bcfd272b1f2e"
+  version "2.23,1811"
+  sha256 "06f50a6af27c6af049150b2b1fc015623953721309019a1f8aace0d7c7efff70"
 
   url "https://wfview.org/download/macos-universal-v#{version.csv.first.dots_to_hyphens}/?wpdmdl=#{version.csv.second}"
   name "wfview"
