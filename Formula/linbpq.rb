@@ -4,9 +4,9 @@ class Linbpq < Formula
   # Upstream has no tags or releases; pin to a specific commit. Bump the URL,
   # sha256 and version together when reviewing — the version is taken from
   # KVerstring in Versions.h.
-  url "https://github.com/g8bpq/linbpq/archive/d84bcdac5cb321ff912741f8a66948030e885544.tar.gz"
-  version "6.0.25.28"
-  sha256 "99e8305e39fffc34767598a60456c771a358081aa1b6ec7785027cff1e24c661"
+  url "https://github.com/g8bpq/linbpq/archive/45dc77a4e18c41ce91f844f1ce6ccd0a5fc44fb8.tar.gz"
+  version "6.0.25.30"
+  sha256 "1b765542abb33523479dcf21589f56da9e29516e4c100f2884a287c8257f6cc4"
   license :cannot_represent
 
   livecheck do
