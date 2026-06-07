@@ -2,14 +2,14 @@ cask "skookumlogger" do
   version "5.5"
   sha256 :no_check
 
-  url "https://www.k1gq.net/SkookumLoggerDownloads/SkookumLoggerLatestBeta.zip"
+  url "https://www.k1gq.net/SkookumLoggerDownloads/SkookumLoggerRelease.zip"
   name "SkookumLogger"
   desc "Contest logging software by K1GQ"
   homepage "https://www.k1gq.net/SkookumLogger/"
 
   livecheck do
     url "https://www.k1gq.net/SkookumLoggerDownloads/"
-    regex(/Beta\s+(\d+(?:\.\d+)+)/i)
+    regex(/Release\s+(\d+(?:\.\d+)+)/i)
   end
 
   depends_on macos: :big_sur
