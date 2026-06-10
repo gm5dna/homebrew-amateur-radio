@@ -17,8 +17,7 @@ class Cloudlogcatqt < Formula
   depends_on "qt@5"
 
   def install
-    # Silence SDK version warning
-    ENV["QMAKE_MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
+    # CONFIG+=sdk_no_version_check silences the SDK version warning
     system Formula["qt@5"].opt_bin/"qmake", "CONFIG+=sdk_no_version_check", "CloudLogCatQt.pro"
     system "make"
 
@@ -28,10 +27,12 @@ class Cloudlogcatqt < Formula
 
   def post_install
     # Symlink into /Applications so it appears in Finder/Launchpad.
-    # Only ever manage a symlink we created; never remove a real app
-    # the user already installed there.
+    # Only ever manage a symlink we created (one pointing into the Homebrew
+    # prefix); never remove a real app or a symlink the user made themselves.
     applications_app = Pathname("/Applications/CloudLogCatQt.app")
-    applications_app.unlink if applications_app.symlink?
+    if applications_app.symlink? && applications_app.readlink.to_s.start_with?(HOMEBREW_PREFIX.to_s)
+      applications_app.unlink
+    end
     ln_s opt_prefix/"CloudLogCatQt.app", applications_app unless applications_app.exist?
   rescue Errno::EPERM
     opoo "Could not symlink to /Applications (permission denied)."
