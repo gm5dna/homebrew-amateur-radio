@@ -15,7 +15,8 @@ cask "wfview" do
     end
   end
 
-  depends_on macos: :monterey
+  # Upstream's download page states the v2 universal binary needs macOS 13+.
+  depends_on macos: :ventura
 
   app "wfview.app"
 
