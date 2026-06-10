@@ -25,16 +25,16 @@ cask "js8call-improved" do
 
   app "JS8Call.app", target: "JS8Call-improved.app"
 
-  zap trash: [
-    "~/Library/Application Support/JS8Call",
-    "~/Library/Preferences/JS8Call.ini",
-    "~/Library/Saved Application State/JS8Call.savedState",
-  ]
+  # No zap stanza: the app uses the same bundle id (org.kn4crd.js8call) and
+  # configuration paths as the base js8call cask, so zapping this cask would
+  # destroy the official app's settings. `brew uninstall --zap js8call`
+  # removes the shared data.
 
   caveats <<~EOS
-    JS8Call-improved uses Qt 6.9.3 with FFmpeg audio backend.
-
-    On macOS, ensure you have the latest security updates installed.
+    JS8Call-improved shares its configuration
+    (~/Library/Application Support/JS8Call and JS8Call.ini) with JS8Call,
+    and it is left in place on uninstall; "brew uninstall --zap js8call"
+    removes it.
 
     Settings from JS8Call v2.3.x are compatible, but v2.2.x settings
     may cause issues. Back up your JS8Call.ini before upgrading.
