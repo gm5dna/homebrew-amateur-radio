@@ -7,12 +7,13 @@ on:
   workflow_dispatch:
     inputs:
       create_issues:
-        description: 'Create issues for outdated casks'
+        description: 'Create issues for outdated packages'
         required: false
         default: 'true'
         type: boolean
 
 permissions:
+  contents: read
   issues: write
 
 jobs:
@@ -28,9 +29,9 @@ jobs:
       - name: Tap this repository
         run: |
           mkdir -p "$(brew --repository)/Library/Taps/gm5dna"
-          ln -sf "$(pwd)" "$(brew --repository)/Library/Taps/gm5dna/homebrew-amateur-radio"
+          ln -sfn "$(pwd)" "$(brew --repository)/Library/Taps/gm5dna/homebrew-amateur-radio"
 
-      - name: Run livecheck on all casks
+      - name: Run livecheck on the tap
         id: livecheck
         run: |
           echo "Running livecheck..."
@@ -70,52 +71,60 @@ jobs:
             echo "has_updates=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create issues for outdated casks
+      - name: Create issues for outdated packages
         if: steps.livecheck.outputs.has_updates == 'true' && (github.event_name == 'schedule' || github.event.inputs.create_issues == 'true')
         uses: actions/github-script@v9
+        env:
+          # Passed via env rather than interpolated into the script: livecheck
+          # output contains version strings scraped from third-party sites, so
+          # it must be treated as untrusted data, never as code.
+          LIVECHECK_OUTPUT: ${{ steps.livecheck.outputs.output }}
         with:
           script: |
-            const output = `${{ steps.livecheck.outputs.output }}`;
+            const output = process.env.LIVECHECK_OUTPUT;
             const lines = output.split('\n').filter(line => line.includes('==>'));
 
+            // Fetch all open update issues once, with pagination.
+            const existingIssues = await github.paginate(github.rest.issues.listForRepo, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'update'
+            });
+
             for (const line of lines) {
-              // Parse: "cask-name: current ==> new"
+              // Parse: "package-name: current ==> new"
               const match = line.match(/^([^:]+):\s*([^\s]+)\s*==>\s*([^\s]+)/);
               if (!match) continue;
 
-              const [, caskName, currentVersion, newVersion] = match;
-              const issueTitle = `Update ${caskName} to ${newVersion}`;
+              const [, packageName, currentVersion, newVersion] = match;
+              const issueTitle = `Update ${packageName} to ${newVersion}`;
 
-              // Check if issue already exists
-              const existingIssues = await github.rest.issues.listForRepo({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                state: 'open',
-                labels: 'update'
-              });
-
-              const issueExists = existingIssues.data.some(issue =>
-                issue.title.includes(caskName) && issue.title.includes(newVersion)
-              );
+              // Exact title match so e.g. an open wsjtx-improved issue cannot
+              // suppress a wsjtx issue for the same version.
+              const issueExists = existingIssues.some(issue => issue.title === issueTitle);
 
               if (!issueExists) {
                 await github.rest.issues.create({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   title: issueTitle,
-                  body: `A new version of **${caskName}** is available.\n\n- Current version: \`${currentVersion}\`\n- New version: \`${newVersion}\`\n\nDetected by automated livecheck.`,
+                  body: `A new version of **${packageName}** is available.\n\n- Current version: \`${currentVersion}\`\n- New version: \`${newVersion}\`\n\nDetected by automated livecheck.`,
                   labels: ['update']
                 });
                 console.log(`Created issue: ${issueTitle}`);
               } else {
-                console.log(`Issue already exists for ${caskName} ${newVersion}`);
+                console.log(`Issue already exists for ${packageName} ${newVersion}`);
               }
             }
 
       - name: Summary
+        env:
+          # env indirection, not ${{ }} interpolation into the script: the
+          # livecheck output is untrusted third-party data.
+          HAS_UPDATES: ${{ steps.livecheck.outputs.has_updates }}
+          LIVECHECK_OUTPUT: ${{ steps.livecheck.outputs.output }}
         run: |
-          HAS_UPDATES="${{ steps.livecheck.outputs.has_updates }}"
-          LIVECHECK_OUTPUT="${{ steps.livecheck.outputs.output }}"
           {
             echo "## Livecheck Results"
             echo ""
@@ -125,6 +134,6 @@ jobs:
               echo "$LIVECHECK_OUTPUT"
               echo '```'
             else
-              echo "All casks are up to date."
+              echo "All packages are up to date."
             fi
           } >> "$GITHUB_STEP_SUMMARY"
