@@ -44,7 +44,8 @@ class Linbpq < Formula
   end
 
   test do
-    output = shell_output("#{bin}/linbpq --help | head -1")
-    assert_match "G8BPQ AX25 Packet Switch", output
+    # .scrub: the help text contains a Latin-1 copyright byte that is not
+    # valid UTF-8 and would crash assert_match.
+    assert_match "G8BPQ AX25 Packet Switch", shell_output("#{bin}/linbpq --help").scrub
   end
 end
