@@ -21,8 +21,13 @@ cask "sdrplusplus-brown" do
 
   app "SDR++Brown.app"
 
-  zap trash: [
-    "~/Library/Application Support/sdrpp",
-    "~/Library/Preferences/sdrpp.plist",
-  ]
+  # No zap stanza: SDR++ Brown uses the same configuration paths
+  # (~/Library/Application Support/sdrpp) as the sdrplusplus cask, so zapping
+  # this cask would destroy SDR++'s settings too.
+
+  caveats <<~EOS
+    SDR++ Brown shares its configuration directory
+    (~/Library/Application Support/sdrpp) with SDR++, and it is left in
+    place on uninstall; "brew uninstall --zap sdrplusplus" removes it.
+  EOS
 end
