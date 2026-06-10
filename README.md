@@ -58,13 +58,13 @@ brew install gm5dna/amateur-radio/wsjtx
 
 | Name | Description |
 |------|-------------|
-| [**cocoamodem**](https://www.w7ay.net/site/Applications/cocoaModem/) | Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes |
+| [**cocoamodem**](https://www.w7ay.net/site/Applications/cocoaModem/) | Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes — *disabled: 32-bit app, unsupported on macOS 10.15 and later* |
 | [**freedv**](https://freedv.org/) | Open-source HF digital voice modem and GUI |
-| [**js8call**](https://js8call.com/) | Weak-signal keyboard-to-keyboard messaging built on FT8 |
+| [**js8call**](https://github.com/js8call/js8call) | Weak-signal keyboard-to-keyboard messaging built on FT8 |
 | [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features |
-| [**jtdx**](https://www.jtdx.tech/) | FT8, JT65, JT9, and T10 digital modes software |
+| [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
 | [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem (UZ7HO QtSoundModem, Apple Silicon port) |
-| [**wsjtx**](https://physics.princeton.edu/pulsar/k1jt/wsjtx.html) | Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes |
+| [**wsjtx**](https://wsjt.sourceforge.io/wsjtx.html) | Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes |
 | [**wsjtx-improved**](https://sourceforge.net/projects/wsjt-x-improved/) | Enhanced WSJT-X with additional features |
 | [**wsjtx-improved-alt**](https://sourceforge.net/projects/wsjt-x-improved/) | WSJT-X Improved with alternative layout |
 | [**wsjtx-improved-ws**](https://sourceforge.net/projects/wsjt-x-improved/) | WSJT-X Improved with widescreen layout |
