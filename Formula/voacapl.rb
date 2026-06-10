@@ -4,7 +4,10 @@ class Voacapl < Formula
   url "https://github.com/jawatson/voacapl.git",
       tag:      "v0.7.7",
       revision: "c12a98b348c39f36f2659b8b3aa97b86284c8a1d"
-  license "LGPL-2.1-or-later"
+  # Upstream LICENSE: two Fortran utilities (dst2csv/dst2ascii) are GPL-3.0;
+  # the rest is an ITS/VOACAP US-government "not subject to copyright" notice
+  # with conditions, which has no SPDX identifier.
+  license :cannot_represent
   head "https://github.com/jawatson/voacapl.git", branch: "master"
 
   livecheck do
