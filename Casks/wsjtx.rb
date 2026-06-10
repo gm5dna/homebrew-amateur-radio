@@ -20,7 +20,7 @@ cask "wsjtx" do
 
   name "WSJT-X"
   desc "Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes"
-  homepage "https://physics.princeton.edu/pulsar/k1jt/wsjtx.html"
+  homepage "https://wsjt.sourceforge.io/wsjtx.html"
 
   livecheck do
     url "https://sourceforge.net/projects/wsjt/files/wsjtx/"
