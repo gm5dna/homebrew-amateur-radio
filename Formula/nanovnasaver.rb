@@ -49,7 +49,7 @@ class Nanovnasaver < Formula
     system venv_python, "-m", "tools.ui_compile"
     system venv_python, "-m", "pip", "install",
            "--disable-pip-version-check", "--no-deps", "--no-build-isolation", "."
-    rm Dir[venv/"lib/python3.12/site-packages/PySide6/Qt/plugins/sqldrivers/libqsql{mimer,odbc,psql}.dylib"]
+    rm Dir[venv/"lib/python*/site-packages/PySide6/Qt/plugins/sqldrivers/libqsql{mimer,odbc,psql}.dylib"]
 
     bin.install_symlink venv/"bin/NanoVNASaver" => "nanovnasaver"
 
@@ -86,10 +86,12 @@ class Nanovnasaver < Formula
 
   def post_install
     # Symlink into /Applications so it appears in Finder/Launchpad.
-    # Only ever manage a symlink we created; never remove a real app
-    # the user already installed there.
+    # Only ever manage a symlink we created (one pointing into the Homebrew
+    # prefix); never remove a real app or a symlink the user made themselves.
     applications_app = Pathname("/Applications/NanoVNASaver.app")
-    applications_app.unlink if applications_app.symlink?
+    if applications_app.symlink? && applications_app.readlink.to_s.start_with?(HOMEBREW_PREFIX.to_s)
+      applications_app.unlink
+    end
     ln_s opt_prefix/"NanoVNASaver.app", applications_app unless applications_app.exist?
   rescue Errno::EPERM
     opoo "Could not symlink to /Applications (permission denied)."

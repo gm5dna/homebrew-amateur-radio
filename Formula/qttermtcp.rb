@@ -23,7 +23,6 @@ class Qttermtcp < Formula
   end
 
   def install
-    ENV["QMAKE_MACOSX_DEPLOYMENT_TARGET"] = MacOS.version.to_s
     # Upstream ships build artefacts (stale .qmake.stash, Makefile, *.o, and a
     # prebuilt QtTermTCP.app skeleton with an empty CFBundleIconFile) in the
     # master tarball. Remove them so qmake regenerates against the current SDK
