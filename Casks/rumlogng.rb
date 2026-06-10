@@ -1,5 +1,7 @@
 cask "rumlogng" do
-  version "6.4"
+  # Unversioned in-place download with no version signal on the website, so
+  # the cask cannot track a meaningful version number.
+  version :latest
   sha256 :no_check
 
   url "https://dl2rum.de/RUMlogNG/RUMlogNG.zip"
