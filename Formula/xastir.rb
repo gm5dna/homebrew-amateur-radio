@@ -14,25 +14,24 @@ class Xastir < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "berkeley-db"
-  depends_on "curl"
   depends_on "graphicsmagick"
   depends_on "libgeotiff"
+  depends_on "libx11"
   depends_on "libxpm"
+  depends_on "libxt"
   depends_on "openmotif"
   depends_on "pcre2"
   depends_on "proj"
   depends_on "shapelib"
 
+  uses_from_macos "curl"
+
   def install
     system "./bootstrap.sh"
 
-    inc_dirs = %w[openmotif libgeotiff libxpm pcre2 shapelib graphicsmagick proj berkeley-db curl].map do |dep|
-      "-I#{Formula[dep].opt_include}"
-    end.join(" ")
-
-    lib_dirs = %w[openmotif libgeotiff libxpm pcre2 shapelib graphicsmagick proj berkeley-db curl].map do |dep|
-      "-L#{Formula[dep].opt_lib}"
-    end.join(" ")
+    deps = %w[openmotif libgeotiff libx11 libxpm libxt pcre2 shapelib graphicsmagick proj berkeley-db]
+    inc_dirs = deps.map { |dep| "-I#{Formula[dep].opt_include}" }.join(" ")
+    lib_dirs = deps.map { |dep| "-L#{Formula[dep].opt_lib}" }.join(" ")
 
     mkdir "build" do
       system "../configure",
