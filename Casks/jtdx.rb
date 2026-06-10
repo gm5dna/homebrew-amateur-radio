@@ -4,19 +4,18 @@ cask "jtdx" do
   on_arm do
     sha256 "6b96a6b91a06f9f2b0ec100f2b5c1c3e00b944f60be1a80dd11dfb823bd29ca7"
 
-    url "https://downloads.sourceforge.net/jtdx/jtdx_#{version}/Apple%20Mac/16-bit_audio/jtdx-#{version}-Darwin-arm64.dmg",
-        verified: "downloads.sourceforge.net/jtdx/"
+    url "https://downloads.sourceforge.net/jtdx/jtdx_#{version}/Apple%20Mac/16-bit_audio/jtdx-#{version}-Darwin-arm64.dmg"
   end
   on_intel do
     sha256 "5d05898a11488706c8336e0f0509781d0e70dd187ce30725df4b6a06ff1aaeb6"
 
-    url "https://downloads.sourceforge.net/jtdx/jtdx_#{version}/Apple%20Mac/16-bit_audio/jtdx-#{version}-Darwin-x86_64.dmg",
-        verified: "downloads.sourceforge.net/jtdx/"
+    url "https://downloads.sourceforge.net/jtdx/jtdx_#{version}/Apple%20Mac/16-bit_audio/jtdx-#{version}-Darwin-x86_64.dmg"
   end
 
   name "JTDX"
   desc "Amateur radio digital modes software for FT8, JT65, JT9, and T10"
-  homepage "https://www.jtdx.tech/"
+  # jtdx.tech (the former project site) is now a parked domain for sale.
+  homepage "https://sourceforge.net/projects/jtdx/"
 
   livecheck do
     url "https://sourceforge.net/projects/jtdx/files/"
