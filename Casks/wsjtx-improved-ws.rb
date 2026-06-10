@@ -22,10 +22,10 @@ cask "wsjtx-improved-ws" do
   homepage "https://sourceforge.net/projects/wsjt-x-improved/"
 
   livecheck do
-    # Path is scoped to the current version directory (and macOS subdir) so the
-    # RSS feed reliably contains the macOS artefacts. Bump the path when upstream
-    # publishes a new WSJT-X_v<major> directory.
-    url "https://sourceforge.net/projects/wsjt-x-improved/rss?path=/WSJT-X_v3.1.0/macOS"
+    # Project-wide feed (the ~100 most recent files) so new WSJT-X_v<version>
+    # directories are picked up automatically; the regex narrows the matches
+    # to this variant's macOS ARM artefact.
+    url "https://sourceforge.net/projects/wsjt-x-improved/rss?path=/"
     regex(%r{/wsjtx[._-]v?(\d+(?:\.\d+)+)[._-]improved[._-]widescreen[._-]PLUS[._-](\d+(?:-\w+)?)[._-]ARM}i)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| "#{match[0]},#{match[1]}" }
@@ -36,8 +36,10 @@ cask "wsjtx-improved-ws" do
 
   app "wsjtx.app", target: "wsjtx-improved-ws.app"
 
+  # ~/Library/Application Support/WSJT-X is intentionally not zapped: it is
+  # shared with the official WSJT-X cask (zap that cask to remove it). The
+  # paths below are shared between the wsjtx-improved* variants only.
   zap trash: [
-    "~/Library/Application Support/WSJT-X",
     "~/Library/Preferences/F6VY59P28F.org.ko3f.wsjtx.plist",
     "~/Library/Saved Application State/F6VY59P28F.org.ko3f.wsjtx.savedState",
   ]
