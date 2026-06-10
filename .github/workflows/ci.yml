@@ -6,14 +6,21 @@ on:
     paths:
       - 'Casks/**'
       - 'Formula/**'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/**'
   pull_request:
     branches: [main]
     paths:
       - 'Casks/**'
       - 'Formula/**'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/**'
   workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   audit:
@@ -28,61 +35,12 @@ jobs:
       - name: Tap this repository
         run: |
           mkdir -p "$(brew --repository)/Library/Taps/gm5dna"
-          ln -sf "$(pwd)" "$(brew --repository)/Library/Taps/gm5dna/homebrew-amateur-radio"
+          ln -sfn "$(pwd)" "$(brew --repository)/Library/Taps/gm5dna/homebrew-amateur-radio"
 
-      - name: Get changed files
-        id: changed-files
-        uses: tj-actions/changed-files@v47
-        with:
-          files: |
-            Casks/**
-            Formula/**
-
-      - name: Run brew style on changed files
-        if: steps.changed-files.outputs.any_changed == 'true'
-        run: |
-          echo "Changed files: ${{ steps.changed-files.outputs.all_changed_files }}"
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "Checking style: $file"
-            brew style "$file"
-          done
-
-      - name: Run brew audit on changed casks
-        if: steps.changed-files.outputs.any_changed == 'true'
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [[ "$file" == Casks/* ]]; then
-              cask_name=$(basename "$file" .rb)
-              echo "Auditing cask: $cask_name"
-              brew audit --cask "$cask_name"
-            fi
-          done
-
-      - name: Run brew audit on changed formulae
-        if: steps.changed-files.outputs.any_changed == 'true'
-        run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            if [[ "$file" == Formula/* ]]; then
-              formula_name=$(basename "$file" .rb)
-              echo "Auditing formula: $formula_name"
-              brew audit --formula "$formula_name"
-            fi
-          done
-
-  audit-all:
-    runs-on: macos-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@main
-
-      - name: Tap this repository
-        run: |
-          mkdir -p "$(brew --repository)/Library/Taps/gm5dna"
-          ln -sf "$(pwd)" "$(brew --repository)/Library/Taps/gm5dna/homebrew-amateur-radio"
+      # The tap is small enough that checking everything on every run is
+      # cheaper and safer than computing changed files from PR input.
+      - name: Run brew style
+        run: brew style gm5dna/amateur-radio
 
       - name: Run brew audit on all casks
         run: |
