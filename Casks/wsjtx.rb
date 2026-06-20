@@ -4,14 +4,16 @@ cask "wsjtx" do
   on_arm do
     sha256 "1b7eff83de7ded13c75b8e65f1eab75a6143d6ecb94c140e4764933b210b23bb"
 
-    url "https://github.com/WSJTX/wsjtx/releases/download/v#{version}/wsjtx-#{version}-arm64-macOS.pkg"
+    url "https://github.com/WSJTX/wsjtx/releases/download/v#{version}/wsjtx-#{version}-arm64-macOS.pkg",
+        verified: "github.com/WSJTX/wsjtx/"
 
     pkg "wsjtx-#{version}-arm64-macOS.pkg"
   end
   on_intel do
     sha256 "4eb4e0ff9687d78129f847c7d93e926fd65b8351eebae8c9f62521d6cb72f3f9"
 
-    url "https://github.com/WSJTX/wsjtx/releases/download/v#{version}/wsjtx-#{version}-x86_64-macOS.pkg"
+    url "https://github.com/WSJTX/wsjtx/releases/download/v#{version}/wsjtx-#{version}-x86_64-macOS.pkg",
+        verified: "github.com/WSJTX/wsjtx/"
 
     pkg "wsjtx-#{version}-x86_64-macOS.pkg"
   end
