@@ -1,19 +1,17 @@
 cask "wsjtx" do
-  version "3.0.1"
+  version "3.0.2"
 
   on_arm do
-    sha256 "31cf41da282148490d442e33bc8f377886ab3184df55fb70d1776e1ad761166e"
+    sha256 "1b7eff83de7ded13c75b8e65f1eab75a6143d6ecb94c140e4764933b210b23bb"
 
-    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-arm64-macOS.pkg",
-        verified: "downloads.sourceforge.net/wsjt/"
+    url "https://github.com/WSJTX/wsjtx/releases/download/v#{version}/wsjtx-#{version}-arm64-macOS.pkg"
 
     pkg "wsjtx-#{version}-arm64-macOS.pkg"
   end
   on_intel do
-    sha256 "177ad99dc74df2325ee67eaff4f4777c4924dfc4f5726ef208d631e842d528bb"
+    sha256 "4eb4e0ff9687d78129f847c7d93e926fd65b8351eebae8c9f62521d6cb72f3f9"
 
-    url "https://downloads.sourceforge.net/wsjt/wsjtx-#{version}/wsjtx-#{version}-x86_64-macOS.pkg",
-        verified: "downloads.sourceforge.net/wsjt/"
+    url "https://github.com/WSJTX/wsjtx/releases/download/v#{version}/wsjtx-#{version}-x86_64-macOS.pkg"
 
     pkg "wsjtx-#{version}-x86_64-macOS.pkg"
   end
@@ -23,9 +21,8 @@ cask "wsjtx" do
   homepage "https://wsjt.sourceforge.io/wsjtx.html"
 
   livecheck do
-    url "https://sourceforge.net/projects/wsjt/files/wsjtx/"
-    regex(%r{href=.*?/wsjtx[._-]v?(\d+(?:\.\d+)+)/?["' >]}i)
-    strategy :page_match
+    url "https://github.com/WSJTX/wsjtx"
+    strategy :github_latest
   end
 
   uninstall quit:    "org.k1jt.wsjtx",
