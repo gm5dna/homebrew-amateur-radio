@@ -1,14 +1,14 @@
 cask "hamrs" do
-  version "2.50.0"
+  version "2.51.0"
 
   on_arm do
-    sha256 "6d1f269f31a17cec442866624a4ce00faeec32544bc96aa8baa835ed5df7504f"
+    sha256 "823ce561962bb71d1ae235de05d8d0683c3240ffa331033beb70c42e82d1eeb8"
 
     url "https://hamrs-dist.s3.amazonaws.com/hamrs-pro-#{version}-mac-arm64.dmg",
         verified: "hamrs-dist.s3.amazonaws.com"
   end
   on_intel do
-    sha256 "f8238f12245a78fb8b5c6861c31141e40154865a7e5bab6a0bdb31c7e7b36df0"
+    sha256 "07b2d1f70940f2c989081c144ef340999282d7e60c4f50a26659c89c52479b94"
 
     url "https://hamrs-dist.s3.amazonaws.com/hamrs-pro-#{version}-mac-x64.dmg",
         verified: "hamrs-dist.s3.amazonaws.com"
