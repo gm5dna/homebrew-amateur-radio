@@ -36,7 +36,7 @@ class Qttermtcp < Formula
     resource("icns").stage { cp "QtTermTCP.icns", buildpath/"QtTermTCP.icns" }
     inreplace "QtTermTCP.pro", "ICONS = QtTermTCP.icns", "ICON = QtTermTCP.icns"
 
-    system Formula["qt@5"].opt_bin/"qmake", "CONFIG+=sdk_no_version_check", "QtTermTCP.pro"
+    system formula_opt_bin("qt@5")/"qmake", "CONFIG+=sdk_no_version_check", "QtTermTCP.pro"
     system "make"
     prefix.install "QtTermTCP.app"
   end

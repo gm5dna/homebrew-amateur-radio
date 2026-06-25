@@ -31,13 +31,13 @@ class Xastir < Formula
 
     deps = %w[openmotif libgeotiff libx11 libxpm libxt pcre2 shapelib graphicsmagick proj berkeley-db]
     inc_dirs = deps.map { |dep| "-I#{Formula[dep].opt_include}" }.join(" ")
-    lib_dirs = deps.map { |dep| "-L#{Formula[dep].opt_lib}" }.join(" ")
+    lib_dirs = deps.map { |dep| "-L#{formula_opt_lib(dep)}" }.join(" ")
 
     mkdir "build" do
       system "../configure",
              "--prefix=#{prefix}",
              "--with-bdb-incdir=#{Formula["berkeley-db"].opt_include}",
-             "--with-bdb-libdir=#{Formula["berkeley-db"].opt_lib}",
+             "--with-bdb-libdir=#{formula_opt_lib("berkeley-db")}",
              "CPPFLAGS=#{inc_dirs}",
              "LDFLAGS=#{lib_dirs}"
       system "make", "-j#{ENV.make_jobs}"
