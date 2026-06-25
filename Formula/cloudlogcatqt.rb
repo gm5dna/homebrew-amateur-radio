@@ -18,7 +18,7 @@ class Cloudlogcatqt < Formula
 
   def install
     # CONFIG+=sdk_no_version_check silences the SDK version warning
-    system Formula["qt@5"].opt_bin/"qmake", "CONFIG+=sdk_no_version_check", "CloudLogCatQt.pro"
+    system formula_opt_bin("qt@5")/"qmake", "CONFIG+=sdk_no_version_check", "CloudLogCatQt.pro"
     system "make"
 
     # The build creates CloudLogCatQt.app bundle

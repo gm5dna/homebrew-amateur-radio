@@ -14,7 +14,7 @@ class Nanovnasaver < Formula
 
   def install
     venv = libexec/"venv"
-    python = Formula["python@3.12"].opt_bin/"python3.12"
+    python = formula_opt_bin("python@3.12")/"python3.12"
     system python, "-m", "venv", venv
 
     requirements = buildpath/"homebrew-requirements.txt"

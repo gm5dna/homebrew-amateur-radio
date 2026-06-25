@@ -25,10 +25,10 @@ class Wsjtz < Formula
   depends_on "qt@5"
 
   def install
-    ENV["FC"] = Formula["gcc"].opt_bin/"gfortran"
+    ENV["FC"] = formula_opt_bin("gcc")/"gfortran"
 
     # GCC's libgomp is needed for Fortran OpenMP code linked by clang++
-    gomp_lib = Formula["gcc"].opt_lib/"gcc/current/libgomp.dylib"
+    gomp_lib = formula_opt_lib("gcc")/"gcc/current/libgomp.dylib"
 
     # Skip bundle_fixup which fails resolving @rpath libs;
     # Homebrew manages shared library dependencies instead
@@ -38,12 +38,12 @@ class Wsjtz < Formula
 
     mkdir "build" do
       prefix_path = %w[qt@5 hamlib fftw boost libusb].map do |dep|
-        Formula[dep].opt_prefix
+        formula_opt_prefix(dep)
       end.join(";")
 
       args = %W[
         -DCMAKE_PREFIX_PATH=#{prefix_path}
-        -DCMAKE_Fortran_COMPILER=#{Formula["gcc"].opt_bin/"gfortran"}
+        -DCMAKE_Fortran_COMPILER=#{formula_opt_bin("gcc")/"gfortran"}
         -DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}
         -DOpenMP_Fortran_FLAGS=-fopenmp
         -DOpenMP_Fortran_LIB_NAMES=gomp
