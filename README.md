@@ -86,6 +86,7 @@ brew install gm5dna/amateur-radio/wsjtx
 
 | Name | Description |
 |------|-------------|
+| [**deskhpsdr**](https://github.com/dl1bz/deskhpsdr) | Software-defined radio app for OpenHPSDR protocol 1 and 2 transceivers (Apple Silicon only) |
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
 | [**qttinysa**](https://github.com/g4ixt/QtTinySA) | Control software for the TinySA spectrum analyzer |
