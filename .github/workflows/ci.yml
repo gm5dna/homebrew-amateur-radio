@@ -13,6 +13,10 @@ on:
       - 'Casks/**'
       - 'Formula/**'
       - '.github/workflows/**'
+  # Daily canary so new Homebrew style/audit enforcements are caught on a
+  # schedule rather than ambushing the next unrelated push.
+  schedule:
+    - cron: '30 4 * * *'
   workflow_dispatch:
 
 permissions:
