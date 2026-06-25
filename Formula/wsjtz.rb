@@ -2,8 +2,8 @@ class Wsjtz < Formula
   desc "Weak-signal digital communication software with automation features"
   homepage "https://github.com/sq9fve/wsjt-z"
   url "https://github.com/sq9fve/wsjt-z.git",
-      revision: "f99f2051bb4bdff40a175f438f021ca3f169cb96"
-  version "3.0.0-2.0.15"
+      revision: "3b0517a57d368d173b75ee979bb72097ff0d4d8e"
+  version "3.0.0-2.0.16"
   license "GPL-3.0-or-later"
   head "https://github.com/sq9fve/wsjt-z.git", branch: "master"
 
