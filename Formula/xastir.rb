@@ -30,13 +30,13 @@ class Xastir < Formula
     system "./bootstrap.sh"
 
     deps = %w[openmotif libgeotiff libx11 libxpm libxt pcre2 shapelib graphicsmagick proj berkeley-db]
-    inc_dirs = deps.map { |dep| "-I#{Formula[dep].opt_include}" }.join(" ")
+    inc_dirs = deps.map { |dep| "-I#{formula_opt_include(dep)}" }.join(" ")
     lib_dirs = deps.map { |dep| "-L#{formula_opt_lib(dep)}" }.join(" ")
 
     mkdir "build" do
       system "../configure",
              "--prefix=#{prefix}",
-             "--with-bdb-incdir=#{Formula["berkeley-db"].opt_include}",
+             "--with-bdb-incdir=#{formula_opt_include("berkeley-db")}",
              "--with-bdb-libdir=#{formula_opt_lib("berkeley-db")}",
              "CPPFLAGS=#{inc_dirs}",
              "LDFLAGS=#{lib_dirs}"
