@@ -44,6 +44,7 @@ brew install gm5dna/amateur-radio/wsjtx
 |------|-------------|
 | [**cloudlogcatqt**](https://github.com/myzinsky/CloudLogCatQt) | CAT control interface for Cloudlog logging |
 | [**linbpq**](https://github.com/g8bpq/linbpq) | G8BPQ AX.25 packet switch (Linux/macOS port of BPQ32) |
+| [**mshv**](https://github.com/dl1bz/mshv-macos-port) | Weak-signal and meteor-scatter digital modes (FT8, FT4, JT65, Q65) |
 | [**nanovnasaver**](https://github.com/NanoVNA-Saver/nanovna-saver) | Tool for reading, displaying, and saving data from NanoVNA analysers |
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications |
 | [**qttermtcp**](https://github.com/g8bpq/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
