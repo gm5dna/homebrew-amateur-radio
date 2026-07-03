@@ -64,6 +64,7 @@ brew install gm5dna/amateur-radio/wsjtx
 | [**js8call**](https://github.com/js8call/js8call) | Weak-signal keyboard-to-keyboard messaging built on FT8 |
 | [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features |
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
+| [**multimode**](https://www.blackcatsystems.com/software/multimode.html) | Multi-mode decoder for CW, RTTY, FAX, SSTV, NAVTEX, PSK31, and more (Intel; needs Rosetta on Apple Silicon) |
 | [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem (UZ7HO QtSoundModem, Apple Silicon port) |
 | [**rttytci**](https://github.com/dl1bz/rttyTCI) | RTTY transceiver app for SDRs using the TCI protocol (Apple Silicon only) |
 | [**sstv**](https://www.blackcatsystems.com/software/sstv.html) | Slow-scan television (SSTV) encoder and decoder (Intel; needs Rosetta on Apple Silicon) |
@@ -91,8 +92,10 @@ brew install gm5dna/amateur-radio/wsjtx
 | Name | Description |
 |------|-------------|
 | [**deskhpsdr**](https://github.com/dl1bz/deskhpsdr) | Software-defined radio app for OpenHPSDR protocol 1 and 2 transceivers (Apple Silicon only) |
+| [**dogparksdr**](https://www.dogparksoftware.com/dogparkSDR.html) | Native client for FlexRadio Signature-series software-defined radios |
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
+| [**macdoppler**](https://www.dogparksoftware.com/MacDoppler.html) | Satellite tracking with Doppler tuning and rotator/antenna automation |
 | [**qttinysa**](https://github.com/g4ixt/QtTinySA) | Control software for the TinySA spectrum analyzer |
 | [**sdc**](https://www.lw-sdc.com/) | Software Defined Connectors — CW/RTTY/PSK skimmers, rig sync, and audio routing for SDR software |
 | [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software-defined radio with extensive device support |
@@ -108,13 +111,18 @@ brew install gm5dna/amateur-radio/wsjtx
 | Name | Description |
 |------|-------------|
 | [**cocoanec**](https://www.w7ay.net/site/Applications/cocoaNEC/) | NEC-2 antenna modelling application |
+| [**matchmaker**](https://www.blackcatsystems.com/software/matchmaker-rf-impedance-matching-software.html) | RF impedance-matching network calculator (Intel; needs Rosetta on Apple Silicon) |
+| [**mininec-pro**](https://www.blackcatsystems.com/software/mininec-antenna-analysis-modeling-software.html) | Antenna analysis and modelling using the MININEC engine (Intel; needs Rosetta on Apple Silicon) |
 
 #### Utilities
 
 | Name | Description |
 |------|-------------|
+| [**dx-toolbox**](https://www.blackcatsystems.com/software/ham-shortwave-radio-propagation-software.html) | Shortwave radio propagation and space-weather forecasting (Intel; needs Rosetta on Apple Silicon) |
 | [**hamclock-launcher**](https://github.com/huberthickman/HamClockLauncher) | Launcher for the HamClock application |
 | [**hf-autopilot**](https://w0xz.com/autopilot/) | Quick tuning to POTA, SOTA, and NetLogger HF spots for HF radios |
+| [**ispectrum**](https://www.dogparksoftware.com/iSpectrum.html) | Audio spectrum analyser with live frequency and waterfall display (Intel; needs Rosetta on Apple Silicon) |
+| [**morse-mania**](https://www.blackcatsystems.com/software/morse-code-practice-software.html) | CW (Morse code) training and practice tutor (Intel; needs Rosetta on Apple Silicon) |
 | [**pine64-updater**](https://github.com/pine64/pine64_updater) | Updater for Pine64 devices (Pinecil, etc.) |
 | [**rf-toolbox**](https://www.blackcatsystems.com/software/electronics-antenna-design-software.html) | Antenna design and electronics calculator |
 
