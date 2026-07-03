@@ -59,7 +59,7 @@ brew install gm5dna/amateur-radio/wsjtx
 
 | Name | Description |
 |------|-------------|
-| [**cocoamodem**](https://www.w7ay.net/site/Applications/cocoaModem/) | Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes — *disabled: 32-bit app, unsupported on macOS 10.15 and later* |
+| [**cocoamodem**](https://github.com/matpet/CocoaModem) | Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes (maintenance fork of W7AY's original, universal binary for macOS 15+) |
 | [**freedv**](https://freedv.org/) | Open-source HF digital voice modem and GUI |
 | [**js8call**](https://github.com/js8call/js8call) | Weak-signal keyboard-to-keyboard messaging built on FT8 |
 | [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features |
