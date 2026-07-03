@@ -1,21 +1,21 @@
 cask "cocoamodem" do
-  version "1.03"
-  sha256 :no_check
+  version "2.1rc5"
+  sha256 "dede480fbba59f2b23a4705ecddb52aadc57af14238d4720d95151166e72b7e0"
 
-  url "https://www.w7ay.net/site/Downloads/cocoaModem/cocoaModem%20app.dmg"
+  url "https://github.com/matpet/CocoaModem/releases/download/#{version}/cocoaModem-#{version}-macos-universal.zip"
   name "cocoaModem"
   desc "Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes"
-  homepage "https://www.w7ay.net/site/Applications/cocoaModem/"
+  homepage "https://github.com/matpet/CocoaModem"
 
   livecheck do
-    skip "No version information available on website"
+    url :url
+    regex(/^v?(\d+(?:\.\d+)+(?:rc\d+)?)$/i)
+    strategy :github_latest
   end
 
-  disable! date: "2026-05-22", because: "is a 32-bit app unsupported on macOS Catalina (10.15) and later"
+  depends_on macos: :sequoia
 
-  depends_on :macos
-
-  app "cocoaModem 2.0.app"
+  app "cocoaModem #{version}.app"
 
   zap trash: [
     "~/Library/Application Support/cocoaModem",
@@ -24,9 +24,15 @@ cask "cocoamodem" do
   ]
 
   caveats <<~EOS
-    cocoaModem was last updated in 2012 and officially supports macOS 10.4-10.8.
-    It may work on newer versions of macOS but is not actively maintained.
+    This is a maintenance fork of W7AY's original cocoaModem, updated to
+    run on macOS 15.7 and later as a universal binary.
 
-    Supported modes: RTTY, PSK31/63/125, MFSK16, Hellschreiber, CW, SITOR-B, HF-FAX
+    The bundle is not notarised. On first launch, Gatekeeper will block
+    it: right-click the app in Finder and choose "Open", then confirm in
+    the dialog. Alternatively, run:
+
+      xattr -r -d com.apple.quarantine "/Applications/cocoaModem #{version}.app"
+
+    Supported modes: RTTY, PSK31, MFSK16, Hellschreiber, CW, SITOR-B, HF-FAX
   EOS
 end
