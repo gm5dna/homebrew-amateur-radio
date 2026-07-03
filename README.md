@@ -66,6 +66,8 @@ brew install gm5dna/amateur-radio/wsjtx
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
 | [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem (UZ7HO QtSoundModem, Apple Silicon port) |
 | [**rttytci**](https://github.com/dl1bz/rttyTCI) | RTTY transceiver app for SDRs using the TCI protocol (Apple Silicon only) |
+| [**sstv**](https://www.blackcatsystems.com/software/sstv.html) | Slow-scan television (SSTV) encoder and decoder (Intel; needs Rosetta on Apple Silicon) |
+| [**sstv-beta**](https://www.blackcatsystems.com/software/sstv.html) | Black Cat SSTV beta — universal build for Apple Silicon and Intel |
 | [**wsjtx**](https://wsjt.sourceforge.io/wsjtx.html) | Weak-signal digital communication using FT8, FT4, JT65, and WSPR modes |
 | [**wsjtx-improved**](https://sourceforge.net/projects/wsjt-x-improved/) | Enhanced WSJT-X with additional features |
 | [**wsjtx-improved-alt**](https://sourceforge.net/projects/wsjt-x-improved/) | WSJT-X Improved with alternative layout |
