@@ -92,6 +92,7 @@ brew install gm5dna/amateur-radio/wsjtx
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
 | [**qttinysa**](https://github.com/g4ixt/QtTinySA) | Control software for the TinySA spectrum analyzer |
+| [**sdc**](https://www.lw-sdc.com/) | Software Defined Connectors — CW/RTTY/PSK skimmers, rig sync, and audio routing for SDR software |
 | [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software-defined radio with extensive device support |
 | [**sdrconnect**](https://www.sdrplay.com/) | SDR application for SDRplay receivers with spectrum analysis |
 | [**sdrplusplus**](https://github.com/AlexandreRouma/SDRPlusPlus) | Cross-platform open-source SDR receiver application (nightly build) |
