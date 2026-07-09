@@ -1,6 +1,6 @@
 cask "deskhpsdr" do
   version "2.7.19"
-  sha256 "43d617ffa74f2bc00d2b5a28319848a2756586764171cb37165fdf0ec81b362f"
+  sha256 "dbad6e99be4530f2528b425db14bcafe7bac887fecac6457f86c80df03b7f2b3"
 
   url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-v#{version.major_minor}-macos-arm64.zip"
   name "deskHPSDR"
@@ -20,8 +20,8 @@ cask "deskhpsdr" do
 
   zap trash: [
     "~/Library/Application Support/deskHPSDR",
-    "~/Library/Preferences/org.deskhpsdr.dl1bz.app.plist",
-    "~/Library/Saved Application State/org.deskhpsdr.dl1bz.app.savedState",
+    "~/Library/Preferences/org.dl1bz.deskhpsdr.plist",
+    "~/Library/Saved Application State/org.dl1bz.deskhpsdr.savedState",
   ]
 
   caveats <<~EOS
