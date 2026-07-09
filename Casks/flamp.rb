@@ -2,11 +2,10 @@ cask "flamp" do
   version "2.2.14"
   sha256 "9e95cbd69b9741362d191880ec74c7b35c05fca19da345ce3f71fcc4a2f8d194"
 
-  url "https://www.w1hkj.org/files/flamp/flamp-#{version}_VN.dmg",
-      verified: "w1hkj.org/files/flamp/"
+  url "https://www.w1hkj.org/files/flamp/flamp-#{version}_VN.dmg"
   name "flamp"
   desc "Amateur Multicast Protocol file transfer for the fldigi suite"
-  homepage "http://www.w1hkj.com/"
+  homepage "https://www.w1hkj.org/"
 
   livecheck do
     url "https://www.w1hkj.org/files/flamp/"

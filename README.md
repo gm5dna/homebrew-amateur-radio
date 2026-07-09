@@ -81,14 +81,14 @@ names (e.g. `flmsg.app`) despite the version-stamped bundles upstream ships.
 
 | Name | Description |
 |------|-------------|
-| [**flmsg**](http://www.w1hkj.com/) | NBEMS structured-message and forms editor for the fldigi suite |
-| [**flamp**](http://www.w1hkj.com/) | Amateur Multicast Protocol file transfer for the fldigi suite |
-| [**flwkey**](http://www.w1hkj.com/) | Control app for K1EL Winkeyer CW keyers |
-| [**fllog**](http://www.w1hkj.com/) | Logbook server shared across the fldigi suite over XML-RPC |
-| [**flnet**](http://www.w1hkj.com/) | Net-control roster and check-in logging for the fldigi suite |
-| [**flcluster**](http://www.w1hkj.com/) | DX telnet cluster client for the fldigi suite |
-| [**flwrap**](http://www.w1hkj.com/) | File encapsulation and checksums for radio file transfer |
-| [**flaa**](http://www.w1hkj.com/) | Antenna-analyser control for RigExpert AA-series instruments (Intel; needs Rosetta on Apple Silicon) |
+| [**flmsg**](https://www.w1hkj.org/) | NBEMS structured-message and forms editor for the fldigi suite |
+| [**flamp**](https://www.w1hkj.org/) | Amateur Multicast Protocol file transfer for the fldigi suite |
+| [**flwkey**](https://www.w1hkj.org/) | Control app for K1EL Winkeyer CW keyers |
+| [**fllog**](https://www.w1hkj.org/) | Logbook server shared across the fldigi suite over XML-RPC |
+| [**flnet**](https://www.w1hkj.org/) | Net-control roster and check-in logging for the fldigi suite |
+| [**flcluster**](https://www.w1hkj.org/) | DX telnet cluster client for the fldigi suite |
+| [**flwrap**](https://www.w1hkj.org/) | File encapsulation and checksums for radio file transfer |
+| [**flaa**](https://www.w1hkj.org/) | Antenna-analyser control for RigExpert AA-series instruments (Intel; needs Rosetta on Apple Silicon) |
 
 #### Logging & QSL Management
 

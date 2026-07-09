@@ -2,11 +2,10 @@ cask "flwkey" do
   version "1.2.4"
   sha256 "278138b3b9f942f579bea3726e2c644f075fd7ba1511e438cf99f296e8f7a01c"
 
-  url "https://www.w1hkj.org/files/flwkey/flwkey-#{version}.dmg",
-      verified: "w1hkj.org/files/flwkey/"
+  url "https://www.w1hkj.org/files/flwkey/flwkey-#{version}.dmg"
   name "flwkey"
   desc "Control app for K1EL Winkeyer CW keyers"
-  homepage "http://www.w1hkj.com/"
+  homepage "https://www.w1hkj.org/"
 
   livecheck do
     url "https://www.w1hkj.org/files/flwkey/"

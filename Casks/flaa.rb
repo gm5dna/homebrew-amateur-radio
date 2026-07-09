@@ -2,11 +2,10 @@ cask "flaa" do
   version "1.0.2"
   sha256 "e8d7e610e6775d0e852c7876592dc2751adfafd00b8497a7cc1a643c551e6f88"
 
-  url "https://www.w1hkj.org/files/flaa/flaa-#{version}.dmg",
-      verified: "w1hkj.org/files/flaa/"
+  url "https://www.w1hkj.org/files/flaa/flaa-#{version}.dmg"
   name "flaa"
   desc "Antenna-analyser control for RigExpert AA-series instruments"
-  homepage "http://www.w1hkj.com/"
+  homepage "https://www.w1hkj.org/"
 
   livecheck do
     url "https://www.w1hkj.org/files/flaa/"
