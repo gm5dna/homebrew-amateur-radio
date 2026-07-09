@@ -7,12 +7,14 @@ on:
       - 'Casks/**'
       - 'Formula/**'
       - '.github/workflows/**'
+      - '.github/scripts/**'
   pull_request:
     branches: [main]
     paths:
       - 'Casks/**'
       - 'Formula/**'
       - '.github/workflows/**'
+      - '.github/scripts/**'
   # Daily canary so new Homebrew style/audit enforcements are caught on a
   # schedule rather than ambushing the next unrelated push.
   schedule:
@@ -61,3 +63,23 @@ jobs:
             echo "Auditing: $formula_name"
             brew audit --formula "$formula_name"
           done
+
+      # The runners are arm64, and `brew fetch` only downloads the current
+      # architecture's artifact, so an `on_intel` sha256 is never exercised by
+      # the steps above. Compare both arches against GitHub's release-asset
+      # digests instead: no downloads, and it also catches upstream replacing
+      # an asset in place under an unchanged tag.
+      - name: Verify cask checksums against GitHub release digests
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: .github/scripts/verify-cask-checksums.sh
+
+      # Casks hosted off GitHub (SourceForge, S3, plain web hosts) have no
+      # published digest, so the only way to check their Intel builds is to
+      # download and hash. That is a couple of GB, so it runs on the daily
+      # schedule rather than on every push.
+      - name: Verify remaining cask checksums by download
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: .github/scripts/verify-cask-checksums.sh --full
