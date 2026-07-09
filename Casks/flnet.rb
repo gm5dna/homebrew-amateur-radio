@@ -2,11 +2,10 @@ cask "flnet" do
   version "7.5.0"
   sha256 "08bac1646c97007bf49fac60a9ecb25ddc4b9601c3eaafa6557b519e77c02162"
 
-  url "https://www.w1hkj.org/files/flnet/flnet-#{version}_BS.dmg",
-      verified: "w1hkj.org/files/flnet/"
+  url "https://www.w1hkj.org/files/flnet/flnet-#{version}_BS.dmg"
   name "flnet"
   desc "Net-control roster and check-in logging for the fldigi suite"
-  homepage "http://www.w1hkj.com/"
+  homepage "https://www.w1hkj.org/"
 
   livecheck do
     url "https://www.w1hkj.org/files/flnet/"

@@ -2,11 +2,10 @@ cask "flcluster" do
   version "1.1.01"
   sha256 "72acdeb07db3a6dc9cb3e5f8d8e6ef9d08026ca11c553dd7e960cee9613dc116"
 
-  url "https://www.w1hkj.org/files/flcluster/flcluster-#{version}.dmg",
-      verified: "w1hkj.org/files/flcluster/"
+  url "https://www.w1hkj.org/files/flcluster/flcluster-#{version}.dmg"
   name "flcluster"
   desc "DX telnet cluster client for the fldigi suite"
-  homepage "http://www.w1hkj.com/"
+  homepage "https://www.w1hkj.org/"
 
   livecheck do
     url "https://www.w1hkj.org/files/flcluster/"
