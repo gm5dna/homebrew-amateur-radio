@@ -119,7 +119,9 @@ names (e.g. `flmsg.app`) despite the version-stamped bundles upstream ships.
 | [**sdrconnect**](https://www.sdrplay.com/) | SDR application for SDRplay receivers with spectrum analysis |
 | [**sdrplusplus**](https://github.com/AlexandreRouma/SDRPlusPlus) | Cross-platform open-source SDR receiver application (nightly build) |
 | [**sdrplusplus-brown**](https://github.com/sannysanoff/SDRPlusPlusBrown) | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
+| [**sigdigger**](https://batchdrake.github.io/SigDigger/) | Digital signal analyser and inspector for SDR (Intel; needs Rosetta on Apple Silicon) |
 | [**sparksdr**](https://www.sparksdr.com/) | SDR application for Hermes Lite and OpenHPSDR-compatible radios |
+| [**spectraflux**](https://rfspace.com/RFSPACE/SpectraFlux/) | Native SDR spectrum analyser with 3D waterfall and demodulation (Apple Silicon only) |
 | [**wfview**](https://wfview.org/) | Open source interface for Icom and Kenwood transceivers |
 | [**wfview-beta**](https://wfview.org/) | wfview Qt6 universal beta builds — tracks upstream master |
 
@@ -139,9 +141,13 @@ names (e.g. `flmsg.app`) despite the version-stamped bundles upstream ships.
 | [**hamclock-launcher**](https://github.com/huberthickman/HamClockLauncher) | Launcher for the HamClock application |
 | [**hf-autopilot**](https://w0xz.com/autopilot/) | Quick tuning to POTA, SOTA, and NetLogger HF spots for HF radios |
 | [**ispectrum**](https://www.dogparksoftware.com/iSpectrum.html) | Audio spectrum analyser with live frequency and waterfall display (Intel; needs Rosetta on Apple Silicon) |
+| [**librevna**](https://github.com/jankae/LibreVNA) | GUI for the LibreVNA open-source USB vector network analyser (macOS 14+) |
 | [**morse-mania**](https://www.blackcatsystems.com/software/morse-code-practice-software.html) | CW (Morse code) training and practice tutor (Intel; needs Rosetta on Apple Silicon) |
+| [**picoscope**](https://www.picotech.com/products/oscilloscope) | Oscilloscope software for PicoScope test-and-measurement hardware (Intel; needs Rosetta on Apple Silicon) |
 | [**pine64-updater**](https://github.com/pine64/pine64_updater) | Updater for Pine64 devices (Pinecil, etc.) |
 | [**rf-toolbox**](https://www.blackcatsystems.com/software/electronics-antenna-design-software.html) | Antenna design and electronics calculator |
+| [**saleae-logic**](https://www.saleae.com/) | Logic analyser and oscilloscope software for Saleae Logic devices |
+| [**scanastudio**](https://www.ikalogic.com/) | Interface software for Ikalogic logic analysers and pattern generators (Intel; needs Rosetta on Apple Silicon) |
 
 ## Updating
 
