@@ -1,13 +1,17 @@
 cask "qttinysa" do
   version "1.2.5"
-  sha256 arm:   "832ecbaa7ae4ff86c2a2793d8e5a37e9d8bc11325704771ae99c3b47dd017c74",
-         intel: "6b74223380a30b309acb5de3f2646df6a1f7a1185cdd9fc3bc0f845e5363f835"
+  sha256 arm:   "148011782abac559f32aef0cf4415ca40013be5d2e345bef549bb59341df08ca",
+         intel: "d626e4d6d83dee2f69ef6b5ccfa36891c79172319c2962f78de0da7df50efe66"
 
+  # Upstream's v1.2.5 release has no macOS assets, so these point at an
+  # unofficial DMG build from the gm5dna fork (built from upstream's v1.2.5
+  # tag via the project's own macos_build.yml). Revert to
+  # g4ixt/QtTinySA once upstream attaches official macOS assets.
   on_arm do
-    url "https://github.com/g4ixt/QtTinySA/releases/download/v#{version}/QtTinySA_mac_arm64.dmg"
+    url "https://github.com/gm5dna/QtTinySA/releases/download/v#{version}/QtTinySA_mac_arm64.dmg"
   end
   on_intel do
-    url "https://github.com/g4ixt/QtTinySA/releases/download/v#{version}/QtTinySA_mac_x86_64.dmg"
+    url "https://github.com/gm5dna/QtTinySA/releases/download/v#{version}/QtTinySA_mac_x86_64.dmg"
   end
 
   name "QtTinySA"
