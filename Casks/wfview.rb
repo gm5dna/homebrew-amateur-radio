@@ -4,7 +4,7 @@ cask "wfview" do
 
   url "https://wfview.org/download/macos-universal-v#{version.csv.first.dots_to_hyphens}/?wpdmdl=#{version.csv.second}"
   name "wfview"
-  desc "Open source interface for Icom and Kenwood transceivers"
+  desc "Open source interface for Icom, Kenwood, and Yaesu transceivers"
   homepage "https://wfview.org/"
 
   livecheck do
