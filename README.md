@@ -64,6 +64,7 @@ brew install gm5dna/amateur-radio/wsjtx
 | [**js8call**](https://github.com/js8call/js8call) | Weak-signal keyboard-to-keyboard messaging built on FT8 |
 | [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features |
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
+| [**macwinlink**](https://github.com/jjones9527/macwinlink-releases) | Native Winlink email client with CAT rig control and VARA, ARDOP, and packet transports (Apple Silicon only, macOS 15+; public beta) |
 | [**multimode**](https://www.blackcatsystems.com/software/multimode.html) | Multi-mode decoder for CW, RTTY, FAX, SSTV, NAVTEX, PSK31, and more (Intel; needs Rosetta on Apple Silicon) |
 | [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem (UZ7HO QtSoundModem, Apple Silicon port) |
 | [**rttytci**](https://github.com/dl1bz/rttyTCI) | RTTY transceiver app for SDRs using the TCI protocol (Apple Silicon only) |
