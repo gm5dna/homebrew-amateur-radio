@@ -3,7 +3,6 @@ cask "js8call-improved" do
   sha256 "9a86f5c154ca3f2bdf18f42c61d1055aca5690973488cfc7d974ea918d9853cc"
 
   url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/v#{version}/JS8Call_#{version}.dmg"
-
   name "JS8Call Improved"
   desc "Improved version of JS8Call for weak-signal amateur radio communication"
   homepage "https://github.com/JS8Call-improved/JS8Call-improved"
