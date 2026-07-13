@@ -1,16 +1,8 @@
 cask "js8call-improved" do
-  version "3.0.2"
+  version "3.0.3"
+  sha256 "9a86f5c154ca3f2bdf18f42c61d1055aca5690973488cfc7d974ea918d9853cc"
 
-  on_arm do
-    sha256 "a7f974c39949e3142f8262d22b887ccd25df3ed17fc41734fb0980a5707858fe"
-
-    url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/v#{version}/JS8Call_#{version}_M1.dmg"
-  end
-  on_intel do
-    sha256 "09479bc5f97f0266dff3ee0ef35dce39d393eb45cb744ce874db0dc0392bdc4e"
-
-    url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/v#{version}/JS8Call_#{version}_Intel.dmg"
-  end
+  url "https://github.com/JS8Call-improved/JS8Call-improved/releases/download/v#{version}/JS8Call_#{version}.dmg"
 
   name "JS8Call Improved"
   desc "Improved version of JS8Call for weak-signal amateur radio communication"
