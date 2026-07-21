@@ -1,6 +1,6 @@
 cask "deskhpsdr" do
   version "2.7.21"
-  sha256 "dd21aea6f32f733754b5c8fb08fa6f8dc4bdee4eb74a789145e04558b05a5fc0"
+  sha256 "d8741a76d19272f57eb7e991756034250d8ed94a680644aa5e9b344ea3d90c73"
 
   url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-v#{version.major_minor}-latest-macos-arm64.zip"
   name "deskHPSDR"
