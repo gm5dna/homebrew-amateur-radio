@@ -1,13 +1,13 @@
 cask "sdc" do
-  version "19.0706"
+  version "19.0707"
 
   on_arm do
-    sha256 "7a3c2ac4505b7e28cadaa46dad4ffd464693c2461dbb0231a5190155351b9624"
+    sha256 "3a69892072db6ec0afa07d46361c164e45711200125b7cd1db1c6c1d08fdcf6b"
 
     url "https://www.lw-sdc.com/wp-content/uploads/SDC_#{version.dots_to_underscores}_mac_M_setup.zip"
   end
   on_intel do
-    sha256 "51d8ad9ba94ae631315f5bd8f6a836d6f3a2e71cb02655c6655fe02b9d3b3281"
+    sha256 "1d4d326e4fe48197c2e794e2ce59d5022d66e7a54a6ae72793f18e5ef561897d"
 
     url "https://www.lw-sdc.com/wp-content/uploads/SDC_#{version.dots_to_underscores}_mac_I_setup.zip"
   end
