@@ -17,6 +17,15 @@ class Linbpq < Formula
   depends_on "miniupnpc"
 
   def install
+    # winstdint.h is a bundled Windows <stdint.h> replacement guarded by
+    # _STDINT_H, but Apple's stdint.h uses _STDINT_H_, so the guard never
+    # fires and its 32-bit typedefs clash with the SDK's (intptr_t, uintptr_t,
+    # intmax_t, uintmax_t). Defer to the real header instead.
+    # The file has CRLF line endings, hence the \r? in the pattern.
+    inreplace "winstdint.h",
+              /#ifndef _STDINT_H\r?\n#define _STDINT_H\r?\n/,
+              "#include <stdint.h>\n#define _STDINT_H\n#ifndef _STDINT_H\n"
+
     # Bundled libpng 1.2.x assumes Mac OS Classic when TARGET_OS_MAC is set,
     # pulling <fp.h> which doesn't exist on modern macOS. Force the standard
     # <math.h> path so the bundled png sources compile.
