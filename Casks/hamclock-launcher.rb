@@ -1,13 +1,13 @@
 cask "hamclock-launcher" do
-  version "4.28"
+  version "4.29"
 
   on_arm do
-    sha256 "ae78744f562b026c205b8557b632c9b652b936fc03cf330dc31883282d4b085c"
+    sha256 "877f8c507b3b4abecb4e3a48e0e0c4f360f8b5258bed6636e559b98610b75c4e"
 
     url "https://github.com/huberthickman/HamClockLauncher/releases/download/release_#{version.tr(".", "_")}/HamClockLauncher.dmg"
   end
   on_intel do
-    sha256 "0f1f7395b5018fe8551ffce30c8852c97ec91002843d4a181245edf85260d48c"
+    sha256 "1a267054165b135555a1abbceecd261a713f8040d2e6939ffe1ac8475b1a12e0"
 
     url "https://github.com/huberthickman/HamClockLauncher/releases/download/release_#{version.tr(".", "_")}/HamClockLauncherIntel.dmg"
   end
