@@ -9,7 +9,7 @@ cask "macdoppler" do
 
   livecheck do
     url :homepage
-    regex(/Download\s+v?(\d+(?:\.\d+)+)/i)
+    regex(/Download\s+v?(\d+(?:\.\d+)+)(?!\w)/i)
   end
 
   depends_on macos: :catalina
