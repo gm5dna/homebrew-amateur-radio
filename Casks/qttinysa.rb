@@ -20,7 +20,8 @@ cask "qttinysa" do
 
   livecheck do
     url "https://github.com/g4ixt/QtTinySA"
-    strategy :github_latest
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_releases
   end
 
   depends_on macos: :big_sur
