@@ -18,9 +18,12 @@ cask "sdc" do
 
   livecheck do
     url "https://www.lw-sdc.com/?page_id=79"
-    regex(/SDC\s+v?(\d+(?:\.\d+)+)/i)
+    # Match the macOS download link, not the page prose: lw-sdc.com announces
+    # new versions in text before publishing the mac zips, which filed a false
+    # update issue for 19.070801 (both mac URLs 404 at the time).
+    regex(/SDC_(\d+(?:_\d+)+)_mac_M_setup\.zip/i)
     strategy :page_match do |page, regex|
-      page.scan(regex).map(&:first)
+      page.scan(regex).map { |match| match.first.tr("_", ".") }
     end
   end
 
