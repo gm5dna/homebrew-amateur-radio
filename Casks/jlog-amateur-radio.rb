@@ -1,15 +1,15 @@
 cask "jlog-amateur-radio" do
-  version "6.14.1"
+  version "6.15"
 
   on_arm do
-    sha256 "49b4e068ecb62002b1c666f9008e0266467af3fafc3c8b739a975bdfbbc823db"
+    sha256 "a3b62e504f53fbbddbba7159a1fc54b7a90a1c7ec8ac37eae2809f297989c730"
 
     url "https://jlog.org/v#{version.major_minor}/jLog-#{version}-M.dmg"
 
     depends_on macos: :big_sur
   end
   on_intel do
-    sha256 "48bfd867ac47b719e986617abb49fd889169ce58dc1baada484c6cbcfd14dc34"
+    sha256 "5f73caa1e5a99a673f415beef471709049a7fe9ced649f3c284b8422cb72c049"
 
     url "https://jlog.org/v#{version.major_minor}/jLog-#{version}.dmg"
 
