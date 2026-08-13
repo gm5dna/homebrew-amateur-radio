@@ -1,6 +1,6 @@
 cask "macwinlink" do
-  version "1.0.0-beta34,2026-08-10,c83aeb8"
-  sha256 "a084b4e9e6beec327b260e9357bf2e3b75f52f4bf74ace55bf8b1f208a2378a7"
+  version "1.0.0-beta35,2026-08-12,6c715a5"
+  sha256 "7ab140c01e2237867160d8f81313832231d5d0a46e4ff8a03c37183e8ff7a91e"
 
   url "https://github.com/jjones9527/macwinlink-releases/releases/download/v#{version.csv.first}/MacWinlink_#{version.csv.second}_#{version.csv.third}.dmg"
   name "MacWinlink"
