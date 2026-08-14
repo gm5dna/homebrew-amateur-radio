@@ -27,6 +27,8 @@ cask "wsjtx" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   uninstall quit:    "org.k1jt.wsjtx",
             pkgutil: "org.k1jt.wsjtx.*"
 
