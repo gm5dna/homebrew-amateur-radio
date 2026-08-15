@@ -1,21 +1,21 @@
 cask "sdrconnect" do
-  version "1.0.9"
+  version "1.0.10"
 
-  # The download URLs embed an upstream build hash (..._a4b8da76b...) that is not
-  # derived from `version`; refresh both URLs by hand when bumping the version.
-  # `sha256 :no_check` is appropriate because the hashed URL is updated in place.
+  # Downloads are now hosted on Google Drive; the file IDs change with each
+  # release and must be updated manually. Refresh both URLs and sha256 hashes
+  # together when bumping the version.
 
   on_arm do
-    sha256 :no_check
+    sha256 "9f88705cf2167c1879fa9dc9e635deab51ead8a11842152956c1c0f223f971b5"
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-arm64_d34bf923c.dmg"
+    url "https://drive.usercontent.google.com/download?id=1FHXM3CQqQnaQofhWw0s_1WV7Jo3jJyTX&export=download&confirm=t"
 
     depends_on macos: :ventura
   end
   on_intel do
-    sha256 :no_check
+    sha256 "50c247e4bb93f0392d2628ca75eaded9ab576fdc25283c3aefe45659d9606877"
 
-    url "https://www.sdrplay.com/software/SDRconnect_darwin-x64_d34bf923c.dmg"
+    url "https://drive.usercontent.google.com/download?id=1HU_kH2A5zhV2vgeimAUrbdJVm3qabvt_&export=download&confirm=t"
 
     depends_on macos: :catalina
   end
@@ -26,7 +26,7 @@ cask "sdrconnect" do
 
   livecheck do
     url "https://www.sdrplay.com/sdrconnect/"
-    regex(/Latest\s+version:\s*v?(\d+(?:\.\d+)+)/i)
+    regex(/current\s+version\s+is\s*v?(\d+(?:\.\d+)+)/i)
   end
 
   app "SDRconnect.app"
