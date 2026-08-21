@@ -1,16 +1,16 @@
 cask "sdr-angel" do
-  version "7.27.1"
+  version "7.27.2"
 
   # The filenames embed the macOS version of the upstream build host
   # (e.g. mac-14.8.7), which changes between releases independently of the
   # SDRangel version — check the release assets when bumping.
   on_arm do
-    sha256 "376089d47bdf7b90430304f39f72d853339c8c8e111fd1904f4ab15abf34b466"
+    sha256 "54a1888e3844565a384416c3b9e700ff1138749d42aff308c0da5caaeba01524"
 
     url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-14.8.7_arm64.dmg"
   end
   on_intel do
-    sha256 "ae4e8eaa059899d0c5cbdf7c8c7f1390d446b753d0b7d47157875eeb069fd4c9"
+    sha256 "c454b306a46e253748568e2fc5002a3c886f0d48cfa0db84d364c13369b8d253"
 
     url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-15.7.7_x86_64.dmg"
   end
