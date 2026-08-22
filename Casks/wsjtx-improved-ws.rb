@@ -2,7 +2,7 @@ cask "wsjtx-improved-ws" do
   version "3.2.0,260818"
 
   on_arm do
-    sha256 "ecd5c7ea1277afcbad5d6071964176798271328c4a93eac55cb62524d995b8de"
+    sha256 "79cba87e7dd759888f59d776777ada0b5ebfc163b9b35a2c9286c5b4e1aa0dca"
 
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_widescreen_PLUS_#{version.csv.second}_ARM.zip"
   end
