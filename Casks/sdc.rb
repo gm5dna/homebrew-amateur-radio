@@ -18,12 +18,16 @@ cask "sdc" do
 
   livecheck do
     url "https://www.lw-sdc.com/?page_id=79"
-    # Match the macOS download link, not the page prose: lw-sdc.com announces
+    # Match the macOS download links, not the page prose: lw-sdc.com announces
     # new versions in text before publishing the mac zips, which filed a false
-    # update issue for 19.070801 (both mac URLs 404 at the time).
-    regex(/SDC_(\d+(?:_\d+)+)_mac_M_setup\.zip/i)
+    # update issue for 19.070801 (both mac URLs 404 at the time). It also
+    # publishes the Apple Silicon (_M_) zip before the Intel (_I_) one, which
+    # filed #47 for 19.0710 whilst the Intel URL 404'd. Only report versions
+    # that have both zips so a bump never breaks on_intel.
+    regex(/SDC_(\d+(?:_\d+)+)_mac_([MI])_setup\.zip/i)
     strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| match.first.tr("_", ".") }
+      by_arch = page.scan(regex).group_by { |m| m.last.upcase }.transform_values { |m| m.map(&:first) }
+      (by_arch.fetch("M", []) & by_arch.fetch("I", [])).map { |v| v.tr("_", ".") }
     end
   end
 
