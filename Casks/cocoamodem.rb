@@ -1,15 +1,15 @@
 cask "cocoamodem" do
   version "2.1rc5"
-  sha256 "dede480fbba59f2b23a4705ecddb52aadc57af14238d4720d95151166e72b7e0"
+  sha256 "7b581bca53f45651f35a9f9b7555919cd9825b6b1461f89970ac493f5ddd5792"
 
-  url "https://github.com/matpet/CocoaModem/releases/download/#{version}/cocoaModem-#{version}-macos-universal.zip"
+  url "https://github.com/matpet/CocoaModem/releases/download/v2.1rc5-d21dfd5/cocoaModem-2.1rc5-universal-macos-d21dfd5.zip"
   name "cocoaModem"
   desc "Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes"
   homepage "https://github.com/matpet/CocoaModem"
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+(?:rc\d+)?)$/i)
+    regex(/^v?(\d+(?:\.\d+)+(?:rc\d+)?)(?:-[0-9a-f]+)?$/i)
     strategy :github_latest
   end
 
