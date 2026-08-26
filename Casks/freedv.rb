@@ -1,6 +1,6 @@
 cask "freedv" do
-  version "2.3.1"
-  sha256 "e95b39eb17793cff98d2e5709bb08871396775775ca816628d2d55763b9a0e50"
+  version "2.4.0"
+  sha256 "4e878758a10661287c666459ade9b4b09b66ee37d2d01654c06ede9830cd6e60"
 
   url "https://github.com/drowe67/freedv-gui/releases/download/v#{version}/FreeDV-#{version}.dmg",
       verified: "github.com/drowe67/freedv-gui/"
