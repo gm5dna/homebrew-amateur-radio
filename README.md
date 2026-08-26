@@ -63,6 +63,7 @@ Everything else runs natively on both.
 |------|-------------|
 | [**cocoamodem**](https://github.com/matpet/CocoaModem) | RTTY, PSK31, MFSK, and other digital modes — maintained fork of W7AY's cocoaModem (macOS 15+) |
 | [**freedv**](https://freedv.org/) | Open-source HF digital voice modem and GUI |
+| [**freedv-neo**](https://blog.marxy.org/p/freedv-neo.html) | Client for the FreeDV RADE V1 digital voice mode — independent build by VK3TPM, not an official FreeDV project release (macOS 14+) |
 | [**js8call**](https://github.com/js8call/js8call) | Weak-signal keyboard-to-keyboard messaging built on FT8 *(Intel)* |
 | [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features |
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
