@@ -1,11 +1,11 @@
 class Mshv < Formula
   desc "Weak-signal and meteor-scatter digital modes (FT8, FT4, FT2, JT65, Q65)"
-  homepage "https://github.com/dl1bz/mshv-macos-port"
-  url "https://github.com/dl1bz/mshv-macos-port/archive/refs/tags/v2.76.6-mac2.tar.gz"
+  homepage "https://github.com/vu2cpl/mshv-macos-port"
+  url "https://github.com/vu2cpl/mshv-macos-port/archive/refs/tags/v2.76.6-mac2.tar.gz"
   version "2.76.6-mac2"
   sha256 "336d5f982042438d46be0c2232aa44c153690662107e98097128390521f1db55"
   license "GPL-3.0-or-later"
-  head "https://github.com/dl1bz/mshv-macos-port.git", branch: "latest"
+  head "https://github.com/vu2cpl/mshv-macos-port.git", branch: "main"
 
   livecheck do
     url :stable
