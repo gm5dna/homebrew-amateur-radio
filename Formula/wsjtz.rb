@@ -53,7 +53,7 @@ class Wsjtz < Formula
         -DWSJT_GENERATE_DOCS=OFF
       ]
 
-      system "cmake", "..", *args, *std_cmake_args
+      system "cmake", "-S", "..", "-B", ".", *args, *std_cmake_args
       system "make"
       system "make", "install"
     end
