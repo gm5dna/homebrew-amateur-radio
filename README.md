@@ -52,6 +52,7 @@ Everything else runs natively on both.
 | [**nanovnasaver**](https://github.com/NanoVNA-Saver/nanovna-saver) | Tool for reading, displaying, and saving data from NanoVNA analysers |
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications |
 | [**qttermtcp**](https://github.com/g8bpq/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
+| [**rigprog**](https://github.com/gm5dna/open-rig-programmer) | Memory-channel programmer for Yaesu and Icom transceivers — command-line tool |
 | [**samoyed**](https://github.com/doismellburning/samoyed) | Software modem/TNC for packet radio (Go port of Dire Wolf) |
 | [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
 | [**wsjtz**](https://github.com/sq9fve/wsjt-z) | Weak-signal digital communication with automation features |
@@ -117,6 +118,7 @@ ships.
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
 | [**macdoppler**](https://www.dogparksoftware.com/MacDoppler.html) | Satellite tracking with Doppler tuning and rotator/antenna automation |
+| [**open-rig-programmer**](https://github.com/gm5dna/open-rig-programmer) | Memory-channel programmer for Yaesu and Icom transceivers — GUI; see the **rigprog** formula for the command-line tool |
 | [**sdc**](https://www.lw-sdc.com/) | Software Defined Connectors — CW/RTTY/PSK skimmers, rig sync, and audio routing for SDR software |
 | [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software-defined radio with extensive device support |
 | [**sdrconnect**](https://www.sdrplay.com/) | SDR application for SDRplay receivers with spectrum analysis |
