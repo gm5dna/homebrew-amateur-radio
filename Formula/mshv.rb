@@ -26,6 +26,15 @@ class Mshv < Formula
 
     # The build creates bin/MSHV.app
     prefix.install "bin/MSHV.app"
+
+    # The build creates these as empty, user-writable directories inside the
+    # bundle and Homebrew's cleaner removes empty directories from the keg,
+    # so leave a file in each to keep them.
+    resources = prefix/"MSHV.app/Contents/Resources"
+    %w[RxWavs log ExportLog AllTxtMonthly Screenshots].each do |dir|
+      (resources/dir).mkpath
+      touch resources/dir/".keep"
+    end
   end
 
   def post_install
@@ -52,10 +61,15 @@ class Mshv < Formula
       This is a native Apple Silicon port of LZ2HV's MSHV using PortAudio
       over CoreAudio. The bundle is not notarised.
 
-      User state (settings, logs, QSO history) lives in:
-        ~/Library/Application Support/MSHV/
-      so replacing the app preserves it. On first launch, macOS will ask
-      for microphone access for receive audio.
+      This port keeps user state (settings, macros, logs, QSO history)
+      inside the app bundle:
+        #{opt_prefix}/MSHV.app/Contents/Resources/
+      `brew upgrade` and `brew reinstall` replace the bundle, so copy the
+      settings/ and log/ directories somewhere safe first and copy them
+      back afterwards.
+
+      On first launch, macOS will ask for microphone access for receive
+      audio.
     EOS
   end
 
