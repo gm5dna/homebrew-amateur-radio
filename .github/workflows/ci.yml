@@ -48,21 +48,36 @@ jobs:
       - name: Run brew style
         run: brew style gm5dna/amateur-radio
 
+      # Tokens are fully qualified because three of ours (picoscope,
+      # saleae-logic, sigdigger) also exist in homebrew/cask, and a bare
+      # token resolves to homebrew/cask's copy rather than this tap's.
+      # Every failure is collected so one run reports them all, rather than
+      # stopping at the first and masking the rest.
       - name: Run brew audit on all casks
         run: |
+          failed=""
           for cask in Casks/*.rb; do
             cask_name=$(basename "$cask" .rb)
             echo "Auditing: $cask_name"
-            brew audit --cask "$cask_name"
+            brew audit --cask "gm5dna/amateur-radio/$cask_name" || failed="$failed $cask_name"
           done
+          if [ -n "$failed" ]; then
+            echo "::error::casks failed audit:$failed"
+            exit 1
+          fi
 
       - name: Run brew audit on all formulae
         run: |
+          failed=""
           for formula in Formula/*.rb; do
             formula_name=$(basename "$formula" .rb)
             echo "Auditing: $formula_name"
-            brew audit --formula "$formula_name"
+            brew audit --formula "gm5dna/amateur-radio/$formula_name" || failed="$failed $formula_name"
           done
+          if [ -n "$failed" ]; then
+            echo "::error::formulae failed audit:$failed"
+            exit 1
+          fi
 
       # The runners are arm64, and `brew fetch` only downloads the current
       # architecture's artifact, so an `on_intel` sha256 is never exercised by
