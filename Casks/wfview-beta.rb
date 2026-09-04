@@ -2,8 +2,7 @@ cask "wfview-beta" do
   version "117"
   sha256 "f3ff45578281c658524cdc22b493ad281fde5ca0bc282c16c8cdcc68b7e9508b"
 
-  url "https://github.com/eliggett/wfview/releases/download/beta-qt6-mac-#{version}/wfview.dmg",
-      verified: "github.com/eliggett/wfview/"
+  url "https://github.com/eliggett/wfview/releases/download/beta-qt6-mac-#{version}/wfview.dmg"
   name "wfview (beta)"
   desc "Open source interface for Icom, Kenwood, and Yaesu transceivers (Qt6 beta)"
   homepage "https://wfview.org/"
