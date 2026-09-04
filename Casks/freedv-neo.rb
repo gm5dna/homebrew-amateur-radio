@@ -2,8 +2,7 @@ cask "freedv-neo" do
   version :latest
   sha256 :no_check
 
-  url "https://vk3tpm-150585202763-ap-southeast-2-an.s3-ap-southeast-2.amazonaws.com/FreeDVNeo.zip",
-      verified: "vk3tpm-150585202763-ap-southeast-2-an.s3-ap-southeast-2.amazonaws.com/"
+  url "https://vk3tpm-150585202763-ap-southeast-2-an.s3-ap-southeast-2.amazonaws.com/FreeDVNeo.zip"
   name "FreeDV Neo"
   desc "Client for the FreeDV RADE V1 digital voice mode"
   homepage "https://blog.marxy.org/p/freedv-neo.html"
