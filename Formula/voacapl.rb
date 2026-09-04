@@ -28,6 +28,14 @@ class Voacapl < Formula
     system "make", "install"
   end
 
+  def caveats
+    <<~EOS
+      voacapl needs the itshfbc data directory in your home directory before
+      it can run. Create it once with:
+        makeitshfbc
+    EOS
+  end
+
   test do
     assert_path_exists bin/"voacapl"
   end
