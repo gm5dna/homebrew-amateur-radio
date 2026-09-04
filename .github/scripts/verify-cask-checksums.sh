@@ -50,10 +50,12 @@ if ! brew ruby .github/scripts/dump-cask-artifacts.rb > "$rows"; then
 fi
 [ -s "$rows" ] || { echo "::error::cask dump produced no rows"; exit 1; }
 
-# Collapse rows resolving to the same artifact (universal binaries, and
-# arm64-only casks whose simulated-intel row is identical).
+# Collapse a cask's rows that resolve to the same artifact (universal
+# binaries, and arm64-only casks whose simulated-intel row is identical).
+# The token is part of the key so two casks sharing a URL are each checked
+# and each named in any error.
 dedup="$work/dedup.tsv"
-awk -F'\t' '!seen[$3 "|" $4]++' "$rows" > "$dedup"
+awk -F'\t' '!seen[$1 "|" $3 "|" $4]++' "$rows" > "$dedup"
 
 # GitHub release-asset URL: /<owner>/<repo>/releases/download/<tag>/<asset>
 gh_asset_re='^https://github\.com/([^/]+)/([^/]+)/releases/download/([^/]+)/(.+)$'
@@ -83,9 +85,19 @@ while IFS=$'\t' read -r token arch url sha; do
 
   cache_file="$cache/$(printf '%s' "${owner}/${repo}@${tag}" | shasum -a 256 | cut -d' ' -f1)"
   if [ ! -f "$cache_file" ]; then
-    if ! gh api "repos/${owner}/${repo}/releases/tags/${tag}" \
-           --jq '.assets[] | "\(.name)\t\(.digest)"' > "$cache_file" 2>/dev/null; then
-      echo "::error file=Casks/${token}.rb::${token} (${arch}): cannot read release ${owner}/${repo}@${tag}"
+    # This runs on every push, so a momentary GitHub API error must not read
+    # as a broken release: try three times before believing it.
+    attempt=1
+    until gh api "repos/${owner}/${repo}/releases/tags/${tag}" \
+            --jq '.assets[] | "\(.name)\t\(.digest)"' > "$cache_file" 2>"$work/gh.err"; do
+      if [ "$attempt" -ge 3 ]; then
+        break
+      fi
+      attempt=$((attempt + 1))
+      sleep 5
+    done
+    if [ "$attempt" -ge 3 ] && ! [ -s "$cache_file" ]; then
+      echo "::error file=Casks/${token}.rb::${token} (${arch}): cannot read release ${owner}/${repo}@${tag}: $(tr -d '\n' < "$work/gh.err")"
       mismatch_log+="  UNREADABLE RELEASE  ${token} (${arch})  ${owner}/${repo}@${tag}"$'\n'
       mismatches=$((mismatches + 1))
       rm -f "$cache_file"
@@ -141,10 +153,11 @@ if [ "$full" = "1" ] && [ -s "$work/todo.tsv" ]; then
     # --fail rejects non-2xx; curl exits 18 on a truncated body even when the
     # server returned 200, which is how a partial SourceForge/CDN response
     # otherwise masquerades as a checksum mismatch. Retry, then believe it.
-    if ! curl --fail --location --silent --show-error \
-              --retry 3 --retry-delay 2 --retry-all-errors \
-              --max-time 900 --output "$blob" "$url" 2>"$work/curl.err"; then
-      rc=$?
+    curl --fail --location --silent --show-error \
+         --retry 3 --retry-delay 2 --retry-all-errors \
+         --max-time 900 --output "$blob" "$url" 2>"$work/curl.err"
+    rc=$?
+    if [ "$rc" -ne 0 ]; then
       echo "::error file=Casks/${token}.rb::${token} (${arch}): download failed (curl exit ${rc}): $(tr -d '\n' < "$work/curl.err")"
       mismatch_log+="  DOWNLOAD FAILED  ${token} (${arch})  curl exit ${rc}"$'\n'
       mismatches=$((mismatches + 1))
