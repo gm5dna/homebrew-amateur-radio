@@ -65,7 +65,11 @@ class Wsjtz < Formula
     # official .pkg installer to load into /Library/LaunchDaemons
     # and has no effect from a Cellar path. Its presence also makes
     # `brew install` print a misleading `brew services start` hint.
-    rm(prefix/"com.wsjtx.sysctl.plist")
+    # Its companion ReadMe.txt describes that installer. Both are
+    # guarded so that upstream dropping either does not break the build.
+    %w[com.wsjtx.sysctl.plist ReadMe.txt].each do |file|
+      rm(prefix/file) if (prefix/file).exist?
+    end
   end
 
   def post_install
