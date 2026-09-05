@@ -18,7 +18,7 @@ cask "sdrconnect" do
 
     url "https://drive.usercontent.google.com/download?id=1HU_kH2A5zhV2vgeimAUrbdJVm3qabvt_&export=download&confirm=t"
 
-    depends_on macos: :catalina
+    depends_on macos: :big_sur
   end
 
   name "SDRconnect"
