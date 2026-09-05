@@ -13,8 +13,8 @@ cask "open-rig-programmer" do
   end
 
   # The bundle's LSMinimumSystemVersion is 10.13, but Homebrew no longer knows
-  # any macOS symbol below Catalina, which is a higher floor than the app's.
-  depends_on macos: :catalina
+  # any macOS symbol below Big Sur, which is a higher floor than the app's.
+  depends_on macos: :big_sur
 
   app "Open Rig Programmer.app"
 

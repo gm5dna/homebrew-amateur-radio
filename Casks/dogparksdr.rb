@@ -12,7 +12,7 @@ cask "dogparksdr" do
     regex(/Download:\s+v?(\d+(?:\.\d+)+)/i)
   end
 
-  depends_on macos: :catalina
+  depends_on macos: :big_sur
 
   app "dogparkSDR.app"
 
