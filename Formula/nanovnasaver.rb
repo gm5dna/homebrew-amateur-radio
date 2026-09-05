@@ -84,26 +84,12 @@ class Nanovnasaver < Formula
     chmod 0755, app/"Contents/MacOS/NanoVNASaver"
   end
 
-  def post_install
-    # Symlink into /Applications so it appears in Finder/Launchpad.
-    # Only ever manage a symlink we created (one pointing into the Homebrew
-    # prefix); never remove a real app or a symlink the user made themselves.
-    applications_app = Pathname("/Applications/NanoVNASaver.app")
-    if applications_app.symlink? && applications_app.readlink.to_s.start_with?(HOMEBREW_PREFIX.to_s)
-      applications_app.unlink
-    end
-    ln_s opt_prefix/"NanoVNASaver.app", applications_app unless applications_app.exist?
-  rescue Errno::EPERM
-    opoo "Could not symlink to /Applications (permission denied)."
-    opoo "Run: sudo ln -s #{opt_prefix}/NanoVNASaver.app /Applications/NanoVNASaver.app"
-  end
-
   def caveats
     <<~EOS
       NanoVNA Saver is installed at:
         #{opt_prefix}/NanoVNASaver.app
-      and symlinked to /Applications/NanoVNASaver.app when that location is
-      writable and no app of that name already exists there.
+      To show it in Finder and Launchpad, link it into /Applications:
+        ln -s #{opt_prefix}/NanoVNASaver.app /Applications/NanoVNASaver.app
 
       Ensure your NanoVNA device is connected via USB.
     EOS
