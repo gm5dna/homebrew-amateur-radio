@@ -19,6 +19,7 @@ permissions:
 jobs:
   livecheck:
     runs-on: macos-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -49,19 +50,36 @@ jobs:
 
           # A non-zero exit with no parsed output means livecheck itself failed
           # (as opposed to individual flaky casks while others succeeded).
+          LIVECHECK_FAILED=false
           if [ "$LIVECHECK_RC" -ne 0 ] && [ -z "$LIVECHECK_OUTPUT" ]; then
-            echo "::warning::brew livecheck exited ${LIVECHECK_RC} with no output; treating as a failed run:"
+            echo "::error::brew livecheck exited ${LIVECHECK_RC} with no output; treating as a failed run:"
             cat livecheck.err
+            LIVECHECK_FAILED=true
+          fi
+          echo "failed=${LIVECHECK_FAILED}" >> "$GITHUB_OUTPUT"
+
+          # Individual packages can fail (a host returning 403 to the runner
+          # IP, a timeout) while the run as a whole succeeds. Surface each one
+          # as a warning so a package that fails day after day is visible
+          # from the run list, instead of being buried in a log nobody opens.
+          # A single day's failure is usually a transient runner-IP block.
+          if [ -s livecheck.err ]; then
+            while IFS= read -r line; do
+              echo "::warning::livecheck: ${line}"
+            done < <(sed 's/\x1b\[[0-9;]*m//g' livecheck.err | grep -v '^[[:space:]]*$')
           fi
 
           echo "Livecheck output:"
           echo "$LIVECHECK_OUTPUT"
 
-          # Save output for next steps
+          # Save output for next steps. The delimiter is random so that a
+          # scraped line reading "EOF" cannot end the value early and smuggle
+          # further lines in as output commands.
+          delimiter="livecheck_$(uuidgen)"
           {
-            echo "output<<EOF"
+            echo "output<<${delimiter}"
             echo "$LIVECHECK_OUTPUT"
-            echo "EOF"
+            echo "${delimiter}"
           } >> "$GITHUB_OUTPUT"
 
           # Check if any lines contain "==>" indicating an actual version update
@@ -119,16 +137,20 @@ jobs:
             }
 
       - name: Summary
+        if: always()
         env:
           # env indirection, not ${{ }} interpolation into the script: the
           # livecheck output is untrusted third-party data.
           HAS_UPDATES: ${{ steps.livecheck.outputs.has_updates }}
+          LIVECHECK_FAILED: ${{ steps.livecheck.outputs.failed }}
           LIVECHECK_OUTPUT: ${{ steps.livecheck.outputs.output }}
         run: |
           {
             echo "## Livecheck Results"
             echo ""
-            if [ "$HAS_UPDATES" == "true" ]; then
+            if [ "$LIVECHECK_FAILED" == "true" ]; then
+              echo "brew livecheck failed outright; see the job log."
+            elif [ "$HAS_UPDATES" == "true" ]; then
               echo "### Updates Available"
               echo '```'
               echo "$LIVECHECK_OUTPUT"
@@ -137,3 +159,11 @@ jobs:
               echo "All packages are up to date."
             fi
           } >> "$GITHUB_STEP_SUMMARY"
+
+      # A run in which livecheck produced nothing is not "no updates". Fail
+      # it so it shows red in the run list, after the summary has been
+      # written; the issue-creation step above is already skipped because
+      # has_updates is false.
+      - name: Fail the run if livecheck itself failed
+        if: steps.livecheck.outputs.failed == 'true'
+        run: exit 1
