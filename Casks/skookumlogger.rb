@@ -1,5 +1,5 @@
 cask "skookumlogger" do
-  version "5.5"
+  version "6.0"
   sha256 :no_check
 
   url "https://www.k1gq.net/SkookumLoggerDownloads/SkookumLoggerRelease.zip"
