@@ -13,8 +13,8 @@ cask "ft710-cockpit" do
     strategy :page_match
   end
 
-  depends_on macos: :ventura
   depends_on cask: "silicon-labs-vcp-driver"
+  depends_on macos: :ventura
 
   app "FT-710 Cockpit.app"
 
