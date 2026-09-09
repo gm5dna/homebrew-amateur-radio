@@ -70,6 +70,7 @@ Everything else runs natively on both.
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
 | [**macwinlink**](https://github.com/jjones9527/macwinlink-releases) | Native Winlink email client with CAT rig control and VARA, ARDOP, and packet transports — public beta, macOS 15+ *(Apple Silicon)* |
 | [**multimode**](https://www.blackcatsystems.com/software/multimode.html) | Multi-mode decoder for CW, RTTY, FAX, SSTV, NAVTEX, PSK31, and more *(Intel)* |
+| [**open-sstv**](https://github.com/bucknova/Open-SSTV) | Open-source SSTV transceiver with rig control, QSO logbook, and image gallery — beta *(Apple Silicon)* |
 | [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem — port of UZ7HO's QtSoundModem *(Apple Silicon)* |
 | [**rttytci**](https://github.com/dl1bz/rttyTCI) | RTTY transceiver app for SDRs using the TCI protocol *(Apple Silicon)* |
 | [**sstv**](https://www.blackcatsystems.com/software/sstv.html) | Slow-scan television (SSTV) encoder and decoder *(Intel)* |
