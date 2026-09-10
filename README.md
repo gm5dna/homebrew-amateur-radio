@@ -55,6 +55,7 @@ Everything else runs natively on both.
 | [**rigprog**](https://github.com/gm5dna/open-rig-programmer) | Memory-channel programmer for Yaesu and Icom transceivers — command-line tool |
 | [**samoyed**](https://github.com/doismellburning/samoyed) | Software modem/TNC for packet radio (Go port of Dire Wolf) |
 | [**voacapl**](https://github.com/jawatson/voacapl) | HF propagation prediction engine (port of VOACAP) |
+| [**wsjtx-improved-auto**](https://sourceforge.net/projects/wsjt-x-improved/) | WSJT-X Improved with an opt-in setting that re-arms Wait & Pounce after each logged QSO — built from upstream source with a local patch |
 | [**wsjtz**](https://github.com/sq9fve/wsjt-z) | Weak-signal digital communication with automation features |
 | [**xastir**](https://github.com/Xastir/Xastir) | APRS client with mapping and weather alert support |
 
