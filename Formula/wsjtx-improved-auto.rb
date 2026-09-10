@@ -59,8 +59,10 @@ class WsjtxImprovedAuto < Formula
       s.gsub! "\r\nbool pounce = false;\r\n",
               "\r\nbool pounce = false;\r\nbool pounce_qso = false;  // Tx enabled while Pounce armed\r\n"
       # Pounce disarms itself 3 s after enabling Tx, so remember it was armed
-      s.gsub! "QTimer::singleShot (3000, [=] {pounce = false;});",
-              "QTimer::singleShot (3000, [=] {pounce_qso = pounce; pounce = false;});"
+      # at the moment Tx goes from off to on. Enabling Tx again during the
+      # QSO (Quick Call does this straight away) must not overwrite it.
+      s.gsub! "      m_auto = checked;\r\n",
+              "      if (!m_auto) pounce_qso = pounce;\r\n      m_auto = checked;\r\n"
       # 2 s after logging, and after read_txLog() refreshes the worked-before
       # guard. !m_auto keeps it disarmed while Tx is still enabled.
       s.gsub! "      pounce = false;\r\n      filtered = false;\r\n      read_txLog();",
