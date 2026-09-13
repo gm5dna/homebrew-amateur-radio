@@ -2,8 +2,8 @@ class Rigprog < Formula
   desc "Memory-channel programmer for Yaesu and Icom transceivers"
   homepage "https://github.com/gm5dna/open-rig-programmer"
   url "https://github.com/gm5dna/open-rig-programmer.git",
-      tag:      "v1.5.1",
-      revision: "48ea58a60bb97a9f502dd6d214e0bb73b9764b3a"
+      tag:      "v1.6.0",
+      revision: "29204fe353401400ba9ab6255c3fb9df4342cd2d"
   license "GPL-3.0-or-later"
   head "https://github.com/gm5dna/open-rig-programmer.git", branch: "main"
 
