@@ -1,12 +1,14 @@
 cask "wsjtx-improved" do
-  version "3.2.0,260818"
-
   on_arm do
-    sha256 "b43f2ec46536104386645b5de89418ffc6dccbb0c52b3453af413d68b5299b11"
+    version "3.2.0,260908"
+    sha256 "dac1610485da24db18b83bac0a4acceac7842b3b8ff57751c3418f2cceaf37a8"
 
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_ARM.zip"
   end
+  # No Intel DMG was published for 260908: Intel stays on the last build that
+  # has one. Bump on_intel separately once a newer _Darwin.dmg appears.
   on_intel do
+    version "3.2.0,260818"
     sha256 "eb2b895e381dbe78f656364682a0f87811a94a54effcbcd215ae44c6cb831085"
 
     url "https://downloads.sourceforge.net/wsjt-x-improved/WSJT-X_v#{version.csv.first}/macOS/wsjtx-#{version.csv.first}_improved_PLUS_#{version.csv.second}_Darwin.dmg"
