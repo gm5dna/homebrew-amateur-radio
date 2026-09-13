@@ -6,7 +6,7 @@ class Linbpq < Formula
   # KVerstring in Versions.h.
   url "https://github.com/g8bpq/linbpq/archive/af79b9bbbfb117a187097d6aacd362df78b1d7c3.tar.gz"
   version "6.0.25.40"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "58fe7698d4b33cb5f44274e329b2d42722b922f6f0c7258e27a26bb326bde3f7"
   license :cannot_represent
 
   livecheck do
@@ -32,6 +32,20 @@ class Linbpq < Formula
     inreplace "pngconf.h",
               /#  if defined\(MACOS\).*?#  endif/m,
               "#  include <math.h>"
+
+    # 6.0.25.40 added GCC's libbacktrace to annotate crash dumps with source
+    # file and line numbers. macOS has no libbacktrace and the makefile never
+    # links it on any platform, so stub its three entry points. execinfo.h
+    # still supplies backtrace() and backtrace_symbols_fd(), so the SIGSEGV
+    # and SIGABRT handlers keep dumping stacks, just without source lines.
+    inreplace "LinBPQ.c", "#include <backtrace.h>", <<~C.chomp
+      struct backtrace_state;
+      typedef void (*backtrace_error_callback)(void *data, const char *msg, int errnum);
+      typedef int (*backtrace_full_callback)(void *data, uintptr_t pc, const char *filename, int lineno, const char *function);
+      static inline struct backtrace_state *backtrace_create_state(const char *filename, int threaded, backtrace_error_callback errcb, void *data) { return NULL; }
+      static inline int backtrace_pcinfo(struct backtrace_state *state, uintptr_t pc, backtrace_full_callback cb, backtrace_error_callback errcb, void *data) { return cb(data, pc, NULL, 0, NULL); }
+      static inline void backtrace_print(struct backtrace_state *state, int skip, FILE *file) {}
+    C
 
     # The Linux build rule appends `sudo setcap ...` after linking. setcap
     # doesn't exist on macOS and the capabilities aren't needed here.
