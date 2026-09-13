@@ -149,7 +149,7 @@ ships.
 | [**picoscope**](https://www.picotech.com/products/oscilloscope) | Oscilloscope software for PicoScope test-and-measurement hardware *(Intel)* |
 | [**qttinysa**](https://github.com/g4ixt/QtTinySA) | Control software for the TinySA spectrum analyser |
 | [**saleae-logic**](https://www.saleae.com/) | Logic analyser and oscilloscope software for Saleae Logic devices |
-| [**scanastudio**](https://www.ikalogic.com/) | Interface software for Ikalogic logic analysers and pattern generators *(Intel)* |
+| [**scanastudio**](https://www.ikalogic.com/) | Interface software for Ikalogic logic analysers and pattern generators |
 
 ### Utilities
 
