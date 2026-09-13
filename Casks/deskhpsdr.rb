@@ -1,8 +1,15 @@
 cask "deskhpsdr" do
-  version "2.7.39"
-  sha256 "1dbb71c8fb156682585a40704cc80dc653ca1b0cccb91b21c5d94de872720b84"
+  version "2.7.40"
 
-  url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-v#{version}-macos-arm64.zip"
+  on_arm do
+    url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-#{version}-master-d63db78-macos-arm64.zip"
+    sha256 "c62ea12dddfd5fa50fec17bf742b88d5879afbe1da6570e2dad1dda18b6c35cc"
+  end
+  on_intel do
+    url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-#{version}-master-d63db78-macos-x86_64.zip"
+    sha256 "48d295a235efbb862d456b910742f4403edde6490f49aa5a694f3632faa51229"
+  end
+
   name "deskHPSDR"
   desc "Software-defined radio app for OpenHPSDR protocol 1 and 2 transceivers"
   homepage "https://github.com/dl1bz/deskhpsdr"
@@ -12,7 +19,6 @@ cask "deskhpsdr" do
     strategy :github_latest
   end
 
-  depends_on arch: :arm64
   depends_on macos: :sequoia
 
   app "deskHPSDR.app"
