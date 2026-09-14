@@ -131,6 +131,7 @@ ships.
 | [**spectraflux**](https://rfspace.com/RFSPACE/SpectraFlux/) | Native SDR spectrum analyser with 3D waterfall and demodulation — rolling beta *(Apple Silicon)* |
 | [**wfview**](https://wfview.org/) | Open source interface for Icom, Kenwood, and Yaesu transceivers |
 | [**wfview-beta**](https://wfview.org/) | wfview Qt6 universal beta builds — tracks upstream master |
+| [**yaesu-web-control**](https://github.com/mm5agm/Yaesu_Web_Control) | Browser-based CAT controller for Yaesu HF transceivers — CAT only on macOS (no SDR spectrum) |
 
 ### Antenna modelling
 
