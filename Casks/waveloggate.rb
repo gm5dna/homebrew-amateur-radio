@@ -1,13 +1,13 @@
 cask "waveloggate" do
-  version "2.1.0"
+  version "2.1.1"
 
   on_arm do
-    sha256 "1cde5903b59a72a19ee28fed9ed1d2a1b505828ed723b789dfcbc46c999a1d18"
+    sha256 "7b90f81966e2fd62f7981a2441a64960bab4e401645e924ea4392b813990fa74"
 
     url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WavelogGate-darwin-arm64.dmg"
   end
   on_intel do
-    sha256 "e4b1fc9f5eab6798d23bbf55b0408e29bdd5e3748b3e6e01826a428c2274f92e"
+    sha256 "c5e84ec3180497f3890d810958232ffeafe1ceabafdb343c379aa5b94bc20621"
 
     url "https://github.com/wavelog/WaveLogGate/releases/download/v#{version}/WavelogGate-darwin-amd64.dmg"
   end
