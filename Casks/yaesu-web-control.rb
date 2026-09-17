@@ -1,9 +1,9 @@
 cask "yaesu-web-control" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.5.0"
-  sha256 arm:   "30d576cb5b7dc715f5786da84015426444852db0dbea1b6b34a31f378f67a8c4",
-         intel: "9290f1f5e18c93c5a8234f4130a1f9211f5ad1eb05a3a8e0903f8076f9e8767e"
+  version "2.5.1"
+  sha256 arm:   "dd6cbadb18426c34613caba098d622c677a2681515622e114d013be08c3823e0",
+         intel: "6296484a0ff693c0e3dd08048ba79ba89893ef060401fd08be098f212a49fbc5"
 
   url "https://github.com/mm5agm/Yaesu_Web_Control/releases/download/v#{version}/Yaesu_Web_Control_CAT_#{version}_macos-#{arch}.dmg"
   name "Yaesu Web Control"
