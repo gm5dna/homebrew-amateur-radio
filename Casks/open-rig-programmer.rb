@@ -1,6 +1,6 @@
 cask "open-rig-programmer" do
-  version "1.9.0"
-  sha256 "513b3e9164d76cc178347a454080ac8eb7880cf708cf8d9ab2e56578fb6d6252"
+  version "1.10.0"
+  sha256 "e226ac28907e1eb7c7f689a61110cea86a93ed0bedbba33eeb149cbc35e4bfa5"
 
   url "https://github.com/gm5dna/open-rig-programmer/releases/download/v#{version}/open-rig-programmer-v#{version}-darwin-universal.app.zip"
   name "Open Rig Programmer"
