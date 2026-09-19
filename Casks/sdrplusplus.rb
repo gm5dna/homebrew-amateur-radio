@@ -17,7 +17,7 @@ cask "sdrplusplus" do
     skip "Nightly build with no versioned releases"
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "SDR++.app"
 

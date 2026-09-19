@@ -29,7 +29,7 @@ cask "wsjtx-improved" do
     end
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "wsjtx.app", target: "wsjtx-improved.app"
 
