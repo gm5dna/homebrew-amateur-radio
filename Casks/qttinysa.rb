@@ -20,7 +20,7 @@ cask "qttinysa" do
     strategy :github_releases
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "QtTinySA.app"
 

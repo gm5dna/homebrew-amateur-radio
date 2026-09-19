@@ -13,7 +13,7 @@ cask "hf-autopilot" do
     strategy :page_match
   end
 
-  depends_on macos: :big_sur
+  depends_on :macos
 
   app "HF Autopilot.app"
 
