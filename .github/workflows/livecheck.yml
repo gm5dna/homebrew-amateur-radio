@@ -74,7 +74,7 @@ jobs:
             # Prefixed, so a version string scraped from a third-party site
             # cannot start a line with "::" and smuggle in a workflow command.
             echo "livecheck stderr:"
-            sed 's/^/livecheck: /' <<<"$LIVECHECK_ERR"
+            awk '{ print "livecheck: " $0 }' <<<"$LIVECHECK_ERR"
           fi
 
           echo "Livecheck output:"
