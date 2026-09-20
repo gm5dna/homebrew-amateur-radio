@@ -52,21 +52,29 @@ jobs:
           # (as opposed to individual flaky casks while others succeeded).
           LIVECHECK_FAILED=false
           if [ "$LIVECHECK_RC" -ne 0 ] && [ -z "$LIVECHECK_OUTPUT" ]; then
-            echo "::error::brew livecheck exited ${LIVECHECK_RC} with no output; treating as a failed run:"
-            cat livecheck.err
+            echo "::error::brew livecheck exited ${LIVECHECK_RC} with no output; treating as a failed run; see the stderr dump below"
             LIVECHECK_FAILED=true
           fi
           echo "failed=${LIVECHECK_FAILED}" >> "$GITHUB_OUTPUT"
 
           # Individual packages can fail (a host returning 403 to the runner
-          # IP, a timeout) while the run as a whole succeeds. Surface each one
-          # as a warning so a package that fails day after day is visible
-          # from the run list, instead of being buried in a log nobody opens.
-          # A single day's failure is usually a transient runner-IP block.
+          # IP, a timeout) while the run as a whole succeeds. Homebrew already
+          # formats those as annotation directives on stderr, because bin/brew
+          # passes GITHUB_ACTIONS through whenever CI is set, but stderr is
+          # redirected to a file above so they never reach the log stream to
+          # be parsed. Replay only those lines, so a package that fails day
+          # after day is visible from the run list; a single day's failure is
+          # usually a transient runner-IP block. Wrapping every stderr line
+          # instead turned Homebrew's own gem-fetch and developer-mode chatter
+          # into annotations, which buried the real errors.
           if [ -s livecheck.err ]; then
-            while IFS= read -r line; do
-              echo "::warning::livecheck: ${line}"
-            done < <(sed 's/\x1b\[[0-9;]*m//g' livecheck.err | grep -v '^[[:space:]]*$')
+            LIVECHECK_ERR=$(sed 's/\x1b\[[0-9;]*m//g' livecheck.err)
+            grep -E '^::(error|warning|notice)::' <<<"$LIVECHECK_ERR" || true
+
+            # Prefixed, so a version string scraped from a third-party site
+            # cannot start a line with "::" and smuggle in a workflow command.
+            echo "livecheck stderr:"
+            sed 's/^/livecheck: /' <<<"$LIVECHECK_ERR"
           fi
 
           echo "Livecheck output:"
