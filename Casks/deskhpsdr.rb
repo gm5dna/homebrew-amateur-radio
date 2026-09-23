@@ -2,14 +2,14 @@ cask "deskhpsdr" do
   version "2.8.3"
 
   on_arm do
-    sha256 "867184a702c23b61e1047c45ef8339f9af6904665e409cd4c4b565cd9944e585"
+    sha256 "4fe39640535982452ff5c8771e70f63838d4264e891ec0231c44839fb8e638dc"
 
-    url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-#{version}-master-98087a1-macos-arm64.zip"
+    url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-#{version}-master-1d04da4-macos-arm64.zip"
   end
   on_intel do
-    sha256 "b20c74d13f29889321e276a0811d6e850f5aa830c87da78242ded7ee1052a0d9"
+    sha256 "f7dc97a743cb7f9f1fca30ca8e7c15bea943472f631846b593d6cc5f90f2841b"
 
-    url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-#{version}-master-98087a1-macos-x86_64.zip"
+    url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version}/deskHPSDR-#{version}-master-1d04da4-macos-x86_64.zip"
   end
 
   name "deskHPSDR"
