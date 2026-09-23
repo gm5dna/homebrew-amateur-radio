@@ -46,6 +46,7 @@ Everything else runs natively on both.
 
 | Name | Description |
 |------|-------------|
+| [**chirp**](https://chirpmyradio.com/) | Memory programming for amateur radio handhelds and mobiles — built from the GitHub master branch because Cloudflare blocks the official downloads |
 | [**cloudlogcatqt**](https://github.com/myzinsky/CloudLogCatQt) | CAT control interface for Cloudlog logging |
 | [**linbpq**](https://github.com/g8bpq/linbpq) | G8BPQ AX.25 packet switch (Linux/macOS port of BPQ32) |
 | [**mshv**](https://github.com/dl1bz/mshv-macos-port) | Weak-signal and meteor-scatter digital modes (FT8, FT4, JT65, Q65) |
