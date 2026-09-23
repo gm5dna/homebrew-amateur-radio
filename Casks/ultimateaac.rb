@@ -19,9 +19,12 @@ cask "ultimateaac" do
 
   app "UltimateAAC.app"
 
-  caveats <<~EOS
-    UltimateAAC is only ad-hoc signed. If macOS says it is damaged, run:
-
-      xattr -d com.apple.quarantine "#{appdir}/UltimateAAC.app"
-  EOS
+  # Upstream edits Info.plist after signing, so the shipped signature is
+  # invalid and macOS kills the app at launch; re-sign it ad hoc.
+  preflight_steps do
+    run "/usr/bin/codesign",
+        args:           ["--force", "--deep", "--sign", "-", "UltimateAAC.app"],
+        chdir:          ".",
+        writable_paths: ["UltimateAAC.app"]
+  end
 end
