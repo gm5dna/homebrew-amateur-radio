@@ -3,7 +3,7 @@ class Rigprog < Formula
   homepage "https://github.com/gm5dna/open-rig-programmer"
   url "https://github.com/gm5dna/open-rig-programmer.git",
       tag:      "v1.10.0",
-      revision: "9cb9668f1d30cda8e753cab0f05ae4b20b88e3fb"
+      revision: "0520021bcfd5ab092a20b5c313558b5c905eac3a"
   license "GPL-3.0-or-later"
   head "https://github.com/gm5dna/open-rig-programmer.git", branch: "main"
 

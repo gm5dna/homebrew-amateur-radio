@@ -18,7 +18,7 @@ class Qttermtcp < Formula
   # macOS, and the qmake variable fix (ICONS -> ICON) needed for the icon to be
   # picked up. The PR is unmerged upstream, so we carry it inline.
   resource "icns" do
-    url "https://raw.githubusercontent.com/gm5dna/QtTermTCP/756001d2ee1c7a48a45f31855ea631644683251b/QtTermTCP.icns"
+    url "https://raw.githubusercontent.com/gm5dna/QtTermTCP/3a528c01a1c14bb3848fe108cf34cefda2d5bde4/QtTermTCP.icns"
     sha256 "4c209b1c725f30540bbc252571244f01410482f78868e3b5c8d3077f6de5a746"
   end
 
