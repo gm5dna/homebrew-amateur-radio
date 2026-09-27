@@ -1,8 +1,8 @@
 cask "rttytci" do
-  version "0.1.1"
-  sha256 "4c9a5e6e86881367f6a7245f159faa267cba3f2a02f12c6f59431bc2f91d4e33"
+  version "0.2.0"
+  sha256 "fba9d89ce54aba8ba31c638b700be9c2343dc9a68445f1ba0fec6cd245777f0d"
 
-  url "https://github.com/dl1bz/rttyTCI/releases/download/#{version}/rttytci-macos-arm64.zip"
+  url "https://github.com/dl1bz/rttyTCI/releases/download/#{version}/rttyTCI-macos-universal.zip"
   name "rttyTCI"
   desc "RTTY transceiver app for SDRs using the TCI protocol"
   homepage "https://github.com/dl1bz/rttyTCI"
@@ -13,7 +13,6 @@ cask "rttytci" do
     strategy :github_latest
   end
 
-  depends_on arch: :arm64
   depends_on :macos
 
   app "RTTY-TCI.app"
@@ -30,7 +29,5 @@ cask "rttytci" do
     confirm in the dialog. Alternatively, run:
 
       xattr -r -d com.apple.quarantine /Applications/RTTY-TCI.app
-
-    Upstream provides Apple Silicon builds only; there is no Intel build.
   EOS
 end
