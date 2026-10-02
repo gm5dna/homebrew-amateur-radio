@@ -173,7 +173,7 @@ class WsjtxImprovedAuto < Formula
 
     # Build produces wsjtx.app; rename it so it cannot be confused with the
     # wsjtx and wsjtx-improved casks
-    mv prefix/"wsjtx.app", prefix/"wsjtx-improved-auto.app" if (prefix/"wsjtx.app").exist?
+    mv prefix/"wsjtx.app", prefix/"wsjtx-improved-auto.app"
 
     # Drop upstream's sysctl tuning plist: it's intended for the
     # official .pkg installer to load into /Library/LaunchDaemons
@@ -181,9 +181,7 @@ class WsjtxImprovedAuto < Formula
     # `brew install` print a misleading `brew services start` hint.
     # Its companion ReadMe.txt describes that installer. Both are
     # guarded so that upstream dropping either does not break the build.
-    %w[com.wsjtx.sysctl.plist ReadMe.txt].each do |file|
-      rm(prefix/file) if (prefix/file).exist?
-    end
+    rm [prefix/"com.wsjtx.sysctl.plist", prefix/"ReadMe.txt"].select(&:exist?)
   end
 
   def caveats

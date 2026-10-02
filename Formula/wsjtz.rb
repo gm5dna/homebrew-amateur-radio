@@ -36,30 +36,28 @@ class Wsjtz < Formula
               "add_subdirectory (bundle_fixup)",
               "# add_subdirectory (bundle_fixup) # skipped for Homebrew"
 
-    mkdir "build" do
-      prefix_path = %w[qt@5 hamlib fftw boost libusb].map do |dep|
-        formula_opt_prefix(dep)
-      end.join(";")
+    prefix_path = %w[qt@5 hamlib fftw boost libusb].map do |dep|
+      formula_opt_prefix(dep)
+    end.join(";")
 
-      args = %W[
-        -DCMAKE_PREFIX_PATH=#{prefix_path}
-        -DCMAKE_Fortran_COMPILER=#{formula_opt_bin("gcc")/"gfortran"}
-        -DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}
-        -DOpenMP_Fortran_FLAGS=-fopenmp
-        -DOpenMP_Fortran_LIB_NAMES=gomp
-        -DOpenMP_gomp_LIBRARY=#{gomp_lib}
-        -DCMAKE_EXE_LINKER_FLAGS=#{gomp_lib}
-        -DWSJT_SKIP_MANPAGES=ON
-        -DWSJT_GENERATE_DOCS=OFF
-      ]
+    args = %W[
+      -DCMAKE_PREFIX_PATH=#{prefix_path}
+      -DCMAKE_Fortran_COMPILER=#{formula_opt_bin("gcc")/"gfortran"}
+      -DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}
+      -DOpenMP_Fortran_FLAGS=-fopenmp
+      -DOpenMP_Fortran_LIB_NAMES=gomp
+      -DOpenMP_gomp_LIBRARY=#{gomp_lib}
+      -DCMAKE_EXE_LINKER_FLAGS=#{gomp_lib}
+      -DWSJT_SKIP_MANPAGES=ON
+      -DWSJT_GENERATE_DOCS=OFF
+    ]
 
-      system "cmake", "-S", "..", "-B", ".", *args, *std_cmake_args
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     # Build produces wsjtx.app; rename to wsjtz.app to avoid confusion with WSJT-X
-    mv prefix/"wsjtx.app", prefix/"wsjtz.app" if (prefix/"wsjtx.app").exist?
+    mv prefix/"wsjtx.app", prefix/"wsjtz.app"
 
     # Drop upstream's sysctl tuning plist — it's intended for the
     # official .pkg installer to load into /Library/LaunchDaemons
@@ -67,9 +65,7 @@ class Wsjtz < Formula
     # `brew install` print a misleading `brew services start` hint.
     # Its companion ReadMe.txt describes that installer. Both are
     # guarded so that upstream dropping either does not break the build.
-    %w[com.wsjtx.sysctl.plist ReadMe.txt].each do |file|
-      rm(prefix/file) if (prefix/file).exist?
-    end
+    rm [prefix/"com.wsjtx.sysctl.plist", prefix/"ReadMe.txt"].select(&:exist?)
   end
 
   def caveats

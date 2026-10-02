@@ -11,10 +11,6 @@ cask "sstv" do
   livecheck do
     url :homepage
     regex(/SSTV version\s*(\d+(?:\.\d+)+)\s+for macOS/i)
-    strategy :page_match do |page, regex|
-      match = page.match(regex)
-      match ? [match[1]] : []
-    end
   end
 
   depends_on :macos

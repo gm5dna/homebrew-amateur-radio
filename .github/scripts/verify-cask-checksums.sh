@@ -17,13 +17,13 @@
 # Exit 1 on any mismatch. Assets we cannot verify this way are reported
 # explicitly rather than passed over in silence.
 #
-# Pass --full (or VERIFY_FULL=1) to additionally download and hash every
-# artifact that has a sha256 but is not a digest-bearing GitHub release asset
-# (SourceForge, S3, plain web hosts). That closes the gap for their Intel
-# builds too, at the cost of a couple of GB, so CI runs it on the daily
-# schedule rather than on every push.
+# Pass --full (or VERIFY_FULL=1) to additionally `brew fetch --all-platforms`
+# every cask with an artifact that has a sha256 but is not a digest-bearing
+# GitHub release asset (SourceForge, S3, plain web hosts). That closes the gap
+# for their Intel builds too, at the cost of a couple of GB, so CI runs it on
+# the daily schedule rather than on every push.
 #
-# Requires: brew (with this tap available), gh (authenticated via GH_TOKEN).
+# Requires: brew (with this tap available), gh (authenticated via GH_TOKEN), jq.
 # Written for bash 3.2 (macOS /bin/bash): no associative arrays.
 
 set -uo pipefail
@@ -44,7 +44,24 @@ rows="$work/rows.tsv"
 cache="$work/cache"
 mkdir -p "$cache"
 
-if ! brew ruby .github/scripts/dump-cask-artifacts.rb > "$rows"; then
+# One row per cask per architecture: token, arch, url, sha256. Without
+# --variations, `brew info` only describes the running architecture, so an
+# `on_intel` url/sha would be invisible on Apple Silicon. Variations list only
+# what differs from the host, keyed by OS (arm64_<os> for Apple Silicon).
+host_arch=intel
+[ "$(uname -m)" = "arm64" ] && host_arch=arm
+casks=(Casks/*.rb)
+casks=("${casks[@]#Casks/}")
+casks=("${casks[@]%.rb}")
+if ! brew info --json=v2 --variations --cask "${casks[@]/#/gm5dna/amateur-radio/}" |
+     jq -r --arg host "$host_arch" '
+       .casks[] | . as $c
+       | ([{arch: $host, url, sha256}]
+          + [.variations | to_entries[]
+             | select((.key | test("linux") | not) and .value.url)
+             | {arch: (if (.key | startswith("arm64_")) then "arm" else "intel" end),
+                url: .value.url, sha256: (.value.sha256 // $c.sha256)}])
+       | .[] | [$c.token, .arch, .url, .sha256] | @tsv' > "$rows"; then
   echo "::error::failed to load one or more casks; see errors above"
   exit 1
 fi
@@ -87,16 +104,13 @@ while IFS=$'\t' read -r token arch url sha; do
   if [ ! -f "$cache_file" ]; then
     # This runs on every push, so a momentary GitHub API error must not read
     # as a broken release: try three times before believing it.
-    attempt=1
-    until gh api "repos/${owner}/${repo}/releases/tags/${tag}" \
-            --jq '.assets[] | "\(.name)\t\(.digest)"' > "$cache_file" 2>"$work/gh.err"; do
-      if [ "$attempt" -ge 3 ]; then
-        break
-      fi
-      attempt=$((attempt + 1))
-      sleep 5
+    for attempt in 1 2 3; do
+      gh api "repos/${owner}/${repo}/releases/tags/${tag}" \
+        --jq '.assets[] | "\(.name)\t\(.digest)"' > "$cache_file" 2>"$work/gh.err" && break
+      rm -f "$cache_file"
+      [ "$attempt" -lt 3 ] && sleep 5
     done
-    if [ "$attempt" -ge 3 ] && ! [ -s "$cache_file" ]; then
+    if [ ! -f "$cache_file" ]; then
       echo "::error file=Casks/${token}.rb::${token} (${arch}): cannot read release ${owner}/${repo}@${tag}: $(tr -d '\n' < "$work/gh.err")"
       mismatch_log+="  UNREADABLE RELEASE  ${token} (${arch})  ${owner}/${repo}@${tag}"$'\n'
       mismatches=$((mismatches + 1))
@@ -142,47 +156,21 @@ echo "  sha256 :no_check         ${skipped_no_check}"
 echo "  not a GitHub release     ${skipped_not_gh}"
 echo "  asset has no digest      ${skipped_no_digest}"
 
-downloaded=0
 if [ "$full" = "1" ] && [ -s "$work/todo.tsv" ]; then
+  tokens="$(cut -f1 "$work/todo.tsv" | sort -u)"
   echo
-  echo "--full: downloading and hashing $(wc -l < "$work/todo.tsv" | tr -d ' ') remaining artifact(s)"
-  echo
+  echo "--full: fetching $(wc -l <<<"$tokens" | tr -d ' ') cask(s) for every platform"
 
-  while IFS=$'\t' read -r token arch url sha; do
-    blob="$work/blob"
-    # --fail rejects non-2xx; curl exits 18 on a truncated body even when the
-    # server returned 200, which is how a partial SourceForge/CDN response
-    # otherwise masquerades as a checksum mismatch. Retry, then believe it.
-    curl --fail --location --silent --show-error \
-         --retry 3 --retry-delay 2 --retry-all-errors \
-         --max-time 900 --output "$blob" "$url" 2>"$work/curl.err"
-    rc=$?
-    if [ "$rc" -ne 0 ]; then
-      echo "::error file=Casks/${token}.rb::${token} (${arch}): download failed (curl exit ${rc}): $(tr -d '\n' < "$work/curl.err")"
-      mismatch_log+="  DOWNLOAD FAILED  ${token} (${arch})  curl exit ${rc}"$'\n'
-      mismatches=$((mismatches + 1))
-      rm -f "$blob"
-      continue
-    fi
-
-    actual="$(shasum -a 256 "$blob" | cut -d' ' -f1)"
-    bytes="$(wc -c < "$blob" | tr -d ' ')"
-    rm -f "$blob"
-
-    if [ "$actual" = "$sha" ]; then
-      downloaded=$((downloaded + 1))
-      printf '  ok        %-22s %-6s %10s bytes\n' "$token" "$arch" "$bytes"
-    else
-      echo "::error file=Casks/${token}.rb::sha256 mismatch for ${token} (${arch}): declared ${sha}, downloaded ${actual}"
-      mismatch_log+="  MISMATCH    ${token} (${arch}) ${url}"$'\n'
-      mismatch_log+="              declared   ${sha}"$'\n'
-      mismatch_log+="              downloaded ${actual} (${bytes} bytes)"$'\n'
+  # `brew fetch` retries, rejects truncated downloads and checks each
+  # distinct URL against its declared sha256.
+  for token in $tokens; do
+    echo
+    if ! brew fetch --cask --all-platforms "gm5dna/amateur-radio/${token}"; then
+      echo "::error file=Casks/${token}.rb::${token}: brew fetch --all-platforms failed (download or sha256 mismatch; see log)"
+      mismatch_log+="  FETCH FAILED  ${token}"$'\n'
       mismatches=$((mismatches + 1))
     fi
-  done < "$work/todo.tsv"
-
-  echo
-  echo "Verified by download: ${downloaded}"
+  done
 elif [ -n "$skip_log" ]; then
   echo
   echo "Unverified detail (these are NOT checked by this job; use --full):"
