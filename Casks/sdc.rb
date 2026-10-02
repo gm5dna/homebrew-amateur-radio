@@ -1,13 +1,15 @@
 cask "sdc" do
-  version "19.0709"
-
   on_arm do
-    sha256 "20ad2ba3824ef38587e7de43038a3a8000da5fd7d4e4c827c152e09530597f81"
+    version "19.08"
+    sha256 "aee64e11ef06b9e5fad1627cd6fcaa2dcf5bba8debb048682c8c39318c556297"
 
     url "https://www.lw-sdc.com/wp-content/uploads/SDC_#{version.dots_to_underscores}_mac_M_setup.zip"
   end
+  # Upstream stopped publishing Intel builds after 19.06 (19.0714 and 19.08
+  # are macOS_M only), so Intel stays on the last release that has one.
   on_intel do
-    sha256 "78c70685d73fa3f3a6fc6fc6bf9a617fe75bf99786ad637c7cf69e7d2a32dacf"
+    version "19.06"
+    sha256 "acf7e00015e74f985bf026752bf3e0d313c3e368023f0dd140d1d2ea3f51b5fa"
 
     url "https://www.lw-sdc.com/wp-content/uploads/SDC_#{version.dots_to_underscores}_mac_I_setup.zip"
   end
@@ -18,16 +20,14 @@ cask "sdc" do
 
   livecheck do
     url "https://www.lw-sdc.com/?page_id=79"
-    # Match the macOS download links, not the page prose: lw-sdc.com announces
-    # new versions in text before publishing the mac zips, which filed a false
-    # update issue for 19.070801 (both mac URLs 404 at the time). It also
-    # publishes the Apple Silicon (_M_) zip before the Intel (_I_) one, which
-    # filed #47 for 19.0710 whilst the Intel URL 404'd. Only report versions
-    # that have both zips so a bump never breaks on_intel.
-    regex(/SDC_(\d+(?:_\d+)+)_mac_([MI])_setup\.zip/i)
+    # Match the download link, not the page prose: lw-sdc.com announces new
+    # versions in text before publishing the mac zips. Versions mix 19.MMDD
+    # and 19.MM (19.0518, 19.06, 19.0714, 19.08), which do not sort, so take
+    # the first Apple Silicon link: the current release heads the page,
+    # above the chronological archive.
+    regex(/SDC[._-](\d+(?:[._]\d+)+)[._-]mac[._-]M[._-]setup\.zip/i)
     strategy :page_match do |page, regex|
-      by_arch = page.scan(regex).group_by { |m| m.last.upcase }.transform_values { |m| m.map(&:first) }
-      (by_arch.fetch("M", []) & by_arch.fetch("I", [])).map { |v| v.tr("_", ".") }
+      page[regex, 1]&.tr("_", ".")
     end
   end
 
