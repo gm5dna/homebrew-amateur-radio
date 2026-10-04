@@ -134,6 +134,7 @@ ships.
 | [**wfview**](https://wfview.org/) | Open source interface for Icom, Kenwood, and Yaesu transceivers |
 | [**wfview-beta**](https://wfview.org/) | wfview Qt6 universal beta builds — tracks upstream master |
 | [**yaesu-web-control**](https://github.com/mm5agm/Yaesu_Web_Control) | Browser-based CAT controller for Yaesu HF transceivers — CAT only on macOS (no SDR spectrum) |
+| [**zeus-link**](https://zeussdr.com/) | Launcher for the ZeusSDR OpenHPSDR station console — fetches the engine itself; needs a QRZ.com sign-in |
 
 ### Antenna modelling
 
