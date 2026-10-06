@@ -121,6 +121,7 @@ ships.
 | [**dogparksdr**](https://www.dogparksoftware.com/dogparkSDR.html) | Native client for FlexRadio Signature-series software-defined radios |
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
+| [**hermitsdr**](https://hermitsdr.com/) | Native client for Hermes-Lite 2, SquareSDR and ANAN openHPSDR radios, with FT8 and other digital-mode decoders *(Apple Silicon)* |
 | [**macdoppler**](https://www.dogparksoftware.com/MacDoppler.html) | Satellite tracking with Doppler tuning and rotator/antenna automation |
 | [**open-rig-programmer**](https://github.com/gm5dna/open-rig-programmer) | Memory-channel programmer for Yaesu and Icom transceivers — GUI; see the **rigprog** formula for the command-line tool |
 | [**sdc**](https://www.lw-sdc.com/) | Software Defined Connectors — CW/RTTY/PSK skimmers, rig sync, and audio routing for SDR software |
