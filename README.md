@@ -107,7 +107,7 @@ ships.
 | [**hamrs**](https://www.hamrs.app/) | Portable amateur radio logger for Parks on the Air, Field Day, and SOTA |
 | [**jlog-amateur-radio**](https://jlog.org/) | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
 | [**netlogger**](https://www.netlogger.org/) | Amateur radio net logging and real-time net monitoring *(Intel)* |
-| [**qlog**](https://github.com/aa5sh/QLog) | Amateur radio logbook with DX cluster, rig control, and online log integration |
+| [**qlog**](https://github.com/aa5sh/QLog) | Amateur radio logbook with DX cluster, rig control, and online log integration *(Apple Silicon)* |
 | [**rumlogng**](https://dl2rum.de/) | Amateur radio logger with QSL management and DX tracking |
 | [**skookumlogger**](https://www.k1gq.net/SkookumLogger/) | Advanced contest logging by K1GQ |
 | [**ultimateaac**](https://epc-mc.eu/) | Award application centre for EPC, AGB, ERC and other digital-mode award programmes, reading your existing logbook |
