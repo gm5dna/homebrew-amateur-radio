@@ -68,7 +68,7 @@ Everything else runs natively on both.
 | [**freedv**](https://freedv.org/) | Open-source HF digital voice modem and GUI |
 | [**freedv-neo**](https://blog.marxy.org/p/freedv-neo.html) | Client for the FreeDV RADE V1 digital voice mode — independent build by VK3TPM, not an official FreeDV project release (macOS 14+) |
 | [**js8call**](https://github.com/js8call/js8call) | Weak-signal keyboard-to-keyboard messaging built on FT8 *(Intel)* |
-| [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features |
+| [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features *(Apple Silicon)* |
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
 | [**macwinlink**](https://github.com/jjones9527/macwinlink-releases) | Native Winlink email client with CAT rig control and VARA, ARDOP, and packet transports — public beta, macOS 15+ *(Apple Silicon)* |
 | [**multimode**](https://www.blackcatsystems.com/software/multimode.html) | Multi-mode decoder for CW, RTTY, FAX, SSTV, NAVTEX, PSK31, and more *(Intel)* |

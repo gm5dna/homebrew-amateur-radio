@@ -12,6 +12,7 @@ cask "js8call-improved" do
     strategy :github_latest
   end
 
+  depends_on arch: :arm64
   depends_on macos: :monterey
 
   app "JS8Call.app", target: "JS8Call-improved.app"
