@@ -1,7 +1,7 @@
 cask "sdc" do
   on_arm do
     version "19.08"
-    sha256 "aee64e11ef06b9e5fad1627cd6fcaa2dcf5bba8debb048682c8c39318c556297"
+    sha256 "b97b877fa122d012f7054ea88e43fdf1d31b5953835c34247495dc954314d14e"
 
     url "https://www.lw-sdc.com/wp-content/uploads/SDC_#{version.dots_to_underscores}_mac_M_setup.zip"
   end
