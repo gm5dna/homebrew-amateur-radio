@@ -110,6 +110,14 @@ while IFS=$'\t' read -r token arch url sha; do
       rm -f "$cache_file"
       [ "$attempt" -lt 3 ] && sleep 5
     done
+    # dl1bz/deskhpsdr deletes each release once the next ships (2.8.5,
+    # 2.8.6), so its 404 means "bump due", which livecheck already opens
+    # an update issue for. Any other cask's 404 stays an error.
+    if [ ! -f "$cache_file" ] && [ "$token" = "deskhpsdr" ] && grep -q 'HTTP 404' "$work/gh.err"; then
+      echo "::warning file=Casks/${token}.rb::${token} (${arch}): release ${owner}/${repo}@${tag} deleted upstream; bump the cask"
+      skip_log+="  deleted     ${token} (${arch})  ${owner}/${repo}@${tag}"$'\n'
+      continue
+    fi
     if [ ! -f "$cache_file" ]; then
       echo "::error file=Casks/${token}.rb::${token} (${arch}): cannot read release ${owner}/${repo}@${tag}: $(tr -d '\n' < "$work/gh.err")"
       mismatch_log+="  UNREADABLE RELEASE  ${token} (${arch})  ${owner}/${repo}@${tag}"$'\n'
