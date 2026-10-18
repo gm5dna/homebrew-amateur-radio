@@ -4,9 +4,9 @@ class Linbpq < Formula
   # Upstream has no tags or releases; pin to a specific commit. Bump the URL,
   # sha256 and version together when reviewing — the version is taken from
   # KVerstring in Versions.h.
-  url "https://github.com/g8bpq/linbpq/archive/af79b9bbbfb117a187097d6aacd362df78b1d7c3.tar.gz"
-  version "6.0.25.40"
-  sha256 "58fe7698d4b33cb5f44274e329b2d42722b922f6f0c7258e27a26bb326bde3f7"
+  url "https://github.com/g8bpq/linbpq/archive/228047d76f410e13a564fb00787516f69b96ff44.tar.gz"
+  version "6.0.26.1"
+  sha256 "96f7eb084ffcdfd6df9df52fa29a1217c11bffe412925c2a5c4454888fb885f7"
   license :cannot_represent
 
   livecheck do
@@ -47,6 +47,33 @@ class Linbpq < Formula
       static inline int backtrace_pcinfo(struct backtrace_state *state, uintptr_t pc, backtrace_full_callback cb, backtrace_error_callback errcb, void *data) { return cb(data, pc, NULL, 0, NULL); }
       static inline void backtrace_print(struct backtrace_state *state, int skip, FILE *file) {}
     C
+
+    # 6.0.26.1's PTTCATThread drives PTT from a serial port's CTS line by
+    # blocking in ioctl(TIOCMIWAIT), which is Linux-only. Poll CTS with
+    # TIOCMGET every 10 ms instead, comparing with the last state reported so
+    # a change between polls is never lost. The first pass reports the
+    # current state.
+    inreplace "RigControl.c",
+              /if \(ioctl\(fd, TIOCMIWAIT, TIOCM_CTS\) < 0\)\s*\{.*?return;\s*\}/m,
+              <<~C.chomp
+                {
+                  static int last_cts = -1;
+                  int now;
+                  for (;;)
+                  {
+                    if (ioctl(fd, TIOCMGET, &now) < 0)
+                    {
+                      perror("ioctl TIOCMGET failed");
+                      close(fd);
+                      return;
+                    }
+                    if ((now & TIOCM_CTS) != last_cts)
+                      break;
+                    usleep(10000);
+                  }
+                  last_cts = now & TIOCM_CTS;
+                }
+              C
 
     # The Linux build rule appends `sudo setcap ...` after linking. setcap
     # doesn't exist on macOS and the capabilities aren't needed here.
