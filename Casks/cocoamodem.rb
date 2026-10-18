@@ -36,9 +36,9 @@ cask "cocoamodem" do
     This is a maintenance fork of W7AY's original cocoaModem, updated to
     run on macOS 15.7 and later as a universal binary.
 
-    The bundle is not notarised. On first launch, Gatekeeper will block
-    it: right-click the app in Finder and choose "Open", then confirm in
-    the dialog. Alternatively, run:
+    The bundle is not notarised, so Gatekeeper will block it on first
+    launch: open the app, dismiss the warning, then choose "Open Anyway" in
+    System Settings → Privacy & Security. Alternatively, run:
 
       xattr -r -d com.apple.quarantine "/Applications/cocoaModem #{version.csv.first}.app"
 

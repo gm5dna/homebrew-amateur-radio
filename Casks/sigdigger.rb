@@ -24,11 +24,12 @@ cask "sigdigger" do
   caveats do
     requires_rosetta
     <<~EOS
-      The macOS build is an unsigned Intel binary (x86_64). On first launch,
-      Gatekeeper will block it: right-click SigDigger.app in Finder and choose
-      "Open", then confirm in the dialog. Alternatively, run:
+      The macOS build is an unsigned Intel binary (x86_64), so Gatekeeper
+      will block it on first launch: open the app, dismiss the warning, then
+      choose "Open Anyway" in System Settings → Privacy & Security.
+      Alternatively, run:
 
-        xattr -d com.apple.quarantine /Applications/SigDigger.app
+        xattr -r -d com.apple.quarantine /Applications/SigDigger.app
     EOS
   end
 end

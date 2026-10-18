@@ -25,11 +25,11 @@ cask "qtsoundmodem" do
   ]
 
   caveats <<~EOS
-    The bundle is ad-hoc signed only. On first launch, Gatekeeper will
-    block it: right-click QtSoundModem.app in Finder and choose "Open",
-    then confirm in the dialog. Alternatively, run:
+    The bundle is ad-hoc signed only, so Gatekeeper will block it on first
+    launch: open the app, dismiss the warning, then choose "Open Anyway" in
+    System Settings → Privacy & Security. Alternatively, run:
 
-      xattr -d com.apple.quarantine /Applications/QtSoundModem.app
+      xattr -r -d com.apple.quarantine /Applications/QtSoundModem.app
 
     Microphone permission is requested on first audio open. If denied,
     the modem reads zero samples. Re-enable in:

@@ -28,10 +28,11 @@ cask "mac125" do
   ]
 
   caveats <<~EOS
-    The macOS build is ad-hoc signed and not notarised. On first launch,
-    Gatekeeper will block it: right-click Mac125.app in Finder and choose
-    "Open", then confirm in the dialog. Alternatively, run:
+    The macOS build is ad-hoc signed and not notarised, so Gatekeeper will
+    block it on first launch: open the app, dismiss the warning, then
+    choose "Open Anyway" in System Settings → Privacy & Security.
+    Alternatively, run:
 
-      xattr -d com.apple.quarantine /Applications/Mac125.app
+      xattr -r -d com.apple.quarantine /Applications/Mac125.app
   EOS
 end

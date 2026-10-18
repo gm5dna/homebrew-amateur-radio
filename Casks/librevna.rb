@@ -32,11 +32,11 @@ cask "librevna" do
 
   caveats do
     <<~EOS
-      The bundle is unsigned. On first launch, Gatekeeper will block it:
-      right-click LibreVNA-GUI.app in Finder and choose "Open", then confirm
-      in the dialog. Alternatively, run:
+      The bundle is unsigned, so Gatekeeper will block it on first launch:
+      open the app, dismiss the warning, then choose "Open Anyway" in
+      System Settings → Privacy & Security. Alternatively, run:
 
-        xattr -d com.apple.quarantine /Applications/LibreVNA-GUI.app
+        xattr -r -d com.apple.quarantine /Applications/LibreVNA-GUI.app
     EOS
   end
 end

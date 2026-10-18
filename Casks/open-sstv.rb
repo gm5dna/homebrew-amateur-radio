@@ -28,9 +28,9 @@ cask "open-sstv" do
   ]
 
   caveats <<~EOS
-    The bundle is ad-hoc signed, not notarised. On first launch, Gatekeeper
-    will block it: right-click Open-SSTV.app in Finder and choose "Open",
-    then confirm in the dialog. Alternatively, run:
+    The bundle is ad-hoc signed, not notarised, so Gatekeeper will block it
+    on first launch: open the app, dismiss the warning, then choose "Open
+    Anyway" in System Settings → Privacy & Security. Alternatively, run:
 
       xattr -r -d com.apple.quarantine /Applications/Open-SSTV.app
 
