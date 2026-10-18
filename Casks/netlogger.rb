@@ -18,8 +18,8 @@ cask "netlogger" do
   app "NetLogger.app"
 
   zap trash: [
-    "~/Library/Preferences/org.netlogger.NetLogger.plist",
-    "~/Library/Saved Application State/org.netlogger.NetLogger.savedState",
+    "~/Library/Preferences/org.themarvins.netlogger.plist",
+    "~/Library/Saved Application State/org.themarvins.netlogger.savedState",
   ]
 
   caveats do
