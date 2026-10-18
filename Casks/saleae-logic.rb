@@ -22,7 +22,7 @@ cask "saleae-logic" do
     strategy :header_match
   end
 
-  depends_on :macos
+  depends_on macos: :monterey
 
   app "Saleae Logic.app"
 
