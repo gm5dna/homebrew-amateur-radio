@@ -15,6 +15,7 @@ cask "wfview" do
     end
   end
 
+  conflicts_with cask: "gm5dna/amateur-radio/wfview-beta"
   # Upstream's download page states the v2 universal binary needs macOS 13+.
   # The 2.24 binary's Info.plist mislabels LSMinimumSystemVersion as 12.0, so
   # `brew audit --online` warns about a monterey/ventura mismatch; ignore it.
