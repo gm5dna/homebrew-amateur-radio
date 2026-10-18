@@ -13,6 +13,7 @@ cask "sstv" do
     regex(/SSTV version\s*(\d+(?:\.\d+)+)\s+for macOS/i)
   end
 
+  conflicts_with cask: "gm5dna/amateur-radio/sstv-beta"
   depends_on :macos
 
   app "SSTV_app/Black Cat SSTV.app"
