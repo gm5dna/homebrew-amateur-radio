@@ -21,7 +21,10 @@ cask "yaesu-web-control" do
 
   # ~/.config/MM5AGM/Yaesu Web Control is deliberately not zapped: it holds
   # the ADIF log of confirmed contacts and the CW transcripts.
-  zap trash: "~/Library/Saved Application State/com.mm5agm.yaesuwebcontrol.savedState"
+  zap trash: [
+    "~/Library/Preferences/com.mm5agm.yaesuwebcontrol.plist",
+    "~/Library/Saved Application State/com.mm5agm.yaesuwebcontrol.savedState",
+  ]
 
   caveats <<~EOS
     The macOS build is ad-hoc signed and not notarised. On first launch,
