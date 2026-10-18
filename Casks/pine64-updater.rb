@@ -17,9 +17,9 @@ cask "pine64-updater" do
   app "PINE64 Updater.app"
 
   zap trash: [
-    "~/Library/Application Support/pine64_updater",
-    "~/Library/Preferences/com.pine64.updater.plist",
-    "~/Library/Saved Application State/com.pine64.updater.savedState",
+    "~/Library/Application Support/org.pine64.pine64updater",
+    "~/Library/Preferences/org.pine64.pine64updater.plist",
+    "~/Library/Saved Application State/org.pine64.pine64updater.savedState",
   ]
 
   caveats do
