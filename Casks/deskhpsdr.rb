@@ -38,12 +38,4 @@ cask "deskhpsdr" do
     "~/Library/Preferences/org.dl1bz.deskhpsdr.plist",
     "~/Library/Saved Application State/org.dl1bz.deskhpsdr.savedState",
   ]
-
-  caveats <<~EOS
-    The bundle is not notarised. On first launch, Gatekeeper will block
-    it: right-click deskHPSDR.app in Finder and choose "Open", then
-    confirm in the dialog. Alternatively, run:
-
-      xattr -r -d com.apple.quarantine /Applications/deskHPSDR.app
-  EOS
 end
