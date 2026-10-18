@@ -10,7 +10,8 @@ class Linbpq < Formula
   license :cannot_represent
 
   livecheck do
-    skip "No tagged releases available"
+    url "https://raw.githubusercontent.com/g8bpq/linbpq/master/Versions.h"
+    regex(/KVerstring\s+"v?(\d+(?:\.\d+)+)/i)
   end
 
   depends_on "libconfig"
