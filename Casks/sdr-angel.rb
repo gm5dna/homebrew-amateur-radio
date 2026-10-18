@@ -29,8 +29,8 @@ cask "sdr-angel" do
   app "SDRangel.app"
 
   zap trash: [
-    "~/Library/Application Support/SDRangel",
-    "~/Library/Preferences/org.f4exb.SDRangel.plist",
-    "~/Library/Saved Application State/org.f4exb.SDRangel.savedState",
+    "~/Library/Application Support/f4exb/SDRangel",
+    "~/Library/Preferences/com.f4exb.SDRangel.plist",
+    "~/Library/Saved Application State/com.f4exb.SDRangel.savedState",
   ]
 end
