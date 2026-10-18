@@ -1,10 +1,10 @@
 cask "open-rig-programmer" do
-  version "1.10.0"
-  sha256 "e226ac28907e1eb7c7f689a61110cea86a93ed0bedbba33eeb149cbc35e4bfa5"
+  version "1.11.1"
+  sha256 "121fbe10fcd0431749fb65f34748942f12a6e9833ac0bb3f063490521620d15c"
 
   url "https://github.com/gm5dna/open-rig-programmer/releases/download/v#{version}/open-rig-programmer-v#{version}-darwin-universal.app.zip"
   name "Open Rig Programmer"
-  desc "Memory-channel programmer for Yaesu and Icom transceivers"
+  desc "Memory-channel programmer for Yaesu, Icom and Kenwood transceivers"
   homepage "https://github.com/gm5dna/open-rig-programmer"
 
   livecheck do
