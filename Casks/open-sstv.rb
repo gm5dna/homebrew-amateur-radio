@@ -18,8 +18,9 @@ cask "open-sstv" do
 
   app "Open-SSTV.app"
 
+  # ~/Library/Application Support/open_sstv is deliberately not zapped: it
+  # holds the QSO logbook (logbook.db).
   zap trash: [
-    "~/Library/Application Support/open_sstv",
     "~/Library/Caches/open_sstv",
     "~/Library/Logs/open_sstv",
     "~/Library/Saved Application State/com.bucknova.OpenSSTV.savedState",
