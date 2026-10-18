@@ -34,8 +34,9 @@ cask "wsjtx-improved-alt" do
   app "wsjtx.app", target: "wsjtx-improved-alt.app"
 
   # ~/Library/Application Support/WSJT-X is deliberately not zapped: it holds
-  # the QSO log (wsjtx_log.adi) and ALL.TXT, and the official WSJT-X cask
-  # shares it. The paths below are shared between the wsjtx-improved*
+  # the QSO log (wsjtx_log.adi) and ALL.TXT. Nor is ~/Library/Preferences/
+  # WSJT-X.ini, which holds the station settings. The official WSJT-X cask
+  # shares both. The paths below are shared between the wsjtx-improved*
   # variants only.
   zap trash: [
     "~/Library/Preferences/F6VY59P28F.org.ko3f.wsjtx.plist",

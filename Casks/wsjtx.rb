@@ -31,8 +31,9 @@ cask "wsjtx" do
             pkgutil: "org.k1jt.wsjtx.*"
 
   # ~/Library/Application Support/WSJT-X is deliberately not zapped: it holds
-  # the QSO log (wsjtx_log.adi) and ALL.TXT, and the wsjtx-improved* casks
-  # share it.
+  # the QSO log (wsjtx_log.adi) and ALL.TXT. Nor is ~/Library/Preferences/
+  # WSJT-X.ini, which holds the station settings. The wsjtx-improved* casks
+  # share both.
   zap trash: [
     "~/Library/Preferences/org.k1jt.wsjtx.plist",
     "~/Library/Saved Application State/org.k1jt.wsjtx.savedState",
