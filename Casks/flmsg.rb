@@ -16,8 +16,9 @@ cask "flmsg" do
 
   app "flmsg-#{version}.app", target: "flmsg.app"
 
+  # ~/.nbems is deliberately not zapped: it holds the messages and forms that
+  # fldigi, flamp and flwrap share.
   zap trash: [
-    "~/.nbems",
     "~/Library/Preferences/com.w1hkj.flmsg.plist",
     "~/Library/Saved Application State/com.w1hkj.flmsg.savedState",
   ]
