@@ -25,8 +25,9 @@ cask "jlog-amateur-radio" do
 
   app "jLog.app"
 
+  # ~/jLog is deliberately not zapped: it is jLog's home folder and holds the
+  # log files.
   zap trash: [
-    "~/jLog",
     "~/Library/Preferences/org.jlog.plist",
     "~/Library/Saved Application State/org.jlog.savedState",
   ]
