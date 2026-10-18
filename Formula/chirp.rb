@@ -16,12 +16,12 @@ class Chirp < Formula
     end
   end
 
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "wxpython"
 
   def install
     venv = libexec/"venv"
-    system formula_opt_bin("python@3.14")/"python3.14", "-m", "venv", "--system-site-packages", venv
+    system formula_opt_bin("python@3.15")/"python3.15", "-m", "venv", "--system-site-packages", venv
 
     requirements = buildpath/"homebrew-requirements.txt"
     requirements.write <<~EOS
@@ -104,5 +104,7 @@ class Chirp < Formula
     assert_path_exists prefix/"CHIRP.app"
     ENV["CHIRP_TESTENV"] = "1"
     assert_match "--list-mem", shell_output("#{bin}/chirpc --help")
+    # The GUI needs Homebrew's wxpython, which only the matching Python can import
+    system libexec/"venv/bin/python", "-c", "import wx"
   end
 end
