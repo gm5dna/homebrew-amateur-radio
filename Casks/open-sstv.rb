@@ -23,6 +23,7 @@ cask "open-sstv" do
   zap trash: [
     "~/Library/Caches/open_sstv",
     "~/Library/Logs/open_sstv",
+    "~/Library/Preferences/com.bucknova.OpenSSTV.plist",
     "~/Library/Saved Application State/com.bucknova.OpenSSTV.savedState",
   ]
 
