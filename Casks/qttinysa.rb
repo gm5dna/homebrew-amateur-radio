@@ -27,8 +27,9 @@ cask "qttinysa" do
   app "QtTinySA.app"
 
   zap trash: [
-    "~/Library/Preferences/g4ixt.QtTinySA.plist",
-    "~/Library/Saved Application State/g4ixt.QtTinySA.savedState",
+    "~/Library/Application Support/QtTinySA",
+    "~/Library/Preferences/QtTinySA.plist",
+    "~/Library/Saved Application State/QtTinySA.savedState",
   ]
 
   caveats <<~EOS
