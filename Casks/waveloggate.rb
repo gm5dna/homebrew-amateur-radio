@@ -23,11 +23,14 @@ cask "waveloggate" do
 
   depends_on :macos
 
-  app "WaveLogGate.app"
+  app "WavelogGate.app"
 
   zap trash: [
     "~/Library/Application Support/WaveLogGate",
-    "~/Library/Preferences/com.wavelog.WaveLogGate.plist",
-    "~/Library/Saved Application State/com.wavelog.WaveLogGate.savedState",
+    "~/Library/Caches/com.wails.WavelogGate",
+    "~/Library/Preferences/com.electron.waveloggate.plist",
+    "~/Library/Preferences/com.wails.WavelogGate.plist",
+    "~/Library/Saved Application State/com.wails.WavelogGate.savedState",
+    "~/Library/WebKit/com.wails.WavelogGate",
   ]
 end
