@@ -26,9 +26,11 @@ on:
 permissions:
   contents: read
 
-# Only pull request runs are superseded by a newer push. A run on main is
-# never cancelled: it is the record of whether main is green, and the notify
-# job below needs a complete result to act on.
+# Only pull request runs are cancelled in progress by a newer push. A run on
+# main that has started is never cancelled: it is the record of whether main
+# is green, and the notify job below needs a complete result to act on. A run
+# still queued behind it can be superseded by a newer one, which checks the
+# newer commit instead.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
@@ -40,6 +42,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
@@ -89,6 +93,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
@@ -105,11 +111,12 @@ jobs:
 
   # Nobody watches the Actions tab, so a failing scheduled run used to sit
   # unnoticed for days. A failure on main opens (or updates) one issue
-  # labelled `ci-failure`; the next green run closes it. Pull requests are
-  # excluded: their status is already visible on the PR.
+  # labelled `ci-failure`; the next run in which every job ran and passed
+  # closes it. Pull requests and dispatches from other branches are excluded:
+  # they say nothing about main.
   notify:
     needs: [check, download-verify]
-    if: always() && github.event_name != 'pull_request'
+    if: always() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
@@ -128,15 +135,12 @@ jobs:
               check: process.env.CHECK_RESULT,
               'download-verify': process.env.DOWNLOAD_RESULT,
             };
+            // A job that hits timeout-minutes reports `cancelled`, not
+            // `timed_out`, so a hung download-verify must count as a failure.
             // A skipped job (download-verify on push) is not a failure.
             const failed = Object.entries(results)
-              .filter(([, result]) => result === 'failure' || result === 'timed_out')
-              .map(([job]) => job);
-            const cancelled = Object.values(results).includes('cancelled');
-            if (cancelled) {
-              console.log('Run was cancelled; leaving any CI failure issue as it is.');
-              return;
-            }
+              .filter(([, result]) => result === 'failure' || result === 'cancelled')
+              .map(([job, result]) => (result === 'cancelled' ? `${job} (cancelled or timed out)` : job));
 
             const { owner, repo } = context.repo;
             const open = await github.paginate(github.rest.issues.listForRepo, {
@@ -144,6 +148,12 @@ jobs:
             });
 
             if (failed.length === 0) {
+              // A push run skips download-verify, so it cannot show that a
+              // download failure from the last scheduled run is fixed.
+              if (Object.values(results).includes('skipped')) {
+                console.log('Not every job ran; leaving any CI failure issue open.');
+                return;
+              }
               for (const issue of open) {
                 await github.rest.issues.createComment({
                   owner, repo, issue_number: issue.number,
