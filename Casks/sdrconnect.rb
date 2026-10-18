@@ -33,8 +33,8 @@ cask "sdrconnect" do
   app "SDRconnect.app"
 
   zap trash: [
-    "~/Library/Application Support/SDRconnect",
-    "~/Library/Preferences/com.sdrplay.SDRconnect.plist",
-    "~/Library/Saved Application State/com.sdrplay.SDRconnect.savedState",
+    "~/Library/Application Support/com.sdrplay.sdrconnect",
+    "~/Library/Preferences/com.sdrplay.sdrconnect.plist",
+    "~/Library/Saved Application State/com.sdrplay.sdrconnect.savedState",
   ]
 end
