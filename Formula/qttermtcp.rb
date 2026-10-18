@@ -8,8 +8,11 @@ class Qttermtcp < Formula
   sha256 "5bdc377e6de7e900a14087e39fef146ed3bd47879c06744245f6d54d90517488"
   license "GPL-3.0-or-later"
 
+  # master embeds the version as `VersionString "0.0.0.81"`; the formula
+  # version drops the leading "0.0.".
   livecheck do
-    skip "No tagged releases available"
+    url "https://raw.githubusercontent.com/g8bpq/QtTermTCP/master/QtTermTCP.cpp"
+    regex(/VersionString\s+"0\.0\.(\d+(?:\.\d+)+)"/i)
   end
 
   depends_on "qt@5"
