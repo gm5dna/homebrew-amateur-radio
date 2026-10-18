@@ -33,9 +33,10 @@ cask "wsjtx-improved-alt" do
 
   app "wsjtx.app", target: "wsjtx-improved-alt.app"
 
-  # ~/Library/Application Support/WSJT-X is intentionally not zapped: it is
-  # shared with the official WSJT-X cask (zap that cask to remove it). The
-  # paths below are shared between the wsjtx-improved* variants only.
+  # ~/Library/Application Support/WSJT-X is deliberately not zapped: it holds
+  # the QSO log (wsjtx_log.adi) and ALL.TXT, and the official WSJT-X cask
+  # shares it. The paths below are shared between the wsjtx-improved*
+  # variants only.
   zap trash: [
     "~/Library/Preferences/F6VY59P28F.org.ko3f.wsjtx.plist",
     "~/Library/Saved Application State/F6VY59P28F.org.ko3f.wsjtx.savedState",

@@ -30,8 +30,10 @@ cask "wsjtx" do
   uninstall quit:    "org.k1jt.wsjtx",
             pkgutil: "org.k1jt.wsjtx.*"
 
+  # ~/Library/Application Support/WSJT-X is deliberately not zapped: it holds
+  # the QSO log (wsjtx_log.adi) and ALL.TXT, and the wsjtx-improved* casks
+  # share it.
   zap trash: [
-    "~/Library/Application Support/WSJT-X",
     "~/Library/Preferences/org.k1jt.wsjtx.plist",
     "~/Library/Saved Application State/org.k1jt.wsjtx.savedState",
   ]
