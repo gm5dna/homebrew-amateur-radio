@@ -49,7 +49,7 @@ Everything else runs natively on both.
 | [**chirp**](https://chirpmyradio.com/) | Memory programming for amateur radio handhelds and mobiles — built from the GitHub master branch because Cloudflare blocks the official downloads |
 | [**cloudlogcatqt**](https://github.com/myzinsky/CloudLogCatQt) | CAT control interface for Cloudlog logging |
 | [**linbpq**](https://github.com/g8bpq/linbpq) | G8BPQ AX.25 packet switch (Linux/macOS port of BPQ32) |
-| [**mshv**](https://github.com/dl1bz/mshv-macos-port) | Weak-signal and meteor-scatter digital modes (FT8, FT4, JT65, Q65) |
+| [**mshv**](https://github.com/vu2cpl/mshv-macos-port) | Weak-signal and meteor-scatter digital modes (FT8, FT4, FT2, JT65, Q65) |
 | [**nanovnasaver**](https://github.com/NanoVNA-Saver/nanovna-saver) | Tool for reading, displaying, and saving data from NanoVNA analysers |
 | [**pat**](https://github.com/la5nta/pat) | Winlink client for emergency communications |
 | [**qttermtcp**](https://github.com/g8bpq/QtTermTCP) | Terminal emulator for packet radio communication by John Wiseman G8BPQ |
@@ -117,7 +117,7 @@ ships.
 
 | Name | Description |
 |------|-------------|
-| [**deskhpsdr**](https://github.com/dl1bz/deskhpsdr) | SDR app for OpenHPSDR protocol 1 and 2 transceivers *(Apple Silicon)* |
+| [**deskhpsdr**](https://github.com/dl1bz/deskhpsdr) | SDR app for OpenHPSDR protocol 1 and 2 transceivers |
 | [**dogparksdr**](https://www.dogparksoftware.com/dogparkSDR.html) | Native client for FlexRadio Signature-series software-defined radios |
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
