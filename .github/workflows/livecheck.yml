@@ -16,6 +16,12 @@ permissions:
   contents: read
   issues: write
 
+# Overlapping runs (a dispatch during the scheduled one) would both list the
+# open issues before either creates one, and open the same issue twice.
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   livecheck:
     runs-on: macos-latest
@@ -23,6 +29,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
@@ -125,22 +133,42 @@ jobs:
 
               const [, packageName, currentVersion, newVersion] = match;
               const issueTitle = `Update ${packageName} to ${newVersion}`;
+              const body = `A new version of **${packageName}** is available.\n\n- Current version: \`${currentVersion}\`\n- New version: \`${newVersion}\`\n\nDetected by automated livecheck.`;
 
-              // Exact title match so e.g. an open wsjtx-improved issue cannot
-              // suppress a wsjtx issue for the same version.
-              const issueExists = existingIssues.some(issue => issue.title === issueTitle);
+              // The trailing " to " stops e.g. an open wsjtx-improved issue
+              // matching wsjtx.
+              const titlePrefix = `Update ${packageName} to `;
+              const existing = existingIssues.find(issue => issue.title.startsWith(titlePrefix));
 
-              if (!issueExists) {
+              if (!existing) {
                 await github.rest.issues.create({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   title: issueTitle,
-                  body: `A new version of **${packageName}** is available.\n\n- Current version: \`${currentVersion}\`\n- New version: \`${newVersion}\`\n\nDetected by automated livecheck.`,
+                  body,
                   labels: ['update']
                 });
                 console.log(`Created issue: ${issueTitle}`);
-              } else {
+              } else if (existing.title === issueTitle) {
                 console.log(`Issue already exists for ${packageName} ${newVersion}`);
+              } else {
+                // Retitle rather than open a second issue, so each package has
+                // one update issue whose number stays valid for `Closes #NN`.
+                const oldVersion = existing.title.slice(titlePrefix.length);
+                await github.rest.issues.update({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existing.number,
+                  title: issueTitle,
+                  body
+                });
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: existing.number,
+                  body: `Now \`${newVersion}\` (was \`${oldVersion}\`).`
+                });
+                console.log(`Retitled #${existing.number}: ${oldVersion} -> ${newVersion}`);
               }
             }
 
