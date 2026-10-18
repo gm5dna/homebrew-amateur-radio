@@ -27,4 +27,8 @@ cask "ultimateaac" do
         chdir:          ".",
         writable_paths: ["UltimateAAC.app"]
   end
+
+  # The app has no bundle identifier, so there are no Preferences or Saved
+  # Application State entries; UltimateAAC.reg only holds window positions.
+  zap trash: "~/Library/Application Support/UltimateAAC"
 end
