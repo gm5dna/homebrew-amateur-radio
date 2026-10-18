@@ -18,8 +18,8 @@ cask "cocoanec" do
 
   zap trash: [
     "~/Library/Application Support/cocoaNEC",
-    "~/Library/Preferences/net.w7ay.cocoaNEC.plist",
-    "~/Library/Saved Application State/net.w7ay.cocoaNEC.savedState",
+    "~/Library/Preferences/w7ay.cocoaNEC-2.0.plist",
+    "~/Library/Saved Application State/w7ay.cocoaNEC-2.0.savedState",
   ]
 
   caveats do
