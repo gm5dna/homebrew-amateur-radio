@@ -17,9 +17,10 @@ cask "qlog" do
 
   app "QLog.app"
 
+  # ~/Library/Application Support/hamradio/QLog is deliberately not zapped: it
+  # holds the logbook (qlog.db).
   zap trash: [
-    "~/Library/Application Support/QLog",
-    "~/Library/Preferences/com.qlog.QLog.plist",
-    "~/Library/Saved Application State/com.qlog.QLog.savedState",
+    "~/Library/Preferences/com.hamradio.QLog.plist",
+    "~/Library/Saved Application State/com.yourcompany.qlog.savedState",
   ]
 end
