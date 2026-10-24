@@ -126,6 +126,7 @@ ships.
 | [**macdoppler**](https://www.dogparksoftware.com/MacDoppler.html) | Satellite tracking with Doppler tuning and rotator/antenna automation |
 | [**onair**](https://github.com/adswill/OnAir) | SDR receiver for digital TV, DAB+, FM, DRM, aviation, satellites, GNSS and ham modes (FT8, PSK31, CW) |
 | [**open-rig-programmer**](https://github.com/gm5dna/open-rig-programmer) | Memory-channel programmer for Yaesu and Icom transceivers — GUI; see the **rigprog** formula for the command-line tool |
+| [**qk4**](https://mikeg-dal.github.io/QK4/) | Remote control for the Elecraft K4 and KPA1500 over the network, with panadapter, waterfall and Opus audio — beta *(Apple Silicon)* |
 | [**sdc**](https://www.lw-sdc.com/) | Software Defined Connectors — CW/RTTY/PSK skimmers, rig sync, and audio routing for SDR software |
 | [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software-defined radio with extensive device support |
 | [**sdrconnect**](https://www.sdrplay.com/) | SDR application for SDRplay receivers with spectrum analysis |
@@ -134,6 +135,7 @@ ships.
 | [**sigdigger**](https://batchdrake.github.io/SigDigger/) | Digital signal analyser and inspector for SDR *(Intel)* |
 | [**sparksdr**](https://www.sparksdr.com/) | SDR application for Hermes Lite and OpenHPSDR-compatible radios |
 | [**spectraflux**](https://rfspace.com/RFSPACE/SpectraFlux/) | Native SDR spectrum analyser with 3D waterfall and demodulation — rolling beta *(Apple Silicon)* |
+| [**tx500-utility**](https://mikeg-dal.github.io/TX500Utility/) | CAT control, memory channels, settings backup, clock sync and firmware updates for the Lab599 TX-500 — beta, macOS 26+ *(Apple Silicon)* |
 | [**wfview**](https://wfview.org/) | Open source interface for Icom, Kenwood, and Yaesu transceivers |
 | [**wfview-beta**](https://wfview.org/) | wfview Qt6 universal beta builds — tracks upstream master |
 | [**yaesu-web-control**](https://github.com/mm5agm/Yaesu_Web_Control) | Browser-based CAT controller for Yaesu HF transceivers — CAT only on macOS (no SDR spectrum) |
@@ -154,6 +156,7 @@ ships.
 | [**ispectrum**](https://www.dogparksoftware.com/iSpectrum.html) | Audio spectrum analyser with live frequency and waterfall display *(Intel)* |
 | [**librevna**](https://github.com/jankae/LibreVNA) | GUI for the LibreVNA open-source USB vector network analyser (macOS 14+) |
 | [**picoscope**](https://www.picotech.com/products/oscilloscope) | Oscilloscope software for PicoScope test-and-measurement hardware *(Intel)* |
+| [**qk-lp100a**](https://mikeg-dal.github.io/QK-LPA100A/) | Power, SWR and impedance display and Hamlib antenna sweeps for the TelePost LP-100A wattmeter — alpha, macOS 26+ *(Apple Silicon)* |
 | [**qttinysa**](https://github.com/g4ixt/QtTinySA) | Control software for the TinySA spectrum analyser |
 | [**saleae-logic**](https://www.saleae.com/) | Logic analyser and oscilloscope software for Saleae Logic devices |
 | [**scanastudio**](https://www.ikalogic.com/) | Interface software for Ikalogic logic analysers and pattern generators |
@@ -166,6 +169,7 @@ ships.
 | [**hamclock-launcher**](https://github.com/huberthickman/HamClockLauncher) | Launcher for the HamClock application |
 | [**hf-autopilot**](https://w0xz.com/autopilot/) | Quick tuning to POTA, SOTA, and NetLogger HF spots for HF radios |
 | [**morse-mania**](https://www.blackcatsystems.com/software/morse-code-practice-software.html) | CW (Morse code) training and practice tutor *(Intel)* |
+| [**morse-runner**](https://mikeg-dal.github.io/MorseRunner-KF5O/) | CW contest simulator — native port of VE3NEA's Morse Runner |
 | [**pine64-updater**](https://github.com/pine64/pine64_updater) | Updater for Pine64 devices (Pinecil, etc.) *(Intel)* |
 | [**rf-toolbox**](https://www.blackcatsystems.com/software/electronics-antenna-design-software.html) | Antenna design and electronics calculator *(Intel)* |
 
