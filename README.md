@@ -168,6 +168,7 @@ ships.
 | [**dx-toolbox**](https://www.blackcatsystems.com/software/ham-shortwave-radio-propagation-software.html) | Shortwave radio propagation and space-weather forecasting *(Intel)* |
 | [**hamclock-launcher**](https://github.com/huberthickman/HamClockLauncher) | Launcher for the HamClock application |
 | [**hf-autopilot**](https://w0xz.com/autopilot/) | Quick tuning to POTA, SOTA, and NetLogger HF spots for HF radios |
+| [**mac-tci-dx-cluster**](https://gw3jvb.uk/software/mac-tci-dx-cluster/) | Telnet DX cluster client that forwards spots to TCI radio servers, with RUMlogNG worked/needed checks (macOS 14+) |
 | [**morse-mania**](https://www.blackcatsystems.com/software/morse-code-practice-software.html) | CW (Morse code) training and practice tutor *(Intel)* |
 | [**morse-runner**](https://mikeg-dal.github.io/MorseRunner-KF5O/) | CW contest simulator — native port of VE3NEA's Morse Runner |
 | [**pine64-updater**](https://github.com/pine64/pine64_updater) | Updater for Pine64 devices (Pinecil, etc.) *(Intel)* |
