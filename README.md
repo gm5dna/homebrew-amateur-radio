@@ -124,6 +124,7 @@ ships.
 | [**hermitsdr**](https://hermitsdr.com/) | Native client for Hermes-Lite 2, SquareSDR and ANAN openHPSDR radios, with FT8 and other digital-mode decoders *(Apple Silicon)* |
 | [**mac125**](https://gw3jvb.uk/software/mac125/) | Memory programmer for the Uniden UBC125XLT scanner |
 | [**macdoppler**](https://www.dogparksoftware.com/MacDoppler.html) | Satellite tracking with Doppler tuning and rotator/antenna automation |
+| [**onair**](https://github.com/adswill/OnAir) | SDR receiver for digital TV, DAB+, FM, DRM, aviation, satellites, GNSS and ham modes (FT8, PSK31, CW) |
 | [**open-rig-programmer**](https://github.com/gm5dna/open-rig-programmer) | Memory-channel programmer for Yaesu and Icom transceivers — GUI; see the **rigprog** formula for the command-line tool |
 | [**sdc**](https://www.lw-sdc.com/) | Software Defined Connectors — CW/RTTY/PSK skimmers, rig sync, and audio routing for SDR software |
 | [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software-defined radio with extensive device support |
