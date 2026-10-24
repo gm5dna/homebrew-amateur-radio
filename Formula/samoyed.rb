@@ -2,9 +2,9 @@ class Samoyed < Formula
   desc "Software modem/TNC for packet radio (Go port of Dire Wolf)"
   homepage "https://github.com/doismellburning/samoyed"
   url "https://github.com/doismellburning/samoyed.git",
-      tag:      "2026.04.15.1776291813-5e52e9b",
-      revision: "5e52e9b23c1d553c62fa806691fb03bcdb2e593c"
-  version "2026.04.15.1776291813"
+      tag:      "2026.10.23.1792794998-f3d1a55",
+      revision: "f3d1a55d9caafe1170a36dffc36f8166d2a56289"
+  version "2026.10.23.1792794998"
   license "GPL-2.0-or-later"
   head "https://github.com/doismellburning/samoyed.git", branch: "main"
 
@@ -29,6 +29,6 @@ class Samoyed < Formula
   end
 
   test do
-    assert_match "APRS encoder/decoder", shell_output("#{bin}/samoyed-direwolf --help 2>&1", 1)
+    assert_match "APRS encoder/decoder", shell_output("#{bin}/samoyed-direwolf --help 2>&1")
   end
 end
