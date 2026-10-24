@@ -72,6 +72,7 @@ Everything else runs natively on both.
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
 | [**macwinlink**](https://github.com/jjones9527/macwinlink-releases) | Native Winlink email client with CAT rig control and VARA, ARDOP, and packet transports — public beta, macOS 15+ *(Apple Silicon)* |
 | [**multimode**](https://www.blackcatsystems.com/software/multimode.html) | Multi-mode decoder for CW, RTTY, FAX, SSTV, NAVTEX, PSK31, and more *(Intel)* |
+| [**nexus**](https://hamradiotools.io/) | All-mode station app with a needed-DX board, FT8/FT4/CW/RTTY/PSK, POTA/SOTA and an awards-tracking logbook (macOS 12+) *(Apple Silicon)* |
 | [**open-sstv**](https://github.com/bucknova/Open-SSTV) | Open-source SSTV transceiver with rig control, QSO logbook, and image gallery — beta *(Apple Silicon)* |
 | [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem — port of UZ7HO's QtSoundModem *(Apple Silicon)* |
 | [**rttytci**](https://github.com/dl1bz/rttyTCI) | RTTY transceiver app for SDRs using the TCI protocol |
@@ -104,6 +105,7 @@ ships.
 | Name | Description |
 |------|-------------|
 | [**aether**](https://www.aetherlog.com/) | Ham radio logger with rig control, awards tracking, and QSL management |
+| [**ham-tools**](https://toolbox.funkwelt.net/) | Logbook with CAT and DX cluster, plus WSPR, NEC2 antenna simulator, Winlink, SSTV and 30+ calculators — beta, macOS 14+ |
 | [**hamrs**](https://www.hamrs.app/) | Portable amateur radio logger for Parks on the Air, Field Day, and SOTA |
 | [**jlog-amateur-radio**](https://jlog.org/) | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
 | [**netlogger**](https://www.netlogger.org/) | Amateur radio net logging and real-time net monitoring *(Intel)* |
@@ -122,6 +124,7 @@ ships.
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |
 | [**hermitsdr**](https://hermitsdr.com/) | Native client for Hermes-Lite 2, SquareSDR and ANAN openHPSDR radios, with FT8 and other digital-mode decoders *(Apple Silicon)* |
+| [**htcommander**](https://github.com/Ylianst/HTCommander) | Controller for Benshi-family handhelds (BTech UV-Pro, Radioddity GA-5WB, Vero VR-N76/N7500) over Bluetooth |
 | [**mac125**](https://gw3jvb.uk/software/mac125/) | Memory programmer for the Uniden UBC125XLT scanner |
 | [**macdoppler**](https://www.dogparksoftware.com/MacDoppler.html) | Satellite tracking with Doppler tuning and rotator/antenna automation |
 | [**onair**](https://github.com/adswill/OnAir) | SDR receiver for digital TV, DAB+, FM, DRM, aviation, satellites, GNSS and ham modes (FT8, PSK31, CW) |
