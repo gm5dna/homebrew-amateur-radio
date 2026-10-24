@@ -1,6 +1,6 @@
 cask "qlog" do
   version "0.54.0"
-  sha256 "6afdee5005b9aca1ef6c79b7311f31bd679748aab29b5db52442c44b2aaa8d92"
+  sha256 "38956f5eb6bda87ea9e760277c9b10279dc993bc6576af630c304798c38a8fc9"
 
   url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog.v#{version}.dmg"
   name "QLog"
@@ -22,5 +22,6 @@ cask "qlog" do
   zap trash: [
     "~/Library/Preferences/com.hamradio.QLog.plist",
     "~/Library/Saved Application State/com.yourcompany.qlog.savedState",
+    "~/Library/Saved Application State/io.github.foldynl.qlog.savedState",
   ]
 end
