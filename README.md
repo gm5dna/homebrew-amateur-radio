@@ -70,6 +70,7 @@ Everything else runs natively on both.
 | [**js8call**](https://github.com/js8call/js8call) | Weak-signal keyboard-to-keyboard messaging built on FT8 *(Intel)* |
 | [**js8call-improved**](https://github.com/JS8Call-improved/JS8Call-improved) | Enhanced JS8Call with bug fixes and additional features *(Apple Silicon)* |
 | [**jtdx**](https://sourceforge.net/projects/jtdx/) | FT8, JT65, JT9, and T10 digital modes software |
+| [**jttychat**](https://blog.marxy.org/p/jttychat-for-macos.html) | Chat client for the JTTY keyboard-to-keyboard digital mode in WSJT-X 3.2, by VK3TPM — macOS 27+ *(Apple Silicon)* |
 | [**macwinlink**](https://github.com/jjones9527/macwinlink-releases) | Native Winlink email client with CAT rig control and VARA, ARDOP, and packet transports — public beta, macOS 15+ *(Apple Silicon)* |
 | [**multimode**](https://www.blackcatsystems.com/software/multimode.html) | Multi-mode decoder for CW, RTTY, FAX, SSTV, NAVTEX, PSK31, and more *(Intel)* |
 | [**nexus**](https://hamradiotools.io/) | All-mode station app with a needed-DX board, FT8/FT4/CW/RTTY/PSK, POTA/SOTA and an awards-tracking logbook (macOS 12+) *(Apple Silicon)* |
@@ -108,7 +109,9 @@ ships.
 | [**ham-tools**](https://toolbox.funkwelt.net/) | Logbook with CAT and DX cluster, plus WSPR, NEC2 antenna simulator, Winlink, SSTV and 30+ calculators — beta, macOS 14+ |
 | [**hamrs**](https://www.hamrs.app/) | Portable amateur radio logger for Parks on the Air, Field Day, and SOTA |
 | [**jlog-amateur-radio**](https://jlog.org/) | Cross-platform logger with LoTW, eQSL, and ClubLog integration |
+| [**klog-amateur-radio**](https://github.com/ea4k/klog) | KLog: cross-platform logger with DX cluster, QSL and DXCC management, and Club Log upload (Apple Silicon build needs macOS 26+) |
 | [**netlogger**](https://www.netlogger.org/) | Amateur radio net logging and real-time net monitoring *(Intel)* |
+| [**opslog**](https://github.com/GregTroar/OpsLog) | Logger with CAT control for a dozen backends, DX cluster, awards, QSL designer and shared MySQL logbooks |
 | [**qlog**](https://github.com/aa5sh/QLog) | Amateur radio logbook with DX cluster, rig control, and online log integration *(Apple Silicon)* |
 | [**rumlogng**](https://dl2rum.de/) | Amateur radio logger with QSL management and DX tracking |
 | [**skookumlogger**](https://www.k1gq.net/SkookumLogger/) | Advanced contest logging by K1GQ |
@@ -119,6 +122,7 @@ ships.
 
 | Name | Description |
 |------|-------------|
+| [**aethersdr**](https://www.aethersdr.com/) | Open-source client for FlexRadio 6000, 8000 and Aurora transceivers (macOS 14+) *(Apple Silicon)* |
 | [**deskhpsdr**](https://github.com/dl1bz/deskhpsdr) | SDR app for OpenHPSDR protocol 1 and 2 transceivers |
 | [**dogparksdr**](https://www.dogparksoftware.com/dogparkSDR.html) | Native client for FlexRadio Signature-series software-defined radios |
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
@@ -133,6 +137,7 @@ ships.
 | [**sdc**](https://www.lw-sdc.com/) | Software Defined Connectors — CW/RTTY/PSK skimmers, rig sync, and audio routing for SDR software |
 | [**sdr-angel**](https://github.com/f4exb/sdrangel) | Software-defined radio with extensive device support |
 | [**sdrconnect**](https://www.sdrplay.com/) | SDR application for SDRplay receivers with spectrum analysis |
+| [**sdroxide**](https://sdroxide.com/) | SDR Oxide: SDR transceiver client for CAT, TCI, HPSDR, RTL-SDR, SoapySDR and SDRplay radios, with skimmers, digital modes and Winlink |
 | [**sdrplusplus**](https://github.com/AlexandreRouma/SDRPlusPlus) | Cross-platform open-source SDR receiver application (nightly build) |
 | [**sdrplusplus-brown**](https://github.com/sannysanoff/SDRPlusPlusBrown) | SDR++ fork with FT8/FT4 decoders, noise reduction, SSB TX, remote monitoring |
 | [**sigdigger**](https://batchdrake.github.io/SigDigger/) | Digital signal analyser and inspector for SDR *(Intel)* |
@@ -174,7 +179,9 @@ ships.
 | [**mac-tci-dx-cluster**](https://gw3jvb.uk/software/mac-tci-dx-cluster/) | Telnet DX cluster client that forwards spots to TCI radio servers, with RUMlogNG worked/needed checks (macOS 14+) |
 | [**morse-mania**](https://www.blackcatsystems.com/software/morse-code-practice-software.html) | CW (Morse code) training and practice tutor *(Intel)* |
 | [**morse-runner**](https://mikeg-dal.github.io/MorseRunner-KF5O/) | CW contest simulator — native port of VE3NEA's Morse Runner |
+| [**orbitdeck**](https://github.com/prstoetzer/OrbitDeck) | Satellite tracker with pass prediction, Doppler-corrected frequencies and link budgets *(Apple Silicon)* |
 | [**pine64-updater**](https://github.com/pine64/pine64_updater) | Updater for Pine64 devices (Pinecil, etc.) *(Intel)* |
+| [**qcluster**](https://qso365.co.uk/qcluster/) | DX cluster client with band, mode, entity and distance filtering and alerts, by G6NHU (macOS 14+) |
 | [**rf-toolbox**](https://www.blackcatsystems.com/software/electronics-antenna-design-software.html) | Antenna design and electronics calculator *(Intel)* |
 
 ## Updating
