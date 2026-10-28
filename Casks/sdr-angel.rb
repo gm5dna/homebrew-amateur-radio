@@ -1,18 +1,22 @@
 cask "sdr-angel" do
-  version "7.27.2"
+  version "8.0.0"
 
   # The filenames embed the macOS version of the upstream build host
   # (e.g. mac-14.8.7), which changes between releases independently of the
   # SDRangel version — check the release assets when bumping.
   on_arm do
-    sha256 "54a1888e3844565a384416c3b9e700ff1138749d42aff308c0da5caaeba01524"
+    sha256 "d9a62182b549054f021d897fa496d2ec6258fb9bb8b815d7ca578e2db28a1b68"
 
-    url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-14.8.7_arm64.dmg"
+    url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-15.7.9_arm64.dmg"
+
+    depends_on macos: :sequoia
   end
   on_intel do
-    sha256 "c454b306a46e253748568e2fc5002a3c886f0d48cfa0db84d364c13369b8d253"
+    sha256 "47e2d9d5555ed578ca347a0ecebdc5182968e2dd66a0df96ab3431b1e2d8c162"
 
-    url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-15.7.7_x86_64.dmg"
+    url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-15.7.9_x86_64.dmg"
+
+    depends_on macos: :sonoma
   end
 
   name "SDRangel"
@@ -23,8 +27,6 @@ cask "sdr-angel" do
     url :homepage
     strategy :github_latest
   end
-
-  depends_on macos: :sonoma
 
   app "SDRangel.app"
 
