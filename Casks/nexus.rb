@@ -1,6 +1,6 @@
 cask "nexus" do
-  version "1.20.0"
-  sha256 "e1d3c946c84d380b3416c791f451446c9c443200439f19dcefd57eab96db5627"
+  version "1.21.0"
+  sha256 "6f3cceb14b2c7c72211107052daea322b6da171fb1b57574bc7b3fd89f10e5b4"
 
   url "https://github.com/kd9taw/Nexus/releases/download/v#{version}/Nexus_#{version}_aarch64.dmg"
   name "Nexus"
