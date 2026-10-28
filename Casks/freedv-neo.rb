@@ -1,5 +1,5 @@
 cask "freedv-neo" do
-  version "1.2.21"
+  version "1.2.25"
   sha256 :no_check
 
   url "https://vk3tpm-150585202763-ap-southeast-2-an.s3-ap-southeast-2.amazonaws.com/FreeDVNeo/FreeDVNeo.zip"
