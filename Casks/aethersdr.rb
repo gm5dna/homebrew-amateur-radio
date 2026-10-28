@@ -1,6 +1,6 @@
 cask "aethersdr" do
-  version "26.10.3"
-  sha256 "afd05a086acbd3f99af91b4e06245f8008e0a7b66a7b37384669a8ee206eec82"
+  version "26.10.4"
+  sha256 "f9f2c0d4b3e89c8bbf9154d9bc263f2223bcf3bd8d4a55590f53659dcfa36b50"
 
   url "https://github.com/aethersdr/AetherSDR/releases/download/v#{version}/AetherSDR-v#{version}-macOS-apple-silicon.dmg"
   name "AetherSDR"
