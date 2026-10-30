@@ -1,6 +1,6 @@
 cask "qlog" do
-  version "0.54.0"
-  sha256 "38956f5eb6bda87ea9e760277c9b10279dc993bc6576af630c304798c38a8fc9"
+  version "0.54.1"
+  sha256 "f5d11875653ec989d832a9418a2fb0ff5c712623db353fe4299c35ddb93b3204"
 
   url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog.v#{version}.dmg"
   name "QLog"
@@ -13,7 +13,7 @@ cask "qlog" do
   end
 
   depends_on arch: :arm64
-  depends_on macos: :sonoma
+  depends_on macos: :tahoe
 
   app "QLog.app"
 

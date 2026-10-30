@@ -112,7 +112,7 @@ ships.
 | [**klog-amateur-radio**](https://github.com/ea4k/klog) | KLog: cross-platform logger with DX cluster, QSL and DXCC management, and Club Log upload (Apple Silicon build needs macOS 26+) |
 | [**netlogger**](https://www.netlogger.org/) | Amateur radio net logging and real-time net monitoring *(Intel)* |
 | [**opslog**](https://github.com/GregTroar/OpsLog) | Logger with CAT control for a dozen backends, DX cluster, awards, QSL designer and shared MySQL logbooks |
-| [**qlog**](https://github.com/aa5sh/QLog) | Amateur radio logbook with DX cluster, rig control, and online log integration *(Apple Silicon)* |
+| [**qlog**](https://github.com/aa5sh/QLog) | Amateur radio logbook with DX cluster, rig control, and online log integration — macOS 26+ *(Apple Silicon)* |
 | [**rumlogng**](https://dl2rum.de/) | Amateur radio logger with QSL management and DX tracking |
 | [**skookumlogger**](https://www.k1gq.net/SkookumLogger/) | Advanced contest logging by K1GQ |
 | [**ultimateaac**](https://epc-mc.eu/) | Award application centre for EPC, AGB, ERC and other digital-mode award programmes, reading your existing logbook |
