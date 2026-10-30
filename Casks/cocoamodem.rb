@@ -1,30 +1,22 @@
 cask "cocoamodem" do
-  version "2.1rc5,d21dfd5"
-  sha256 "7b581bca53f45651f35a9f9b7555919cd9825b6b1461f89970ac493f5ddd5792"
+  version "2.1rc6.2"
+  sha256 "0f6bf2b2cdedc2be1fa3e30b5a542b6fd0ed5bfdda12ac43d1673dc0be62afc7"
 
-  url "https://github.com/matpet/CocoaModem/releases/download/v#{version.csv.first}-#{version.csv.second}/cocoaModem-#{version.csv.first}-universal-macos-#{version.csv.second}.zip"
+  url "https://github.com/matpet/CocoaModem/releases/download/v#{version}/cocoamodem-#{version}-universal-macos.zip"
   name "cocoaModem"
   desc "Amateur radio modem for RTTY, PSK31, MFSK, and other digital modes"
   homepage "https://github.com/matpet/CocoaModem"
 
   livecheck do
-    # Upstream tags releases as v<version>-<short commit> and ships the same
-    # marketing version (2.1rc5) across rebuilds, so the commit hash is the
-    # only thing distinguishing one build from the next. Keeping it in the
-    # version also keeps the url versioned, which `brew audit` requires.
+    # The default regex would read v2.1rc6.2 as 2.1.
     url :url
-    regex(/^v?(\d+(?:\.\d+)+(?:rc\d+)?)-(\h+)$/i)
-    strategy :github_latest do |json, regex|
-      match = json["tag_name"]&.match(regex)
-      next if match.blank?
-
-      "#{match[1]},#{match[2]}"
-    end
+    regex(/^v?(\d+(?:\.\d+)*rc\d+(?:\.\d+)*)$/i)
+    strategy :github_latest
   end
 
   depends_on macos: :sequoia
 
-  app "cocoaModem #{version.csv.first}.app"
+  app "cocoaModem #{version} universal.app"
 
   zap trash: [
     "~/Library/Application Support/cocoaModem",
@@ -40,7 +32,7 @@ cask "cocoamodem" do
     launch: open the app, dismiss the warning, then choose "Open Anyway" in
     System Settings → Privacy & Security. Alternatively, run:
 
-      xattr -r -d com.apple.quarantine "/Applications/cocoaModem #{version.csv.first}.app"
+      xattr -r -d com.apple.quarantine "/Applications/cocoaModem #{version} universal.app"
 
     Supported modes: RTTY, PSK31, MFSK16, Hellschreiber, CW, SITOR-B, HF-FAX
   EOS
