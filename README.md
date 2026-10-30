@@ -123,7 +123,7 @@ ships.
 | Name | Description |
 |------|-------------|
 | [**aethersdr**](https://www.aethersdr.com/) | Open-source client for FlexRadio 6000, 8000 and Aurora transceivers (macOS 14+) *(Apple Silicon)* |
-| [**deskhpsdr**](https://github.com/dl1bz/deskhpsdr) | SDR app for OpenHPSDR protocol 1 and 2 transceivers |
+| [**deskhpsdr**](https://github.com/dl1bz/deskhpsdr) | SDR app for OpenHPSDR protocol 1 and 2 transceivers (Apple Silicon build needs macOS 26+) |
 | [**dogparksdr**](https://www.dogparksoftware.com/dogparkSDR.html) | Native client for FlexRadio Signature-series software-defined radios |
 | [**ft710-cockpit**](https://w0xz.com/ft-710/) | Controller for the Yaesu FT-710 transceiver |
 | [**ftdx10-cockpit**](https://w0xz.com/ftdx10/) | Controller for the Yaesu FTdx10 transceiver |

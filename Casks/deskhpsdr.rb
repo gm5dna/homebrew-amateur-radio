@@ -5,11 +5,16 @@ cask "deskhpsdr" do
     sha256 "804c7f79db62857f54fb23a37d971fc3b8e9999c73d56aab337b54ecda12a314"
 
     url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version.csv.first}/deskHPSDR-#{version.csv.first}-master-#{version.csv.third}-macos-arm64.zip"
+
+    # The binary is `minos 26.0` although its plist still says 15.0.
+    depends_on macos: :tahoe
   end
   on_intel do
     sha256 "f0b802cbe87da6557db4ad739e8c2cde633e2ba657b81ac9a200e8011f2ed947"
 
     url "https://github.com/dl1bz/deskhpsdr/releases/download/#{version.csv.first}/deskHPSDR-#{version.csv.first}-master-#{version.csv.third}-macos-x86_64.zip"
+
+    depends_on macos: :sequoia
   end
 
   name "deskHPSDR"
@@ -28,8 +33,6 @@ cask "deskhpsdr" do
       end
     end
   end
-
-  depends_on macos: :sequoia
 
   app "deskHPSDR.app"
 
