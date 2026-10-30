@@ -1,6 +1,6 @@
 cask "scanastudio" do
-  version "6.0.28"
-  sha256 "d310832272bb67e5a43cbd4a7816b577b24b283e788f09685fc16682af918aa5"
+  version "6.0.29"
+  sha256 "59c0d267ed17b979ae70dfbf6280884024874acc5ae4db824c18d669f037f3ff"
 
   url "https://cdn.ikalogic.com/dist/scanastudio-6/ScanaStudio_#{version}_universal.dmg"
   name "ScanaStudio"
