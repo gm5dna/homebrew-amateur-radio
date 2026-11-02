@@ -1,8 +1,11 @@
 cask "aethersdr" do
-  version "26.11.1"
-  sha256 "af1d037776411350f906196fd44cb6b7983f99438588602e17fa7445bd8d0bf0"
+  arch arm: "apple-silicon", intel: "intel"
 
-  url "https://github.com/aethersdr/AetherSDR/releases/download/v#{version}/AetherSDR-v#{version}-macOS-apple-silicon.dmg"
+  version "26.11.1"
+  sha256 arm:   "af1d037776411350f906196fd44cb6b7983f99438588602e17fa7445bd8d0bf0",
+         intel: "23a8204b4513d46eb9955e3f1a3c3e8ddf405e0475f106c5c9f9e9ea86e68e24"
+
+  url "https://github.com/aethersdr/AetherSDR/releases/download/v#{version}/AetherSDR-v#{version}-macOS-#{arch}.dmg"
   name "AetherSDR"
   desc "Client for FlexRadio 6000, 8000 and Aurora transceivers"
   homepage "https://www.aethersdr.com/"
@@ -13,7 +16,6 @@ cask "aethersdr" do
   end
 
   auto_updates true
-  depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "AetherSDR.app"
