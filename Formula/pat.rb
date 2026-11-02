@@ -2,8 +2,8 @@ class Pat < Formula
   desc "Cross-platform Winlink client for amateur radio"
   homepage "https://github.com/la5nta/pat"
   url "https://github.com/la5nta/pat.git",
-      tag:      "v1.0.0",
-      revision: "2e6a8d14baf0268f4e2aa4d01784a54ca935cf52"
+      tag:      "v1.0.1",
+      revision: "2ad31e8fc1f1748ac1b00cac9d88da54e3e0efe2"
   license "MIT"
   head "https://github.com/la5nta/pat.git", branch: "develop"
 
