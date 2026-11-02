@@ -1,5 +1,5 @@
 cask "jttychat" do
-  version "1.15"
+  version "1.16"
   sha256 :no_check
 
   url "https://vk3tpm-150585202763-ap-southeast-2-an.s3-ap-southeast-2.amazonaws.com/JttyChat/JttyChat.zip"
