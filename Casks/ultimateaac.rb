@@ -2,7 +2,7 @@ cask "ultimateaac" do
   arch_id = on_arch_conditional arm: "25", intel: "26"
   arch_cat = on_arch_conditional arm: "19:arm64bit", intel: "18:64bit"
 
-  version "2.7.37"
+  version "2.7.38"
   sha256 :no_check
 
   url "https://epc-mc.eu/index.php?option=com_phocadownload&view=category&download=#{arch_id}:setup-ultimateaac&id=#{arch_cat}&lang=en"
