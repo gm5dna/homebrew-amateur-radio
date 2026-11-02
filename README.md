@@ -73,7 +73,7 @@ Everything else runs natively on both.
 | [**jttychat**](https://blog.marxy.org/p/jttychat-for-macos.html) | Chat client for the JTTY keyboard-to-keyboard digital mode in WSJT-X 3.2, by VK3TPM — macOS 27+ *(Apple Silicon)* |
 | [**macwinlink**](https://github.com/jjones9527/macwinlink-releases) | Native Winlink email client with CAT rig control and VARA, ARDOP, and packet transports — public beta, macOS 15+ *(Apple Silicon)* |
 | [**multimode**](https://www.blackcatsystems.com/software/multimode.html) | Multi-mode decoder for CW, RTTY, FAX, SSTV, NAVTEX, PSK31, and more *(Intel)* |
-| [**nexus**](https://hamradiotools.io/) | All-mode station app with a needed-DX board, FT8/FT4/CW/RTTY/PSK, POTA/SOTA and an awards-tracking logbook (macOS 12+) *(Apple Silicon)* |
+| [**nexus**](https://hamradiotools.io/) | All-mode station app with a needed-DX board, FT8/FT4/CW/RTTY/PSK, POTA/SOTA and an awards-tracking logbook (macOS 12+) |
 | [**open-sstv**](https://github.com/bucknova/Open-SSTV) | Open-source SSTV transceiver with rig control, QSO logbook, and image gallery — beta *(Apple Silicon)* |
 | [**qtsoundmodem**](https://github.com/gm5dna/qtsoundmodem-macos-port) | AX.25 packet-radio soundmodem — port of UZ7HO's QtSoundModem *(Apple Silicon)* |
 | [**rttytci**](https://github.com/dl1bz/rttyTCI) | RTTY transceiver app for SDRs using the TCI protocol |

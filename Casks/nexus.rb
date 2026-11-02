@@ -1,8 +1,11 @@
 cask "nexus" do
-  version "1.22.0"
-  sha256 "305c3e335d53a8d6640aa016d2508921a7f52299828cb33d316284c7dd8b5a1a"
+  arch arm: "aarch64", intel: "x64"
 
-  url "https://github.com/kd9taw/Nexus/releases/download/v#{version}/Nexus_#{version}_aarch64.dmg"
+  version "1.22.0"
+  sha256 arm:   "305c3e335d53a8d6640aa016d2508921a7f52299828cb33d316284c7dd8b5a1a",
+         intel: "3a5a0020fd02fcb64afbb05d8e59a138368264da85e33bcb3927c4efc78b3dfc"
+
+  url "https://github.com/kd9taw/Nexus/releases/download/v#{version}/Nexus_#{version}_#{arch}.dmg"
   name "Nexus"
   desc "Station app with needed-DX alerts, digital modes, rig control and logbook"
   homepage "https://hamradiotools.io/"
@@ -13,7 +16,6 @@ cask "nexus" do
   end
 
   auto_updates true
-  depends_on arch: :arm64
   depends_on macos: :monterey
 
   app "Nexus.app"
