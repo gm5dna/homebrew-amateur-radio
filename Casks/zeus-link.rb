@@ -1,9 +1,9 @@
 cask "zeus-link" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.0.59"
-  sha256 arm:   "5a36b7a322856917a39d917f11a2934c2b7cca319f2579bf5e880c0ec6a805f5",
-         intel: "7ac92600c6d92711f756c504707d84682c97daba570f42c1bc14bd3d82698491"
+  version "2.0.63"
+  sha256 arm:   "4b11f690fbd95e429b45db0d212211b1605358bc07de0beb356484b1191b68c8",
+         intel: "83a51e0f00506721622d26a144b692c462f3d9286feee7247eabfdae8acaf50b"
 
   url "https://downloads.zeussdr.com/versions/#{version}/zeus-link-#{version}-macos-#{arch}.dmg"
   name "Zeus Link"
