@@ -1,6 +1,6 @@
 cask "mac125" do
-  version "0.5.2"
-  sha256 "529756c97e778e884349b672cb3d47ad275354d413b2f1e6b24b2ab582034abc"
+  version "0.5.3"
+  sha256 "4c175d15e5d72f88d893550814865a9c00300896590a0197b922c2df2308a192"
 
   url "https://github.com/reflectingme/Mac125/releases/download/v#{version}/Mac125_v#{version}_macos.dmg"
   name "Mac125"
