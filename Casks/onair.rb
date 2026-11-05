@@ -1,9 +1,9 @@
 cask "onair" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "3.5.0"
-  sha256 arm:   "7da36c936127fca78cb2279246d7cc1b49802e1d45cfe9ab6c506e543d6d9150",
-         intel: "6f61ad92c8e68ef1e8c43ead2b46bc497de2ca13af12c1d32ca9a1c49df71125"
+  version "3.6.0"
+  sha256 arm:   "6979ecf60bd948e5d4dd04f19f48460b9bcbe61e934ef304b6c94a392479f418",
+         intel: "eacd3ec686fe8ca60b6c3f44b5255c9782e94710df56a4306d6eb511a6ffe25a"
 
   url "https://github.com/adswill/OnAir/releases/download/v#{version}/OnAir-#{version}-macos-#{arch}.dmg"
   name "OnAir"
