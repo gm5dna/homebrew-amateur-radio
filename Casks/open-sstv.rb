@@ -1,6 +1,6 @@
 cask "open-sstv" do
-  version "0.6.18"
-  sha256 "178b4a82a8de7e442942418f82cd0728e102c2084bc9ddbd68f55c86b5e26dbc"
+  version "0.6.19"
+  sha256 "21eb8a6ec7ea83bc172ead3dec7019b0f2e6c003564342809ce9a56143eae9cb"
 
   url "https://github.com/bucknova/Open-SSTV/releases/download/v#{version}/open-sstv-macos-arm64.zip"
   name "Open-SSTV"
