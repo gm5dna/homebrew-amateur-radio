@@ -1,6 +1,6 @@
 cask "rttytci" do
-  version "0.3.0"
-  sha256 "61d59bd7e131b0c6c37276d86c888b5ad1d1fafcf741b1c2edd2a6c4e0f5bc59"
+  version "0.3.1"
+  sha256 "a092285e910605bbff465fbc75448cc8adb97f6aa32ad29d33e2517c2af7c68b"
 
   url "https://github.com/dl1bz/rttyTCI/releases/download/#{version}/rttyTCI-macos-universal.zip"
   name "rttyTCI"
