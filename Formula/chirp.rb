@@ -3,9 +3,9 @@ class Chirp < Formula
   homepage "https://chirpmyradio.com/"
   # Cloudflare blocks the upstream builds on archive.chirpmyradio.com and master
   # is untagged, so pin a master commit versioned by its UTC commit date.
-  url "https://github.com/kk7ds/chirp/archive/efbbeade947aa4b0acd2da54cb30c1f5f845c14b.tar.gz"
-  version "20261103"
-  sha256 "91cccaedaa4b67775ef14ca42f4393c670272dd864037da86d2e2e98693fcf5b"
+  url "https://github.com/kk7ds/chirp/archive/ba67ff430e50780a8274be9ca040af6b0de15425.tar.gz"
+  version "20261105"
+  sha256 "6093e29241bd0a26916db3bfc1913bd83a077efbf370735703f4dbf4f060d2f8"
   license "GPL-3.0-or-later"
 
   livecheck do
