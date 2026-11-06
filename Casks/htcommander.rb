@@ -1,6 +1,6 @@
 cask "htcommander" do
-  version "0.1.89"
-  sha256 "3fccd9b57fecaafd1710d211ec3f95e8c9a2e1c57677b93edc09dedadeb865b9"
+  version "0.1.91"
+  sha256 "42c2dc75cdc3a4b42240db11bac337d6e6896b572135afbc116e0767f5c106c0"
 
   url "https://github.com/Ylianst/HTCommander/releases/download/v#{version}/htcommander-#{version}-macos.zip"
   name "HTCommander"
