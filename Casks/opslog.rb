@@ -1,6 +1,6 @@
 cask "opslog" do
-  version "0.51.32"
-  sha256 "619b67ecd3fb63387dfa9201575563e39a39d7844b617ffa90eaf86169bbb818"
+  version "0.51.34"
+  sha256 "a1ba3bd65fcf5f12b3f2a6566962aa59fdd19f1e94543058bea9bca518bb8357"
 
   url "https://github.com/GregTroar/OpsLog/releases/download/v#{version}/OpsLog-macos.zip"
   name "OpsLog"
