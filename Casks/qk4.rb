@@ -1,6 +1,6 @@
 cask "qk4" do
-  version "0.8.0-beta.1"
-  sha256 "2d3fc5190cbbcc0637c02a6c86fcd4ba67d6cd66af227857adb6d62d45d0de98"
+  version "0.8.1-beta.1"
+  sha256 "5d3ddec551ad0cd2c750c2190f87142602cea41fa959745288e52292735b1867"
 
   url "https://github.com/mikeg-dal/QK4/releases/download/v#{version}/QK4-#{version}-macos.dmg"
   name "QK4"
