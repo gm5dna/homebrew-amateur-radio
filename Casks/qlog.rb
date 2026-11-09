@@ -1,8 +1,8 @@
 cask "qlog" do
   version "0.54.2"
-  sha256 "ba1b77c2520a54b928de0add1a87cdb3302e1232d93e5da6dba2ee973546a975"
+  sha256 "0284ef93236fb6908d615b4bd1510dfe53a4da4a102cb06be9823c5d336f0780"
 
-  url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog.v#{version}.macos13-arm64.dmg"
+  url "https://github.com/aa5sh/QLog/releases/download/v#{version}/QLog-#{version}.zip"
   name "QLog"
   desc "Amateur radio logbook with DX cluster, rig control, and online log integration"
   homepage "https://github.com/aa5sh/QLog"
@@ -14,6 +14,7 @@ cask "qlog" do
 
   depends_on arch: :arm64
   depends_on macos: :ventura
+  container nested: "QLog.v#{version}.macos13-arm64.dmg"
 
   app "qlog.app"
 
