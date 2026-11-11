@@ -1,5 +1,5 @@
 cask "qcluster" do
-  version "1.0.7"
+  version "1.0.8"
   sha256 :no_check
 
   url "https://qso365.co.uk/qcluster/qcluster.dmg"
