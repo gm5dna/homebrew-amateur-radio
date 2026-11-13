@@ -1,6 +1,6 @@
 cask "hermitsdr" do
-  version "2026.1110_001"
-  sha256 "f15ea028cda0d2b347436719931c29b1457297a8222ca15214cb074f2ffde267"
+  version "2026.1111_001"
+  sha256 "5384441aa0499e01da4014aac0caeb237be03c4e5b7946878023b56f080fe27a"
 
   url "https://github.com/dzcassell/HermitSDR-releases/releases/download/v#{version}/HermitSDR-#{version}.dmg"
   name "HermitSDR"
