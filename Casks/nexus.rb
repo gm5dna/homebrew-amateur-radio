@@ -1,9 +1,9 @@
 cask "nexus" do
   arch arm: "aarch64", intel: "x64"
 
-  version "1.23.0"
-  sha256 arm:   "68a9ebc0172e043f4cef28150eb7446febb998546feac0c5b0e7ced2f0c2e34a",
-         intel: "e809ba150cf16e5b3b8eb0ce993406ff76b42ebe41b1d5e98f8e017f0a638af9"
+  version "1.24.0"
+  sha256 arm:   "bb8ef39905fa57f77d50eb868f85c16d6bf4951ced000c17686e73bda5f42811",
+         intel: "369149f4b3423df6281f80cf54e3bc2331b757dea562e3550b42b401981c9fb7"
 
   url "https://github.com/kd9taw/Nexus/releases/download/v#{version}/Nexus_#{version}_#{arch}.dmg"
   name "Nexus"
