@@ -1,13 +1,13 @@
 cask "saleae-logic" do
-  version "2.4.48"
+  version "2.4.49"
 
   on_arm do
-    sha256 "dc0c25c7726d80c8363f95b892401462563326b50ec8c15233491771d91a82d2"
+    sha256 "8e7ea6bcfeb3841c47f868e7375415cfbf651520e0fa3250fb3217a5644eb671"
 
     url "https://downloads2.saleae.com/logic2/Logic-#{version}-macos-arm64.zip"
   end
   on_intel do
-    sha256 "9540109b80062dfc128eb7e31b90e7b71c07ff5ec5d4ae796a3fca22d97743d0"
+    sha256 "25f2b852fb40d63dfab78769d25e4483fe85f0ab1f0ac03efb8693f250e5d672"
 
     url "https://downloads2.saleae.com/logic2/Logic-#{version}-macos-x64.zip"
   end
