@@ -1,21 +1,19 @@
 cask "sdr-angel" do
+  version "8.2.0"
+
   # The filenames embed the macOS version of the upstream build host
   # (e.g. mac-14.8.7), which changes between releases independently of the
   # SDRangel version — check the release assets when bumping. The separator
-  # before it changed from `_mac-` to `-mac-` in 8.1.0.
+  # before it was `-mac-` in 8.1.0 only; it is `_mac-` again from 8.2.0.
   on_arm do
-    version "8.1.0"
-    sha256 "c746391cffb28bdb68bc1bb7e2ad9816abb4b3d32ffdab9f181ab71df66c0787"
+    sha256 "acb76d238f5b0d37c06a8f1c99b725144641965d8d206ba6de3cfedf4946c802"
 
-    url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}-mac-15.8.2_arm64.dmg"
+    url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-15.8.2_arm64.dmg"
 
     depends_on macos: :sequoia
   end
-  # Upstream's 8.1.0 release has no x86_64 DMG, so Intel stays on 8.0.0
-  # until one is attached. Livecheck runs on arm and will not flag it.
   on_intel do
-    version "8.0.0"
-    sha256 "47e2d9d5555ed578ca347a0ecebdc5182968e2dd66a0df96ab3431b1e2d8c162"
+    sha256 "1bc3c50ed0929b9f97c9524e667a2f9b2adde9c0942759367c53de5138d87c82"
 
     url "https://github.com/f4exb/sdrangel/releases/download/v#{version}/sdrangel-#{version}_mac-15.7.9_x86_64.dmg"
 
