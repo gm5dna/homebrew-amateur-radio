@@ -2,8 +2,8 @@ class Wsjtz < Formula
   desc "Weak-signal digital communication software with automation features"
   homepage "https://github.com/sq9fve/wsjt-z"
   url "https://github.com/sq9fve/wsjt-z.git",
-      revision: "b3a06e89ae0174c51c8595d99e40ca179738eb0a"
-  version "3.0.0-2.0.19"
+      revision: "3d2c92e61bd2383fdbc939bd1392e6e11fc622ef"
+  version "3.0.0-2.0.20"
   license "GPL-3.0-or-later"
   head "https://github.com/sq9fve/wsjt-z.git", branch: "master"
 
@@ -36,6 +36,16 @@ class Wsjtz < Formula
               "add_subdirectory (bundle_fixup)",
               "# add_subdirectory (bundle_fixup) # skipped for Homebrew"
 
+    # iconutil cannot build the app icon inside Homebrew's build sandbox on
+    # macOS 26 (it reports "Invalid Iconset" for an iconset that converts
+    # cleanly outside the sandbox), so the icon is assembled from the same
+    # PNGs below and the CMake rule is made a no-op. Same workaround as
+    # wsjtx-improved-auto.
+    inreplace "CMakeLists.txt",
+              "COMMAND iconutil -c icns --output \"${CMAKE_BINARY_DIR}/${WSJTX_ICON_FILE}\" " \
+              "\"${CMAKE_SOURCE_DIR}/icons/Darwin/${CMAKE_PROJECT_NAME}.iconset\"",
+              "COMMAND true"
+
     prefix_path = %w[qt@5 hamlib fftw boost libusb].map do |dep|
       formula_opt_prefix(dep)
     end.join(";")
@@ -53,6 +63,22 @@ class Wsjtz < Formula
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+
+    # An .icns is a header plus typed PNG chunks; these are the type codes
+    # iconutil emits for each iconset member.
+    iconset = buildpath/"icons/Darwin/wsjtx.iconset"
+    chunks = {
+      "icon_16x16.png"      => "icp4", "icon_16x16@2x.png"   => "ic11",
+      "icon_32x32.png"      => "icp5", "icon_32x32@2x.png"   => "ic12",
+      "icon_128x128.png"    => "ic07", "icon_128x128@2x.png" => "ic13",
+      "icon_256x256.png"    => "ic08", "icon_256x256@2x.png" => "ic14",
+      "icon_512x512.png"    => "ic09", "icon_512x512@2x.png" => "ic10"
+    }.map do |png, type|
+      data = (iconset/png).binread
+      type + [data.bytesize + 8].pack("N") + data
+    end.join
+    (buildpath/"build/wsjtx.icns").binwrite("icns" + [chunks.bytesize + 8].pack("N") + chunks)
+
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
