@@ -1,6 +1,6 @@
 cask "ham-tools" do
-  version "1.62.0"
-  sha256 "ff89985b7f6687ec07f3a615c3af210d6a5639437b69741c0f3855f5b1c74d12"
+  version "1.63.0"
+  sha256 "f3ea1016d73c9dab1e63b16d7c92758e9a9995557f6fdf0e7be0083dd3e93ef8"
 
   url "https://toolbox.funkwelt.net/app/dmg/HAM-Tools-#{version}.dmg"
   name "HAM-Tools"
