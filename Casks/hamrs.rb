@@ -25,9 +25,10 @@ cask "hamrs" do
 
   app "HAMRS Pro.app"
 
+  # ~/Library/Application Support/HAMRS Pro is deliberately not zapped: it is
+  # the app's Electron data folder, which holds the local logbooks.
   zap trash: [
-    "~/Library/Application Support/HAMRS Pro",
-    "~/Library/Preferences/com.hamrs.pro.plist",
-    "~/Library/Saved Application State/com.hamrs.pro.savedState",
+    "~/Library/Preferences/app.hamrs.pro.plist",
+    "~/Library/Saved Application State/app.hamrs.pro.savedState",
   ]
 end
