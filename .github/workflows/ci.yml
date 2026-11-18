@@ -135,12 +135,14 @@ jobs:
               check: process.env.CHECK_RESULT,
               'download-verify': process.env.DOWNLOAD_RESULT,
             };
-            // A job that hits timeout-minutes reports `cancelled`, not
-            // `timed_out`, so a hung download-verify must count as a failure.
-            // A skipped job (download-verify on push) is not a failure.
+            // Anything but success or skipped is a failure. A job that hits
+            // timeout-minutes reports `cancelled`, not `timed_out`, and one
+            // that never got a runner reports `abandoned` (18/11/2026, which
+            // closed #226 as green). A skipped job (download-verify on push)
+            // is not a failure.
             const failed = Object.entries(results)
-              .filter(([, result]) => result === 'failure' || result === 'cancelled')
-              .map(([job, result]) => (result === 'cancelled' ? `${job} (cancelled or timed out)` : job));
+              .filter(([, result]) => result !== 'success' && result !== 'skipped')
+              .map(([job, result]) => (result === 'failure' ? job : `${job} (${result})`));
 
             const { owner, repo } = context.repo;
             const open = await github.paginate(github.rest.issues.listForRepo, {
