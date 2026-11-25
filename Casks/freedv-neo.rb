@@ -1,5 +1,5 @@
 cask "freedv-neo" do
-  version "1.2.25"
+  version "1.2.27"
   sha256 :no_check
 
   url "https://vk3tpm-150585202763-ap-southeast-2-an.s3-ap-southeast-2.amazonaws.com/FreeDVNeo/FreeDVNeo.zip"
@@ -9,7 +9,7 @@ cask "freedv-neo" do
 
   livecheck do
     url :homepage
-    regex(/\(Version\s+v?(\d+(?:\.\d+)+)\)/i)
+    regex(/>\s*v?(\d+(?:\.\d+)+)\s+Changes\s*</i)
   end
 
   depends_on macos: :sonoma
