@@ -28,6 +28,7 @@ class WsjtxImprovedAuto < Formula
 
     # GCC's libgomp is needed for Fortran OpenMP code linked by clang++
     gomp_lib = formula_opt_lib("gcc")/"gcc/current/libgomp.dylib"
+    gfortran = formula_opt_bin("gcc")/"gfortran"
 
     # The tarball is a superbuild wrapper (bundled hamlib 4.7.2 plus
     # src/wsjtx.tgz) that no longer configures under CMake 4. Unpack the
@@ -141,7 +142,7 @@ class WsjtxImprovedAuto < Formula
 
     args = %W[
       -DCMAKE_PREFIX_PATH=#{prefix_path}
-      -DCMAKE_Fortran_COMPILER=#{formula_opt_bin("gcc")/"gfortran"}
+      -DCMAKE_Fortran_COMPILER=#{gfortran}
       -DCMAKE_OSX_DEPLOYMENT_TARGET=#{MacOS.version}
       -DOpenMP_Fortran_FLAGS=-fopenmp
       -DOpenMP_Fortran_LIB_NAMES=gomp

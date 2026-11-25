@@ -11,7 +11,10 @@ cask "wfview" do
     url "https://wfview.org/download/"
     regex(%r{macos-universal-v([\d-]+)/\?wpdmdl=(\d+)}i)
     strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "#{match[0].tr("-", ".")},#{match[1]}" }
+      page.scan(regex).map do |match|
+        dotted = match[0].tr("-", ".")
+        "#{dotted},#{match[1]}"
+      end
     end
   end
 

@@ -31,7 +31,8 @@ cask "deskhpsdr" do
         match = asset["name"]&.match(regex)
         next unless match
 
-        "#{match[1]},#{asset["created_at"]&.delete("-")&.slice(0, 8)},#{match[2]}"
+        date = asset["created_at"]&.delete("-")&.slice(0, 8)
+        "#{match[1]},#{date},#{match[2]}"
       end
     end
   end
