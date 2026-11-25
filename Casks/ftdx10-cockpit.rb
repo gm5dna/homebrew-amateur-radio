@@ -1,5 +1,5 @@
 cask "ftdx10-cockpit" do
-  version "1.2"
+  version "1.3"
   sha256 :no_check
 
   url "https://w0xz.com/ftdx10/Installer.dmg"
