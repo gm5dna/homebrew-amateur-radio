@@ -1,9 +1,9 @@
 cask "aethersdr" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "26.11.3"
-  sha256 arm:   "83e455efcbae4e9f0adf9f9c0ca98f9f6d84ff2ff906438f80131fdab148a742",
-         intel: "1027e69c176541944fc572e5f55cffda2db6a2b5890b88ad70fe670af37c75d1"
+  version "26.11.4"
+  sha256 arm:   "d3678d421871c8415609940c2ebf6b0135aecfb95db5472cf5b72cae9837e5fa",
+         intel: "0ed7da16d4be548aca3bfd82a7f38db606c806d08e9912a26f4ca5bc5d07cbe5"
 
   url "https://github.com/aethersdr/AetherSDR/releases/download/v#{version}/AetherSDR-v#{version}-macOS-#{arch}.dmg"
   name "AetherSDR"
