@@ -20,7 +20,7 @@ cask "ft710-cockpit" do
 
   zap trash: [
     "~/Library/Application Support/FT-710 Cockpit",
-    "~/Library/Preferences/com.w0xz.FT710Cockpit.plist",
-    "~/Library/Saved Application State/com.w0xz.FT710Cockpit.savedState",
+    "~/Library/Preferences/com.W0XZ.FT-710Cockpit.plist",
+    "~/Library/Saved Application State/com.W0XZ.FT-710Cockpit.savedState",
   ]
 end
