@@ -1,9 +1,9 @@
 cask "sdroxide" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "1.7.3"
-  sha256 arm:   "8de101fb90e3ccda74178d03e5678ac66dd8ff0317d9bd949d24dba380dfcfb4",
-         intel: "894ea89214112fc3bb56674d19f5288301296d0e80d94a9a6f59eab78d734499"
+  version "1.7.4"
+  sha256 arm:   "58d3b1ca176883aeec7f5a05a3d519ac3ba119235c97c0a7a9d38b36be6ad9a5",
+         intel: "ab2c1dfcf9cbfbd4177e42d0bb44cc5ec0f21bbc40a6a3694adcc4e9712b9a21"
 
   url "https://github.com/dividebysandwich/sdroxide/releases/download/v#{version}/sdroxide-v#{version}-macos-#{arch}.dmg"
   name "SDR Oxide"
