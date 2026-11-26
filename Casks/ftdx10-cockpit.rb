@@ -20,7 +20,7 @@ cask "ftdx10-cockpit" do
 
   zap trash: [
     "~/Library/Application Support/FTDX10 Cockpit",
-    "~/Library/Preferences/com.w0xz.FTDX10Cockpit.plist",
-    "~/Library/Saved Application State/com.w0xz.FTDX10Cockpit.savedState",
+    "~/Library/Preferences/com.W0XZ.FTDX10Cockpit.plist",
+    "~/Library/Saved Application State/com.W0XZ.FTDX10Cockpit.savedState",
   ]
 end
