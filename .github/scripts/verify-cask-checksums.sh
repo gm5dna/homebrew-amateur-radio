@@ -169,11 +169,13 @@ if [ "$full" = "1" ] && [ -s "$work/todo.tsv" ]; then
   echo
   echo "--full: fetching $(wc -l <<<"$tokens" | tr -d ' ') cask(s) for every platform"
 
-  # `brew fetch` retries, rejects truncated downloads and checks each
-  # distinct URL against its declared sha256.
+  # `brew fetch` rejects truncated downloads and checks each distinct URL
+  # against its declared sha256. `--retry` re-downloads up to five times,
+  # because curl's own retries do not cover SourceForge mirrors cutting a
+  # transfer short (`curl: (18)`), which failed this job most days.
   for token in $tokens; do
     echo
-    if ! brew fetch --cask --all-platforms "gm5dna/amateur-radio/${token}"; then
+    if ! brew fetch --cask --all-platforms --retry "gm5dna/amateur-radio/${token}"; then
       echo "::error file=Casks/${token}.rb::${token}: brew fetch --all-platforms failed (download or sha256 mismatch; see log)"
       mismatch_log+="  FETCH FAILED  ${token}"$'\n'
       mismatches=$((mismatches + 1))
