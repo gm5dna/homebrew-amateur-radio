@@ -193,11 +193,23 @@ then
   # against its declared sha256. `--retry` re-downloads up to five times,
   # because curl's own retries do not cover SourceForge mirrors cutting a
   # transfer short (`curl: (18)`), which failed this job most days.
+  # Retries did not fix that either (27/11), so a fetch whose only failures
+  # are short reads is a warning: nothing was downloaded to verify. A
+  # SHA-256 mismatch or any other curl error (e.g. a 404) still fails.
   for token in ${tokens}
   do
     echo
-    if ! brew fetch --cask --all-platforms --retry "gm5dna/amateur-radio/${token}"
+    fetch_log="${work}/fetch-${token}.log"
+    if brew fetch --cask --all-platforms --retry "gm5dna/amateur-radio/${token}" 2>&1 | tee "${fetch_log}"
     then
+      continue
+    fi
+    if grep -q "curl: (18)" "${fetch_log}" &&
+       ! grep -q "SHA-256 mismatch" "${fetch_log}" &&
+       ! grep -E "curl: \([0-9]+\)" "${fetch_log}" | grep -vq "curl: (18)"
+    then
+      echo "::warning file=Casks/${token}.rb::${token}: download cut short by the server (curl: (18)); checksum not verified this run"
+    else
       echo "::error file=Casks/${token}.rb::${token}: brew fetch --all-platforms failed (download or sha256 mismatch; see log)"
       mismatch_log+="  FETCH FAILED  ${token}"$'\n'
       mismatches=$((mismatches + 1))
